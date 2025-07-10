@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form.needs-validation");
   const steps = document.querySelectorAll(".form-step");
@@ -9,7 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const estrategiasNao = document.getElementById("estrategiasNao");
   const acompanhamentoField = document.getElementById("acompanhamentoField");
 
+  const nascimento = form.querySelector('[name="nascimento"]');
+  const idade = form.querySelector('[name="idade"]');
+
   let currentStep = 0;
+
+  // Limites para o campo nascimento
+  const hoje = new Date();
+  const anoMax = hoje.getFullYear() - 4;
+  const dataMaxDate = new Date(anoMax, 11, 31); // 31 de dezembro do ano permitido
+  const dataMax = dataMaxDate.toISOString().split("T")[0];
+  nascimento.setAttribute("max", dataMax);
+  nascimento.setAttribute("min", "1900-01-01");
 
   // Mostrar o step atual
   function showStep(index) {
@@ -18,7 +28,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Validação básica automática
+  function validarCampo(campo, condicaoValida) {
+    if (condicaoValida) {
+      campo.classList.remove("is-invalid");
+      campo.classList.add("is-valid");
+    } else {
+      campo.classList.remove("is-valid");
+      campo.classList.add("is-invalid");
+    }
+  }
+
+  function calcularIdade(data) {
+    const hoje = new Date();
+    const nascimento = new Date(data);
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    const m = hoje.getMonth() - nascimento.getMonth();
+    if (m < 0 || (m === 0 && hoje.getDate() < nascimento.getDate())) {
+      idade--;
+    }
+    return idade;
+  }
+
+  nascimento.addEventListener("change", () => {
+    if (!nascimento.value) return;
+
+    const dataNasc = new Date(nascimento.value);
+    const idadeCalculada = calcularIdade(nascimento.value);
+    idade.value = idadeCalculada;
+
+    const dataValida =
+      dataNasc.getFullYear() >= 1900 &&
+      idadeCalculada >= 3 &&
+      dataNasc <= new Date(dataMax); // limita ao fim do ano permitido
+
+    validarCampo(nascimento, dataValida);
+    validarCampo(idade, idadeCalculada >= 3 && idadeCalculada <= 120);
+  });
+
   function validateCurrentStep() {
     const currentFormStep = steps[currentStep];
     const inputs = currentFormStep.querySelectorAll("input, textarea, select");
@@ -38,11 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return isValid;
   }
 
-  // Validação customizada do Step 1
   function validarStep1() {
     let valido = true;
 
-    function validarCampo(campo, condicao) {
+    function validarCampoInterno(campo, condicao) {
       if (condicao) {
         campo.classList.remove("is-invalid");
         campo.classList.add("is-valid");
@@ -54,16 +99,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const nome = form.querySelector('[name="nome"]');
-    validarCampo(nome, nome.value.trim().length >= 5);
+    validarCampoInterno(nome, nome.value.trim().length >= 5);
 
-    const idade = form.querySelector('[name="idade"]');
-    validarCampo(idade, idade.value && idade.value > 0 && idade.value <= 120);
-
-    const nascimento = form.querySelector('[name="nascimento"]');
     if (nascimento.value) {
-      const hoje = new Date();
       const dataNasc = new Date(nascimento.value);
-      validarCampo(nascimento, dataNasc <= hoje);
+      const idadeCalc = calcularIdade(nascimento.value);
+      idade.value = idadeCalc;
+
+      const dataValida =
+        dataNasc.getFullYear() >= 1900 &&
+        idadeCalc >= 3 &&
+        dataNasc <= new Date(dataMax);
+
+      validarCampoInterno(nascimento, dataValida);
+      validarCampoInterno(idade, idadeCalc >= 3 && idadeCalc <= 120);
+    } else {
+      validarCampoInterno(nascimento, false);
+      validarCampoInterno(idade, false);
     }
 
     const sexoM = form.querySelector("#sexoM");
@@ -75,25 +127,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sexoValido) valido = false;
 
     const telefone = form.querySelector('[name="telefone"]');
-    validarCampo(telefone, /^\d{9,}$/.test(telefone.value.trim()));
+    validarCampoInterno(telefone, /^\d{9,}$/.test(telefone.value.trim()));
 
     const email = form.querySelector('[name="email"]');
-    validarCampo(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
+    validarCampoInterno(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
 
     const estadoCivil = form.querySelector('[name="estado_civil"]');
     if (estadoCivil.value.trim() !== "") {
-      validarCampo(estadoCivil, estadoCivil.value.trim().length >= 3);
+      validarCampoInterno(estadoCivil, estadoCivil.value.trim().length >= 3);
     }
 
     const bi = form.querySelector('[name="BI"]');
     if (bi && bi.value.trim() !== "") {
-      validarCampo(bi, bi.value.trim().length >= 6);
+      validarCampoInterno(bi, bi.value.trim().length >= 6);
     }
 
     return valido;
   }
 
-  // Atualiza o botão de envio ao digitar nos campos
   form.addEventListener("input", () => {
     if (form.checkValidity()) {
       submitButton.removeAttribute("disabled");
@@ -102,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Passar para próximo step com validação
   nextBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
       const valido = currentStep === 0 ? validarStep1() : validateCurrentStep();
@@ -114,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   );
 
-  // Voltar para step anterior
   prevBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
       currentStep--;
@@ -123,7 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   );
 
-  // Validação final antes de enviar
   form.addEventListener("submit", (e) => {
     if (!form.checkValidity()) {
       e.preventDefault();
@@ -139,7 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Lógica para mostrar o campo "com acompanhamento" só se SIM for selecionado
   if (estrategiasSim && estrategiasNao && acompanhamentoField) {
     estrategiasSim.addEventListener("change", () => {
       acompanhamentoField.style.display = estrategiasSim.checked ? "block" : "none";
@@ -150,7 +197,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Exibir o primeiro step no início
   showStep(currentStep);
 });
-
