@@ -1,0 +1,31 @@
+body {
+  background: #f4f6f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+.form-container {
+  background: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+h2, h3 {
+  color: #198754;
+}
+.form-control, .form-check-input {
+  margin-bottom: 1rem;
+}
+button[type="submit"] {
+  background-color: #198754;
+  border: none;
+}
+button[type="submit"]:hover {
+  background-color: #146c43;
+}
+.form-step {
+  display: none;
+}
+.form-step.active {
+  display: block;
+}
+
