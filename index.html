@@ -28,408 +28,403 @@
               <input type="text" name="nome" class="form-control" required>
               <div class="invalid-feedback">Informe o nome completo.</div>
             </div>
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Idade</label>
-              <input type="number" name="idade" class="form-control" required>
-              <div class="invalid-feedback">Informe a idade.</div>
-            </div>
-          </div>
-
-
-          <div class="row">
             <div class="col-md-6 mb-3">
               <label class="form-label">Data de Nascimento</label>
               <input type="date" name="nascimento" class="form-control">
             </div>
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Sexo</label> <br>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="M">
-                <label class="form-check-label" for="sexoM">M</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="F">
-                <label class="form-check-label" for="sexoF">F</label>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Telefone</label>
-              <input type="tel" name="telefone" class="form-control" required>
-              <div class="invalid-feedback">Informe um telefone.</div>
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label">E-mail</label>
-              <input type="email" name="email" class="form-control" required>
-              <div class="invalid-feedback">Informe um email válido.</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Estado Civil</label>
-              <input type="text" name="estado_civil" class="form-control">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Portado do BI</label>
-              <input type="text" name="BI" class="form-control">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-step" id="step-2">
-          <hr>
-          <h3>🔍 Informações Complementares</h3>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Peso Atual (kg)</label>
-              <input type="text" name="peso" class="form-control">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Altura (m)</label>
-              <input type="text" name="altura" class="form-control">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Profissão</label>
-              <input type="text" name="profissao" class="form-control">
-            </div>
-          </div>
-
-          <div class="row">
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Profissão / Ocupação e Carga Horária</label>
-              <input type="text" name="ocupacao" class="form-control">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Endereço</label>
-              <input type="text" name="endereco" class="form-control">
-            </div>
-          </div>
-          <div class="row">
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Data da Consulta</label>
-              <input type="date" name="data" class="form-control">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Histórico do Paciente</label>
-              <textarea name="historico" class="form-control" rows="3"></textarea>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Motivo da Consulta</label>
-              <textarea name="motivo_consulta" class="form-control" rows="2"></textarea>
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label">O que espera de mim como nutricionista?</label>
-              <textarea name="expectativa" class="form-control" rows="2"></textarea>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Já realizou estratégias para perda de peso anteriormente?</label><br>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="estrategias_perda" id="estrategiasSim" value="Sim">
-
-                <label class="form-check-label" for="estrategiasSim">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="estrategias_perda" id="estrategiasNao" value="Nao">
-                value="Não">
-                <label class="form-check-label" for="estrategiasNao">Não</label>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3" id="acompanhamentoField" style="display: none;">
-              <label class="form-label">Se sim, foi com o acompanhamento de um profissional?</label>
-              <textarea name="com_acompanhamento" class="form-control" rows="2"></textarea>
-            </div>
-
-
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Que evolução teve durante o processo?</label>
-            <textarea name="evolucao" class="form-control" rows="2"></textarea>
-          </div>
-
-        </div>
-
-        <div class="form-step" id="step-3">
-          <hr>
-          <h3>2️⃣ Histórico de Peso e Hábitos</h3>
-
-          <div class="mb-3">
-            <label class="form-label">Qual foi seu peso máximo e mínimo?</label>
-            <input type="text" name="peso_max_min" class="form-control">
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Vida adulta:</label>
-            <textarea name="vida_adulta" class="form-control" rows="2"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Adolescência:</label>
-            <textarea name="adolescencia" class="form-control" rows="2"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Dificuldades referentes à sua alimentação (Qual a maior falha)?</label>
-            <textarea name="dificuldades_alimentacao" class="form-control" rows="3"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Hábitos de Vida:</label>
-            <textarea name="habitos_vida" class="form-control" rows="3"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Quantidade de água por dia?</label>
-            <input type="text" name="agua_por_dia" class="form-control">
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Frequência de Evacuação por dia</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq1" value="1">
-              <label class="form-check-label" for="freq1">1</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq2" value="2">
-              <label class="form-check-label" for="freq2">2</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq3" value="3">
-              <label class="form-check-label" for="freq3">3</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq4" value="4">
-              <label class="form-check-label" for="freq4">4</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq5" value="5">
-              <label class="form-check-label" for="freq5">5</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq6" value="6">
-              <label class="form-check-label" for="freq6">6</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="freq_evacuacao" id="freqNenhum" value="Nenhum">
-              <label class="form-check-label" for="freqNenhum">Nenhum</label>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Fumante?</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="fumante" id="fumanteSim" value="Sim">
-              <label class="form-check-label" for="fumanteSim">Sim</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="fumante" id="fumanteNao" value="Não">
-              <label class="form-check-label" for="fumanteNao">Não</label>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Consome bebidas alcoólicas?</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="alcool" id="alcoolSim" value="Sim">
-              <label class="form-check-label" for="alcoolSim">Sim</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="alcool" id="alcoolNao" value="Não">
-              <label class="form-check-label" for="alcoolNao">Não</label>
-            </div>
-            <div class="ms-3">
-              <label class="form-label">Se sim, qual frequência?</label>
-              <input type="text" name="freq_alcool" class="form-control">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Apetite</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="apetite" id="apetiteNormal" value="Normal">
-                <label class="form-check-label" for="apetiteNormal">Normal</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="apetite" id="apetiteAumentado" value="Aumentado">
-                <label class="form-check-label" for="apetiteAumentado">Aumentado</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="apetite" id="apetiteDiminuido" value="Diminuído">
-                <label class="form-check-label" for="apetiteDiminuido">Diminuído</label>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Mastigação</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoNormal" value="Normal">
-                <label class="form-check-label" for="mastigacaoNormal">Normal</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoRapida" value="Rápida">
-                <label class="form-check-label" for="mastigacaoRapida">Rápida</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoLenta" value="Lenta">
-                <label class="form-check-label" for="mastigacaoLenta">Lenta</label>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="form-step" id="step-4">
-          <hr>
-          <h3>3️⃣ Histórico de Saúde e Hábitos Alimentares</h3>
-
-          <div class="mb-3">
-            <label class="form-label">Patologias (Quais?)</label>
-            <textarea name="patologias" class="form-control" rows="3"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Histórico Familiar</label>
-            <textarea name="historico_familiar" class="form-control" rows="3"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Exames</label>
-            <textarea name="exames" class="form-control" rows="2"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Faz alguma medicação?</label>
-            <textarea name="medicacao" class="form-control" rows="2"></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Sinais e Sintomas, você possui algum desses?</label>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="ansiedade" value="Ansiedade">
-                  <label class="form-check-label" for="ansiedade">Ansiedade</label>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Idade</label>
+                <input type="number" name="idade" disabled class="form-control" min="3" required>
+                <div class="invalid-feedback">Informe a idade.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Sexo</label> <br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="M">
+                  <label class="form-check-label" for="sexoM">M</label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="ma_circulacao"
-                    value="Má circulação">
-                  <label class="form-check-label" for="ma_circulacao">Má circulação</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="refluxo_azia"
-                    value="Refluxo, Azia">
-                  <label class="form-check-label" for="refluxo_azia">Refluxo, Azia</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="falta_memoria"
-                    value="Falta de Memória">
-                  <label class="form-check-label" for="falta_memoria">Falta de Memória</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="irritabilidade"
-                    value="Irritabilidade">
-                  <label class="form-check-label" for="irritabilidade">Irritabilidade</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="F">
+                  <label class="form-check-label" for="sexoF">F</label>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="depressao" value="Depressão">
-                  <label class="form-check-label" for="depressao">Depressão</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="fadiga" value="Fadiga">
-                  <label class="form-check-label" for="fadiga">Fadiga</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="indigestao" value="Indigestão">
-                  <label class="form-check-label" for="indigestao">Indigestão</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="dores_corpo"
-                    value="Dores no Corpo">
-                  <label class="form-check-label" for="dores_corpo">Dores no Corpo</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="sintomas" id="outros_sintomas" value="Outros">
-                  <label class="form-check-label" for="outros_sintomas">Outros</label>
-                </div>
-                <input type="text" name="outros_sintomas_descricao" class="form-control mt-2"
-                  placeholder="Descreva outros sintomas">
+
+
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Telefone</label>
+                <input type="tel" name="telefone" class="form-control" required>
+                <div class="invalid-feedback">Informe um telefone.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="email" name="email" class="form-control" required>
+                <div class="invalid-feedback">Informe um email válido.</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Estado Civil</label>
+                <input type="text" name="estado_civil" class="form-control">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Portado do BI</label>
+                <input type="text" name="BI" class="form-control">
               </div>
             </div>
           </div>
-        </div>
 
+          <div class="form-step" id="step-2">
+            <hr>
+            <h3>🔍 Informações Complementares</h3>
 
-
-        <div class="form-step" id="step-4">
-          <hr>
-          <h3>3️⃣ Hábitos Alimentares</h3>
-          <div class="mb-3">
-            <label class="form-label">Hábitos Alimentares</label>
-            <div class="mb-2">
-              <label class="form-label">Faz as refeições fora de casa?</label>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="refeicoes_fora_casa" id="refeicoesSim" value="Sim">
-                <label class="form-check-label" for="refeicoesSim">Sim</label>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Peso Atual (kg)</label>
+                <input type="text" name="peso" class="form-control">
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="refeicoes_fora_casa" id="refeicoesNao" value="Não">
-                <label class="form-check-label" for="refeicoesNao">Não</label>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Altura (m)</label>
+                <input type="text" name="altura" class="form-control">
               </div>
-              <div class="ms-3">
-                <label class="form-label">Se sim, onde faz?</label>
-                <input type="text" name="onde_refeicoes" class="form-control">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Profissão</label>
+                <input type="text" name="profissao" class="form-control">
               </div>
             </div>
-            <div class="mb-2">
-              <label class="form-label">Quem faz as compras?</label>
-              <input type="text" name="quem_faz_compras" class="form-control">
+
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Profissão / Ocupação e Carga Horária</label>
+                <input type="text" name="ocupacao" class="form-control">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Endereço</label>
+                <input type="text" name="endereco" class="form-control">
+              </div>
             </div>
-            <div class="mb-2">
-              <label class="form-label">Alergia ou Intolerância?</label>
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Data da Consulta</label>
+                <input type="date" name="data" class="form-control">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Histórico do Paciente</label>
+                <textarea name="historico" class="form-control" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Motivo da Consulta</label>
+                <textarea name="motivo_consulta" class="form-control" rows="2"></textarea>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">O que espera de mim como nutricionista?</label>
+                <textarea name="expectativa" class="form-control" rows="2"></textarea>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Já realizou estratégias para perda de peso anteriormente?</label><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="estrategias_perda" id="estrategiasSim" value="Sim">
+
+                  <label class="form-check-label" for="estrategiasSim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="estrategias_perda" id="estrategiasNao" value="Nao">
+                  value="Não">
+                  <label class="form-check-label" for="estrategiasNao">Não</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3" id="acompanhamentoField" style="display: none;">
+                <label class="form-label">Se sim, foi com o acompanhamento de um profissional?</label>
+                <textarea name="com_acompanhamento" class="form-control" rows="2"></textarea>
+              </div>
+
+
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Que evolução teve durante o processo?</label>
+              <textarea name="evolucao" class="form-control" rows="2"></textarea>
+            </div>
+
+          </div>
+
+          <div class="form-step" id="step-3">
+            <hr>
+            <h3>2️⃣ Histórico de Peso e Hábitos</h3>
+
+            <div class="mb-3">
+              <label class="form-label">Qual foi seu peso máximo e mínimo?</label>
+              <input type="text" name="peso_max_min" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Vida adulta:</label>
+              <textarea name="vida_adulta" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Adolescência:</label>
+              <textarea name="adolescencia" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Dificuldades referentes à sua alimentação (Qual a maior falha)?</label>
+              <textarea name="dificuldades_alimentacao" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Hábitos de Vida:</label>
+              <textarea name="habitos_vida" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Quantidade de água por dia?</label>
+              <input type="text" name="agua_por_dia" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Frequência de Evacuação por dia</label>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="alergia_intolerancia" id="alergiaSim" value="Sim">
-                <label class="form-check-label" for="alergiaSim">Sim</label>
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq1" value="1">
+                <label class="form-check-label" for="freq1">1</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="alergia_intolerancia" id="alergiaNao" value="Não">
-                <label class="form-check-label" for="alergiaNao">Não</label>
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq2" value="2">
+                <label class="form-check-label" for="freq2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq3" value="3">
+                <label class="form-check-label" for="freq3">3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq4" value="4">
+                <label class="form-check-label" for="freq4">4</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq5" value="5">
+                <label class="form-check-label" for="freq5">5</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq6" value="6">
+                <label class="form-check-label" for="freq6">6</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="freq_evacuacao" id="freqNenhum" value="Nenhum">
+                <label class="form-check-label" for="freqNenhum">Nenhum</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Fumante?</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="fumante" id="fumanteSim" value="Sim">
+                <label class="form-check-label" for="fumanteSim">Sim</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="fumante" id="fumanteNao" value="Não">
+                <label class="form-check-label" for="fumanteNao">Não</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Consome bebidas alcoólicas?</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="alcool" id="alcoolSim" value="Sim">
+                <label class="form-check-label" for="alcoolSim">Sim</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="alcool" id="alcoolNao" value="Não">
+                <label class="form-check-label" for="alcoolNao">Não</label>
               </div>
               <div class="ms-3">
-                <label class="form-label">Se sim, qual?</label>
-                <input type="text" name="qual_alergia_intolerancia" class="form-control">
+                <label class="form-label">Se sim, qual frequência?</label>
+                <input type="text" name="freq_alcool" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Apetite</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="apetite" id="apetiteNormal" value="Normal">
+                  <label class="form-check-label" for="apetiteNormal">Normal</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="apetite" id="apetiteAumentado" value="Aumentado">
+                  <label class="form-check-label" for="apetiteAumentado">Aumentado</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="apetite" id="apetiteDiminuido" value="Diminuído">
+                  <label class="form-check-label" for="apetiteDiminuido">Diminuído</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Mastigação</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoNormal" value="Normal">
+                  <label class="form-check-label" for="mastigacaoNormal">Normal</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoRapida" value="Rápida">
+                  <label class="form-check-label" for="mastigacaoRapida">Rápida</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoLenta" value="Lenta">
+                  <label class="form-check-label" for="mastigacaoLenta">Lenta</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-step" id="step-4">
+            <hr>
+            <h3>3️⃣ Histórico de Saúde e Hábitos Alimentares</h3>
+
+            <div class="mb-3">
+              <label class="form-label">Patologias (Quais?)</label>
+              <textarea name="patologias" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Histórico Familiar</label>
+              <textarea name="historico_familiar" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Exames</label>
+              <textarea name="exames" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Faz alguma medicação?</label>
+              <textarea name="medicacao" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Sinais e Sintomas, você possui algum desses?</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="ansiedade" value="Ansiedade">
+                    <label class="form-check-label" for="ansiedade">Ansiedade</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="ma_circulacao"
+                      value="Má circulação">
+                    <label class="form-check-label" for="ma_circulacao">Má circulação</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="refluxo_azia"
+                      value="Refluxo, Azia">
+                    <label class="form-check-label" for="refluxo_azia">Refluxo, Azia</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="falta_memoria"
+                      value="Falta de Memória">
+                    <label class="form-check-label" for="falta_memoria">Falta de Memória</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="irritabilidade"
+                      value="Irritabilidade">
+                    <label class="form-check-label" for="irritabilidade">Irritabilidade</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="depressao" value="Depressão">
+                    <label class="form-check-label" for="depressao">Depressão</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="fadiga" value="Fadiga">
+                    <label class="form-check-label" for="fadiga">Fadiga</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="indigestao" value="Indigestão">
+                    <label class="form-check-label" for="indigestao">Indigestão</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="dores_corpo"
+                      value="Dores no Corpo">
+                    <label class="form-check-label" for="dores_corpo">Dores no Corpo</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sintomas" id="outros_sintomas" value="Outros">
+                    <label class="form-check-label" for="outros_sintomas">Outros</label>
+                  </div>
+                  <input type="text" name="outros_sintomas_descricao" class="form-control mt-2"
+                    placeholder="Descreva outros sintomas">
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="d-flex justify-content-between mt-3">
-          <button type="button" class="btn btn-secondary prev-step">Anterior</button>
-          <button type="button" class="btn btn-primary next-step">Próximo</button>
-        </div>
 
-        <div class="text-center mt-4">
-          <button type="submit" id="btnSubmit"
-            class="btn btn-success btn-lg animate__animated animate__pulse animate__infinite" disabled>
-            Enviar Ficha
-          </button>
-        </div>
+
+          <div class="form-step" id="step-4">
+            <hr>
+            <h3>3️⃣ Hábitos Alimentares</h3>
+            <div class="mb-3">
+              <label class="form-label">Hábitos Alimentares</label>
+              <div class="mb-2">
+                <label class="form-label">Faz as refeições fora de casa?</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="refeicoes_fora_casa" id="refeicoesSim" value="Sim">
+                  <label class="form-check-label" for="refeicoesSim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="refeicoes_fora_casa" id="refeicoesNao" value="Não">
+                  <label class="form-check-label" for="refeicoesNao">Não</label>
+                </div>
+                <div class="ms-3">
+                  <label class="form-label">Se sim, onde faz?</label>
+                  <input type="text" name="onde_refeicoes" class="form-control">
+                </div>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Quem faz as compras?</label>
+                <input type="text" name="quem_faz_compras" class="form-control">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Alergia ou Intolerância?</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="alergia_intolerancia" id="alergiaSim" value="Sim">
+                  <label class="form-check-label" for="alergiaSim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="alergia_intolerancia" id="alergiaNao" value="Não">
+                  <label class="form-check-label" for="alergiaNao">Não</label>
+                </div>
+                <div class="ms-3">
+                  <label class="form-label">Se sim, qual?</label>
+                  <input type="text" name="qual_alergia_intolerancia" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+            <button type="button" class="btn btn-primary next-step">Próximo</button>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" id="btnSubmit"
+              class="btn btn-success btn-lg animate__animated animate__pulse animate__infinite" disabled>
+              Enviar Ficha
+            </button>
+          </div>
 
       </form>
     </div>
