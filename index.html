@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ficha de Avaliação Nutricional</title>
+</head>
+<body>
+  <h2>Ficha de Anamnese e Avaliação Nutricional</h2>
+  
+  <form action="https://formsubmit.co/teuemail@email.com" method="POST">
+    <h3>1. Dados do Paciente</h3>
+    Nome: <input type="text" name="nome"><br>
+    Idade: <input type="number" name="idade"> Sexo: <input type="text" name="sexo"><br>
+    Telefone: <input type="text" name="telefone"><br>
+    E-mail: <input type="email" name="email"><br>
+    Profissão: <input type="text" name="profissao"><br>
+    Data da Consulta: <input type="date" name="data"><br>
+
+    <h3>2. Anamnese Nutricional</h3>
+    <p><strong>Objetivos:</strong></p>
+    <input type="checkbox" name="objetivos[]" value="Perda de peso"> Perda de peso<br>
+    <input type="checkbox" name="objetivos[]" value="Ganho de massa muscular"> Ganho de massa muscular<br>
+    <input type="checkbox" name="objetivos[]" value="Melhora da saúde geral"> Melhora da saúde geral<br>
+    <input type="checkbox" name="objetivos[]" value="Controle de doenças"> Controle de doenças<br>
+    Outros: <input type="text" name="outros_objetivos"><br>
+
+    <p><strong>Histórico de Saúde:</strong></p>
+    Doenças pré-existentes: <input type="text" name="doencas"><br>
+    Cirurgias: <input type="text" name="cirurgias"><br>
+    Alergias: <input type="text" name="alergias"><br>
+    Medicamentos: <input type="text" name="medicamentos"><br>
+
+    <p><strong>Hábitos Alimentares:</strong></p>
+    Refeições diárias: <input type="text" name="refeicoes"><br>
+    Alimentos preferidos: <input type="text" name="preferidos"><br>
+    Alimentos evitados: <input type="text" name="evitados"><br>
+    Consumo de água: <input type="text" name="agua"><br>
+
+    <p><strong>Atividade Física:</strong></p>
+    Pratica exercícios? 
+    <input type="radio" name="exercicios" value="Sim"> Sim
+    <input type="radio" name="exercicios" value="Não"> Não<br>
+    Tipo e frequência: <input type="text" name="frequencia"><br>
+
+    <h3>3. Avaliação Antropométrica</h3>
+    Peso: <input type="text" name="peso"> kg<br>
+    Altura: <input type="text" name="altura"> m<br>
+    IMC: <input type="text" name="imc"><br>
+    Cintura: <input type="text" name="cintura"> cm<br>
+    Quadril: <input type="text" name="quadril"> cm<br>
+    Braço: <input type="text" name="braco"> cm<br>
+    Percentual de gordura: <input type="text" name="gordura"> %<br>
+    Massa magra: <input type="text" name="massa_magra"> kg<br>
+
+    <br><button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
+
