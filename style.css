@@ -1,31 +1,79 @@
-body {
-  background: #f4f6f8;
-  font-family: 'Segoe UI', sans-serif;
-}
-.form-container {
-  background: #fff;
-  padding: 2rem;
-  margin-top: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-h2, h3 {
-  color: #198754;
-}
-.form-control, .form-check-input {
-  margin-bottom: 1rem;
-}
-button[type="submit"] {
-  background-color: #198754;
-  border: none;
-}
-button[type="submit"]:hover {
-  background-color: #146c43;
-}
-.form-step {
-  display: none;
-}
-.form-step.active {
-  display: block;
-}
+      .form-section {
+            display: none;
+        }
 
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .progress {
+            height: 10px;
+        }
+
+        .invalid-feedback {
+            display: none;
+            color: #dc3545;
+        }
+
+        .was-validated .form-control:invalid~.invalid-feedback,
+        .was-validated .form-check-input:invalid~.invalid-feedback {
+            display: block;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: #dee2e6;
+            color: #495057;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .step.active .step-number {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background-color: #198754;
+            color: white;
+        }
+
+        .step-title {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .step.active .step-title {
+            color: #0d6efd;
+            font-weight: bold;
+        }
+
+        .step.completed .step-title {
+            color: #198754;
+        }
