@@ -325,8 +325,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }).save();
 
             pdfOutputElement.style.display = 'none'; // Opcional: esconde de novo após gerar o PDF
+            document.getElementById('whatsapp-button').style.display = 'block';
+
 
             alert('PDF gerado e baixado com sucesso!');
+            document.getElementById('whatsapp-button').style.display = 'block';
+
             // Opcional: Limpar o formulário ou retornar ao primeiro passo após o download
             form.reset();
             currentStep = 0;
