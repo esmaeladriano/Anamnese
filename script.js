@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const progressBar = document.getElementById('form-progress');
     let currentStep = 0;
 
+    
     // Função para calcular a idade a partir da data de nascimento
     const dataNascimentoInput = document.getElementById('data-nascimento');
     const idadeInput = document.getElementById('idade');
@@ -328,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('whatsapp-button').style.display = 'block';
 
 
-            alert('PDF gerado e baixado com sucesso!');
+            //alert('PDF gerado e baixado com sucesso!');
             document.getElementById('whatsapp-button').style.display = 'block';
 
             // Opcional: Limpar o formulário ou retornar ao primeiro passo após o download
