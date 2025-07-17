@@ -1,4 +1,8 @@
-      .form-section {
+     .card-header{
+       background-color:  #4CAF50;
+     }
+     
+     .form-section {
             display: none;
         }
 
@@ -55,7 +59,7 @@
         }
 
         .step.active .step-number {
-            background-color: #0d6efd;
+            background-color: #4CAF50;
             color: white;
         }
 
@@ -70,10 +74,43 @@
         }
 
         .step.active .step-title {
-            color: #0d6efd;
+            color: #4CAF50;
             font-weight: bold;
         }
 
         .step.completed .step-title {
             color: #198754;
+        }
+
+
+
+        .pdf-box {
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+
+        #pdf-output {
+            max-width: 800px;
+            margin: auto;
+            font-size: 14px;
+            color: #222;
+        }
+
+        #pdf-output h2,
+        #pdf-output h3 {
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        #pdf-output p {
+            margin: 3px 0;
+        }
+
+        #pdf-output strong {
+            display: inline-block;
+            width: 200px;
         }
