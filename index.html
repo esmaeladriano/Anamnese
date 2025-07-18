@@ -646,92 +646,98 @@
 
     <div id="pdf-output" style="display: none;">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <img src="logo.png" alt="Logotipo" style="height: 60px;">
-            <h1 style="flex: 1; text-align: right; font-size: 20px;">Clínica Nutricional - Ficha de Anamnese</h1>
+            <h1 style="
+                    margin: 0;
+                    text-align: left;
+                    font-size: 25px;
+                    border-bottom: 10px solid #4CAF50;
+                    display: flex;
+                    align-items: center;">
+                Ficha de Anamnese e <br> Avaliação Nutricional
+            </h1>
+            <img src="logo.png" alt="Logotipo" width="150" height="150">
         </div>
 
-        <h4 style="text-align: center; display: none;">Ficha de Anamnese Nutricional</h2>
 
-            <div style="
+        <div style="
             position: fixed;
             top: 20%;
             left: 30%;
-            font-size: 50px;
-            color: #19875463;
             transform: rotate(-30deg);
             z-index: 0;
-            pointer-events: none;">
-                CLÍNICA NUTRICIONAL Maria Chinhama
-            </div>
+            pointer-events: none;
+            opacity: 0.2;"> <!-- opcional: opacity para efeito de marca d'água -->
+            <img src="./logo-marca.png" alt="Marca d'água" style="width: 400px;">
+        </div>
 
-            <h3>Dados Pessoais</h3>
-            <p><strong>Nome:</strong> <span id="pdf-nome"></span></p>
-            <p><strong>Data de Nascimento:</strong> <span id="pdf-data-nascimento"></span></p>
-            <p><strong>Idade:</strong> <span id="pdf-idade"></span></p>
-            <p><strong>Sexo:</strong> <span id="pdf-sexo"></span></p>
-            <p><strong>Email:</strong> <span id="pdf-email"></span></p>
-            <p><strong>Telefone:</strong> <span id="pdf-telefone"></span></p>
-            <p><strong>Estado Civil:</strong> <span id="pdf-estado-civil"></span></p>
-            <p><strong>BI:</strong> <span id="pdf-bi"></span></p>
+        <h3>Dados Pessoais</h3>
+        <p><strong>Nome:</strong> <span id="pdf-nome"></span></p>
+        <p><strong>Data de Nascimento:</strong> <span id="pdf-data-nascimento"></span></p>
+        <p><strong>Idade:</strong> <span id="pdf-idade"></span></p>
+        <p><strong>Sexo:</strong> <span id="pdf-sexo"></span></p>
+        <p><strong>Email:</strong> <span id="pdf-email"></span></p>
+        <p><strong>Telefone:</strong> <span id="pdf-telefone"></span></p>
+        <p><strong>Estado Civil:</strong> <span id="pdf-estado-civil"></span></p>
+        <p><strong>BI:</strong> <span id="pdf-bi"></span></p>
 
-            <h3>Medidas Corporais</h3>
-            <p><strong>Peso:</strong> <span id="pdf-peso"></span></p>
-            <p><strong>Altura:</strong> <span id="pdf-altura"></span></p>
+        <h3>Medidas Corporais</h3>
+        <p><strong>Peso:</strong> <span id="pdf-peso"></span></p>
+        <p><strong>Altura:</strong> <span id="pdf-altura"></span></p>
 
-            <h3>Informações Gerais</h3>
-            <p><strong>Profissão:</strong> <span id="pdf-profissao"></span></p>
-            <p><strong>Ocupação:</strong> <span id="pdf-ocupacao"></span></p>
-            <p><strong>Endereço:</strong> <span id="pdf-endereco"></span></p>
-            <p><strong>Data da Consulta:</strong> <span id="pdf-data-consulta"></span></p>
-            <p><strong>Histórico:</strong> <span id="pdf-historico"></span></p>
+        <h3>Informações Gerais</h3>
+        <p><strong>Profissão:</strong> <span id="pdf-profissao"></span></p>
+        <p><strong>Ocupação:</strong> <span id="pdf-ocupacao"></span></p>
+        <p><strong>Endereço:</strong> <span id="pdf-endereco"></span></p>
+        <p><strong>Data da Consulta:</strong> <span id="pdf-data-consulta"></span></p>
+        <p><strong>Histórico:</strong> <span id="pdf-historico"></span></p>
 
-            <h3>Histórico Alimentar</h3>
-            <p><strong>Peso Máximo/Mínimo:</strong> <span id="pdf-peso_max_min"></span></p>
-            <p><strong>Vida Adulta:</strong> <span id="pdf-vida_adulta"></span></p>
-            <p><strong>Adolescência:</strong> <span id="pdf-adolescencia"></span></p>
-            <p><strong>Dificuldades Alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
-            <p><strong>Hábitos de Vida:</strong> <span id="pdf-habitos_vida"></span></p>
-            <p><strong>Água por dia:</strong> <span id="pdf-agua_por_dia"></span></p>
-            <p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
-            <p><strong>Fumante:</strong> <span id="pdf-fumante"></span></p>
-            <p><strong>Consumo de Álcool:</strong> <span id="pdf-alcool"></span></p>
-            <p><strong>Frequência do Álcool:</strong> <span id="pdf-freq_alcool"></span></p>
-            <p><strong>Apetite:</strong> <span id="pdf-apetite"></span></p>
-            <p><strong>Mastigação:</strong> <span id="pdf-mastigacao"></span></p>
+        <h3>Histórico Alimentar</h3>
+        <p><strong>Peso Máximo/Mínimo:</strong> <span id="pdf-peso_max_min"></span></p>
+        <p><strong>Vida Adulta:</strong> <span id="pdf-vida_adulta"></span></p>
+        <p><strong>Adolescência:</strong> <span id="pdf-adolescencia"></span></p>
+        <p><strong>Dificuldades Alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
+        <p><strong>Hábitos de Vida:</strong> <span id="pdf-habitos_vida"></span></p>
+        <p><strong>Água por dia:</strong> <span id="pdf-agua_por_dia"></span></p>
+        <p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
+        <p><strong>Fumante:</strong> <span id="pdf-fumante"></span></p>
+        <p><strong>Consumo de Álcool:</strong> <span id="pdf-alcool"></span></p>
+        <p><strong>Frequência do Álcool:</strong> <span id="pdf-freq_alcool"></span></p>
+        <p><strong>Apetite:</strong> <span id="pdf-apetite"></span></p>
+        <p><strong>Mastigação:</strong> <span id="pdf-mastigacao"></span></p>
 
-            <h3>Saúde</h3>
-            <p><strong>Patologias:</strong> <span id="pdf-patologias"></span></p>
-            <p><strong>Histórico Familiar:</strong> <span id="pdf-historico_familiar"></span></p>
-            <p><strong>Exames:</strong> <span id="pdf-exames"></span></p>
-            <p><strong>Medicação:</strong> <span id="pdf-medicacao"></span></p>
-            <p><strong>Sintomas:</strong> <span id="pdf-sintomas"></span></p>
-            <p><strong>Outros Sintomas:</strong> <span id="pdf-outros_sintomas_text"></span></p>
+        <h3>Saúde</h3>
+        <p><strong>Patologias:</strong> <span id="pdf-patologias"></span></p>
+        <p><strong>Histórico Familiar:</strong> <span id="pdf-historico_familiar"></span></p>
+        <p><strong>Exames:</strong> <span id="pdf-exames"></span></p>
+        <p><strong>Medicação:</strong> <span id="pdf-medicacao"></span></p>
+        <p><strong>Sintomas:</strong> <span id="pdf-sintomas"></span></p>
+        <p><strong>Outros Sintomas:</strong> <span id="pdf-outros_sintomas_text"></span></p>
 
-            <h3>Rotina Alimentar</h3>
-            <p><strong>Refeições por dia:</strong> <span id="pdf-refeicoes_dia"></span></p>
-            <p><strong>Horários das refeições:</strong> <span id="pdf-horarios_refeicoes"></span></p>
-            <p><strong>Local das refeições:</strong> <span id="pdf-local_refeicoes"></span></p>
-            <p><strong>Quem prepara a comida:</strong> <span id="pdf-quem_prepara"></span></p>
-            <p><strong>Come assistindo TV:</strong> <span id="pdf-come_assistindo"></span></p>
-            <p><strong>Come rápido:</strong> <span id="pdf-come_rapido"></span></p>
-            <p><strong>Faz dieta:</strong> <span id="pdf-faz_dieta"></span></p>
-            <p><strong>Petisca entre as refeições:</strong> <span id="pdf-petiscar"></span></p>
-            <p><strong>Jantar:</strong> <span id="pdf-jantar"></span></p>
-            <p><strong>Café da manhã:</strong> <span id="pdf-cafe_manha"></span></p>
-            <p><strong>Almoço:</strong> <span id="pdf-almocar"></span></p>
-            <p><strong>Alimentos que não gosta:</strong> <span id="pdf-alimentos_nao_gosta"></span></p>
-            <p><strong>Alimentos preferidos:</strong> <span id="pdf-alimentos_preferidos"></span></p>
-            <hr>
-            <div style="text-align: center; font-size: 12px; margin-top: 20px;">
-                📞 Telefone: (244) 999-999-999 &nbsp; | &nbsp; ✉️ Email: contato@clinica.com &nbsp; | &nbsp; 📍 Luanda -
-                Angola<br>
-                <em>Gerado em: <span id="data-geracao-pdf"></span></em>
-            </div>
+        <h3>Rotina Alimentar</h3>
+        <p><strong>Refeições por dia:</strong> <span id="pdf-refeicoes_dia"></span></p>
+        <p><strong>Horários das refeições:</strong> <span id="pdf-horarios_refeicoes"></span></p>
+        <p><strong>Local das refeições:</strong> <span id="pdf-local_refeicoes"></span></p>
+        <p><strong>Quem prepara a comida:</strong> <span id="pdf-quem_prepara"></span></p>
+        <p><strong>Come assistindo TV:</strong> <span id="pdf-come_assistindo"></span></p>
+        <p><strong>Come rápido:</strong> <span id="pdf-come_rapido"></span></p>
+        <p><strong>Faz dieta:</strong> <span id="pdf-faz_dieta"></span></p>
+        <p><strong>Petisca entre as refeições:</strong> <span id="pdf-petiscar"></span></p>
+        <p><strong>Jantar:</strong> <span id="pdf-jantar"></span></p>
+        <p><strong>Café da manhã:</strong> <span id="pdf-cafe_manha"></span></p>
+        <p><strong>Almoço:</strong> <span id="pdf-almocar"></span></p>
+        <p><strong>Alimentos que não gosta:</strong> <span id="pdf-alimentos_nao_gosta"></span></p>
+        <p><strong>Alimentos preferidos:</strong> <span id="pdf-alimentos_preferidos"></span></p>
+        <hr>
+        <div style="text-align: center; font-size: 12px; margin-top: 20px;">
+            📞 Telefone: (244) 999-999-999 &nbsp; | &nbsp; ✉️ Email: contato@clinica.com &nbsp; | &nbsp; 📍 Luanda -
+            Angola<br>
+            <em>Gerado em: <span id="data-geracao-pdf"></span></em>
+        </div>
 
-            <script>
-                // Preenche a data atual no rodapé
-                document.getElementById('data-geracao-pdf').textContent = new Date().toLocaleDateString();
-            </script>
+        <script>
+            // Preenche a data atual no rodapé
+            document.getElementById('data-geracao-pdf').textContent = new Date().toLocaleDateString();
+        </script>
 
     </div>
 
