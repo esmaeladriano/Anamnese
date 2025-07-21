@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Seção 1: Identificação
         document.getElementById('pdf-nome').textContent = data.nome || '  ';
-        document.getElementById('pdf-data-nascimento').textContent = data.data_nascimento || '  ';
-        document.getElementById('pdf-idade').textContent = data.idade || '  ';
+        document.getElementById('pdf-data-nascimento').textContent = data.nascimento || '  ';
+        document.getElementById('pdf-idade').textContent = data.idade|| '  ';
         document.getElementById('pdf-sexo').textContent = data.sexo || '  ';
         document.getElementById('pdf-email').textContent = data.email || '  ';
         document.getElementById('pdf-telefone').textContent = data.telefone || '  ';
