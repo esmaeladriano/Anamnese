@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="telefone" class="form-label">Telefone*</label>
-                                        <input type="tel" class="form-control" id="telefone" required
+                                        <input type="tel" class="form-control" name="telefone" id="telefone" required
                                             placeholder="+244 9XX XXX XXX" pattern="^\+244\s9\d{2}\s\d{3}\s\d{3}$"
                                             title="Formato: +244 9XX XXX XXX">
                                         <div class="invalid-feedback">Por favor, insira um telefone válido no formato
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="email" class="form-label">E-mail*</label>
-                                        <input type="email" class="form-control" id="email" required
+                                        <input type="email" class="form-control" name="email" id="email" required
                                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                             title="Por favor, insira um endereço de e-mail válido.">
                                         <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="idade" class="form-label">Idade*</label>
-                                        <input type="number" name="idade" disabled class="form-control" id="idade"
+                                        <input type="number" name="idade" readonly class="form-control" id="idade"
                                             min="3" required>
                                         <div class="invalid-feedback">Informe a idade.</div>
                                     </div>
