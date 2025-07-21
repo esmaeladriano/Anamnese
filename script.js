@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('pdf-duracao_atividade').textContent = data.duracao_atividade || '  ';
         document.getElementById('pdf-alimentacao_atividade').textContent = data.alimentacao_atividade || '  ';
         document.getElementById('pdf-suplementacao').textContent = data.suplementacao || '  ';
-        document.getElementById('pdf-data-consulta').textContent = data['data-consulta'] || '  ';
+        document.getElementById('pdf-data-consulta').textContent = data.data_consulta  || '  ';
 
 
         const pdfOutputElement = document.getElementById('pdf-output');
