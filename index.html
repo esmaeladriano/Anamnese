@@ -64,7 +64,7 @@
 
                         <form id="nutrition-form" class="needs-validation" novalidate>
 
- <div class="form-section active" id="section-1">
+                            <div class="form-section active" id="section-1">
                                 <h3 class="h5 mb-4 text-center">Identificação</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
@@ -412,7 +412,7 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="sintomas"
-                                                        id="ansiedade" value="Ansiedade" required>
+                                                        id="ansiedade" value="Ansiedade">
                                                     <label class="form-check-label" for="ansiedade">Ansiedade</label>
                                                 </div>
                                                 <div class="form-check">
@@ -611,6 +611,12 @@
                                                     required>
                                                 <label class="form-check-label" for="alimentado">Alimentado</label>
                                             </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    name="alimentacao_atividade" id="em_jejum" value="Em jejum"
+                                                    required>
+                                                <label class="form-check-label" for="em_jejum">em jejum</label>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -624,10 +630,10 @@
 
                             <div class="form-section" id="section-7">
                                 <h3 class="h5 mb-4 text-center">Confirmação e Envio</h3>
-                                <diFv class="alert alert-info" role="alert">
+                                <div class="alert alert-info" role="alert">
                                     Revise todas as informações antes de enviar. Um PDF será gerado com
                                     os dados.
-                                </diFv>
+                                </div>
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-secondary"
                                         onclick="prevStep()">Anterior</button>
@@ -659,81 +665,86 @@
 
 
         <div style="
-            position: fixed;
-            top: 35%;
-            left: 40%;
-            transform: rotate(-30deg);
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.2;">
-            <img src="./logo-marca.png" alt="Marca d'água" style="width: 400px;">
-        </div>
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.1;
+    font-size: 60px;
+    color: #999;
+    text-align: center;
+    width: 100%;
+">
+    <strong>MC Nutricionista</strong>
+</div>
 
-      <!-- Seção 1: Identificação -->
-<h3>Identificação</h3>
-<p><strong>Nome completo:</strong> <span id="pdf-nome"></span></p>
-<p><strong>Endereço:</strong> <span id="pdf-endereco"></span></p>
-<p><strong>Telefone:</strong> <span id="pdf-telefone"></span></p>
-<p><strong>E-mail:</strong> <span id="pdf-email"></span></p>
-<p><strong>Data de Nascimento:</strong> <span id="pdf-data-nascimento"></span></p>
-<p><strong>Idade:</strong> <span id="pdf-idade"></span></p>
-<p><strong>Sexo:</strong> <span id="pdf-sexo"></span></p>
+        <!-- Seção 1: Identificação -->
+        <h3>Identificação</h3>
+        <p><strong>Nome completo:</strong> <span id="pdf-nome"></span></p>
+        <p><strong>Endereço:</strong> <span id="pdf-endereco"></span></p>
+        <p><strong>Telefone:</strong> <span id="pdf-telefone"></span></p>
+        <p><strong>E-mail:</strong> <span id="pdf-email"></span></p>
+        <p><strong>Data de Nascimento:</strong> <span id="pdf-data-nascimento"></span></p>
+        <p><strong>Idade:</strong> <span id="pdf-idade"></span></p>
+        <p><strong>Sexo:</strong> <span id="pdf-sexo"></span></p>
 
-<!-- Seção 2: Dados do Paciente -->
-<h3>Dados do Paciente</h3>
-<p><strong>Altura (m):</strong> <span id="pdf-altura"></span></p>
-<p><strong>Peso Atual (kg):</strong> <span id="pdf-peso"></span></p>
-<p><strong>Estado Civil:</strong> <span id="pdf-estado-civil"></span></p>
-<p><strong>Profissão:</strong> <span id="pdf-profissao"></span></p>
-<p><strong>Carga Horária:</strong> <span id="pdf-ocupacao"></span></p>
+        <!-- Seção 2: Dados do Paciente -->
+        <h3>Dados do Paciente</h3>
+        <p><strong>Altura (m):</strong> <span id="pdf-altura"></span></p>
+        <p><strong>Peso Atual (kg):</strong> <span id="pdf-peso"></span></p>
+        <p><strong>Estado Civil:</strong> <span id="pdf-estado-civil"></span></p>
+        <p><strong>Profissão:</strong> <span id="pdf-profissao"></span></p>
+        <p><strong>Carga Horária:</strong> <span id="pdf-ocupacao"></span></p>
 
-<!-- Seção 3: Histórico do Paciente -->
-<h3>Histórico do Paciente</h3>
-<p><strong>Motivo da consulta:</strong> <span id="pdf-historico"></span></p>
-<p><strong>O que espera do nutricionista:</strong> <span id="pdf-vida_adulta"></span></p>
-<p><strong>Já realizou estratégia para perda de peso:</strong> <span id="pdf-alcool1"></span></p>
-<p><strong>Com acompanhamento profissional:</strong> <span id="pdf-freq_alcool1"></span></p>
-<p><strong>Avaliação durante o processo:</strong> <span id="pdf-Eva"></span></p>
-<p><strong>Peso máximo/mínimo na adolescência:</strong> <span id="pdf-peso_max_min_adolescencia"></span></p>
-<p><strong>Peso máximo/mínimo na vida adulta:</strong> <span id="pdf-peso_max_min_adulta"></span></p>
-<p><strong>Dificuldades alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
+        <!-- Seção 3: Histórico do Paciente -->
+        <h3>Histórico do Paciente</h3>
+        <p><strong>Motivo da consulta:</strong> <span id="pdf-historico"></span></p>
+        <p><strong>O que espera do nutricionista:</strong> <span id="pdf-vida_adulta"></span></p>
+        <p><strong>Já realizou estratégia para perda de peso:</strong> <span id="pdf-alcool1"></span></p>
+        <p><strong>Com acompanhamento profissional:</strong> <span id="pdf-freq_alcool1"></span></p>
+        <p><strong>Avaliação durante o processo:</strong> <span id="pdf-Eva"></span></p>
+        <p><strong>Peso máximo/mínimo na adolescência:</strong> <span id="pdf-peso_max_min_adolescencia"></span></p>
+        <p><strong>Peso máximo/mínimo na vida adulta:</strong> <span id="pdf-peso_max_min_adulta"></span></p>
+        <p><strong>Dificuldades alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
 
-<!-- Seção 4: Hábitos de Vida -->
-<h3>Hábitos de Vida</h3>
-<p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
-<p><strong>Fumante:</strong> <span id="pdf-fumante"></span></p>
-<p><strong>Consome bebidas alcoólicas:</strong> <span id="pdf-alcool"></span></p>
-<p><strong>Frequência do álcool:</strong> <span id="pdf-freq_alcool"></span></p>
-<p><strong>Apetite:</strong> <span id="pdf-apetite"></span></p>
-<p><strong>Mastigação:</strong> <span id="pdf-mastigacao"></span></p>
-<p><strong>Patologias:</strong> <span id="pdf-patologias"></span></p>
-<p><strong>Histórico familiar:</strong> <span id="pdf-historico_familiar"></span></p>
-<p><strong>Exames:</strong> <span id="pdf-exames"></span></p>
-<p><strong>Medicação:</strong> <span id="pdf-medicacao"></span></p>
-<p><strong>Sintomas:</strong> <span id="pdf-sintomas"></span></p>
-<p><strong>Outros sintomas:</strong> <span id="pdf-outros_sintomas_text"></span></p>
+        <!-- Seção 4: Hábitos de Vida -->
+        <h3>Hábitos de Vida</h3>
+        <p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
+        <p><strong>Fumante:</strong> <span id="pdf-fumante"></span></p>
+        <p><strong>Consome bebidas alcoólicas:</strong> <span id="pdf-alcool"></span></p>
+        <p><strong>Frequência do álcool:</strong> <span id="pdf-freq_alcool"></span></p>
+        <p><strong>Apetite:</strong> <span id="pdf-apetite"></span></p>
+        <p><strong>Mastigação:</strong> <span id="pdf-mastigacao"></span></p>
+        <p><strong>Patologias:</strong> <span id="pdf-patologias"></span></p>
+        <p><strong>Histórico familiar:</strong> <span id="pdf-historico_familiar"></span></p>
+        <p><strong>Exames:</strong> <span id="pdf-exames"></span></p>
+        <p><strong>Medicação:</strong> <span id="pdf-medicacao"></span></p>
+        <p><strong>Sintomas:</strong> <span id="pdf-sintomas"></span></p>
+        <p><strong>Outros sintomas:</strong> <span id="pdf-outros_sintomas_text"></span></p>
 
-<!-- Seção 5: Hábitos Alimentares -->
-<h3>Hábitos Alimentares</h3>
-<p><strong>Refeições fora de casa:</strong> <span id="pdf-refeicoes_fora"></span></p>
-<p><strong>Onde faz refeições fora:</strong> <span id="pdf-local_refeicoes"></span></p>
-<p><strong>Quem faz as compras:</strong> <span id="pdf-quem_compras"></span></p>
-<p><strong>Alergia ou intolerância:</strong> <span id="pdf-alergia"></span></p>
-<p><strong>Tipo de alergia:</strong> <span id="pdf-tipo_alergia"></span></p>
-<p><strong>Café da manhã:</strong> <span id="pdf-cafe_manha"></span></p>
-<p><strong>Almoço:</strong> <span id="pdf-almoco"></span></p>
-<p><strong>Lanche da tarde:</strong> <span id="pdf-lanche_tarde"></span></p>
-<p><strong>Jantar:</strong> <span id="pdf-jantar"></span></p>
-<p><strong>Alimentos que não gosta:</strong> <span id="pdf-alimentos_nao_gosta"></span></p>
+        <!-- Seção 5: Hábitos Alimentares -->
+        <h3>Hábitos Alimentares</h3>
+        <p><strong>Refeições fora de casa:</strong> <span id="pdf-refeicoes_fora"></span></p>
+        <p><strong>Onde faz refeições fora:</strong> <span id="pdf-local_refeicoes"></span></p>
+        <p><strong>Quem faz as compras:</strong> <span id="pdf-quem_compras"></span></p>
+        <p><strong>Alergia ou intolerância:</strong> <span id="pdf-alergia"></span></p>
+        <p><strong>Tipo de alergia:</strong> <span id="pdf-tipo_alergia"></span></p>
+        <p><strong>Café da manhã:</strong> <span id="pdf-cafe_manha"></span></p>
+        <p><strong>Almoço:</strong> <span id="pdf-almoco"></span></p>
+        <p><strong>Lanche da tarde:</strong> <span id="pdf-lanche_tarde"></span></p>
+        <p><strong>Jantar:</strong> <span id="pdf-jantar"></span></p>
+        <p><strong>Alimentos que não gosta:</strong> <span id="pdf-alimentos_nao_gosta"></span></p>
 
-<!-- Seção 6: Atividades Físicas -->
-<h3>Atividades Físicas</h3>
-<p><strong>Tipo de atividade física:</strong> <span id="pdf-tipo_atividade"></span></p>
-<p><strong>Frequência:</strong> <span id="pdf-frequencia_atividade"></span></p>
-<p><strong>Duração:</strong> <span id="pdf-duracao_atividade"></span></p>
-<p><strong>Realiza alimentado ou em jejum:</strong> <span id="pdf-alimentacao_atividade"></span></p>
-<p><strong>Suplementação:</strong> <span id="pdf-suplementacao"></span></p>
-<p><strong>Data da consulta:</strong> <span id="pdf-data-consulta"></span></p>
+        <!-- Seção 6: Atividades Físicas -->
+        <h3>Atividades Físicas</h3>
+        <p><strong>Tipo de atividade física:</strong> <span id="pdf-tipo_atividade"></span></p>
+        <p><strong>Frequência:</strong> <span id="pdf-frequencia_atividade"></span></p>
+        <p><strong>Duração:</strong> <span id="pdf-duracao_atividade"></span></p>
+        <p><strong>Realiza alimentado ou em jejum:</strong> <span id="pdf-alimentacao_atividade"></span></p>
+        <p><strong>Suplementação:</strong> <span id="pdf-suplementacao"></span></p>
+        <p><strong>Data da consulta:</strong> <span id="pdf-data-consulta"></span></p>
 
         <hr>
         <div style="text-align: center; font-size: 12px; margin-top: 20px;">
