@@ -63,484 +63,579 @@
                         </div>
 
                         <form id="nutrition-form" class="needs-validation" novalidate>
-                            
-                          <!-- Todos os campos obrigatórios: todos inputs, textareas e selects relevantes possuem o atributo required -->
 
-<div class="form-section active" id="section-1">
-    <h3 class="h5 mb-4 text-center">Identificação</h3>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 mb-3">
-            <label for="nome" class="form-label">Nome completo*</label>
-            <input type="text" name="nome" class="form-control" id="nome" required pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras e espaços são permitidos.">
-            <div class="invalid-feedback">Informe um nome completo válido (apenas letras e espaços).</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="endereco" class="form-label">Endereço*</label>
-            <input type="text" name="endereco" id="endereco" class="form-control" required>
-            <div class="invalid-feedback">Informe seu endereço.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="telefone" class="form-label">Telefone*</label>
-            <input type="tel" class="form-control" id="telefone" required placeholder="+244 9XX XXX XXX" pattern="^\+244\s9\d{2}\s\d{3}\s\d{3}$" title="Formato: +244 9XX XXX XXX">
-            <div class="invalid-feedback">Por favor, insira um telefone válido no formato +244 9XX XXX XXX.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="email" class="form-label">E-mail*</label>
-            <input type="email" class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Por favor, insira um endereço de e-mail válido.">
-            <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="data-nascimento" class="form-label">Data de Nascimento*</label>
-            <input type="date" name="nascimento" class="form-control" min="1950-01-01" max="2020-12-31" id="data-nascimento" required>
-            <div class="invalid-feedback">Por favor, insira uma data de nascimento válida entre 1950 e 2020.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="idade" class="form-label">Idade*</label>
-            <input type="number" name="idade" disabled class="form-control" id="idade" min="3" required>
-            <div class="invalid-feedback">Informe a idade.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="sexo" class="form-label">Sexo*</label>
-            <select name="sexo" id="sexo" class="form-select" required>
-                <option value="" disabled selected>Selecione...</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
-            </select>
-            <div class="invalid-feedback">Por favor, selecione seu sexo.</div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-end mt-4">
-        <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
-    </div>
-</div>
-
-<div class="form-section" id="section-2">
-    <h3 class="h5 mb-4 text-center">Dados do Paciente</h3>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 mb-3">
-            <label for="altura" class="form-label">Altura (m)*</label>
-            <input type="number" name="altura" id="altura" class="form-control" step="0.01" min="1" max="3" required title="Informe uma altura entre 1.00m e 3.00m.">
-            <div class="invalid-feedback">Informe uma altura entre 1.00m e 3.00m.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="peso" class="form-label">Peso Atual (kg)*</label>
-            <input type="number" name="peso" id="peso" class="form-control" step="0.1" min="5" max="300" required title="Informe um peso entre 5.0 e 300.0 kg, com até uma casa decimal.">
-            <div class="invalid-feedback">Informe um peso válido entre 5kg e 300kg, com até uma casa decimal.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="estado-civil" class="form-label">Estado Civil*</label>
-            <select id="estado-civil" name="estado_civil" class="form-select" required>
-                <option value="">Selecione...</option>
-                <option value="solteiro">Solteiro(a)</option>
-                <option value="casado">Casado(a)</option>
-                <option value="divorciado">Divorciado(a)</option>
-                <option value="viuvo">Viúvo(a)</option>
-                <option value="uniao-estavel">União Estável</option>
-            </select>
-            <div class="invalid-feedback">Por favor, selecione um estado civil.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="profissao" class="form-label">Profissão*</label>
-            <input type="text" name="profissao" id="profissao" class="form-control" required pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras e espaços são permitidos.">
-            <div class="invalid-feedback">Informe sua profissão (apenas letras e espaços).</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="ocupacao" class="form-label">Carga Horária*</label>
-            <input type="text" name="ocupacao" id="ocupacao" class="form-control" required>
-            <div class="invalid-feedback">Este campo é obrigatório.</div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-between mt-4">
-        <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
-        <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
-    </div>
-</div>
-
-<div class="form-section" id="section-3">
-    <h3 class="h5 mb-4 text-center">Histórico do Paciente</h3>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 mb-3">
-            <label for="historico" class="form-label">Motivo da consulta*</label>
-            <textarea name="historico" id="historico" class="form-control" rows="3" required></textarea>
-            <div class="invalid-feedback">Descreva o motivo da consulta.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="vida_adulta" class="form-label">O que espera do nutricionista?*</label>
-            <textarea name="vida_adulta" id="vida_adulta" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Descreva o que espera do nutricionista.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Já realizou estratégia para perda de peso anteriormente?*</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="alcool1" id="alcoolSim1" value="Sim" required>
-                <label class="form-check-label" for="alcoolSim1">Sim</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="alcool1" id="alcoolNao1" value="Não">
-                <label class="form-check-label" for="alcoolNao1">Não</label>
-            </div>
-            <div id="frequencia-alcool-container1" class="ms-3 mt-2" style="display: none;">
-                <label for="freq_alcool1" class="form-label">Se sim, foi com acompanhamento profissional?*</label>
-                <input name="freq_alcool1" id="freq_alcool1" class="form-control" >
-                <div class="invalid-feedback">Informe aqui!</div>
-            </div>
-            <div class="invalid-feedback">Por favor, indique se já realizou estratégias.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="Eva" class="form-label">Avaliação durante o processo*</label>
-            <textarea name="Eva" id="Eva" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe a avaliação durante o processo.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="peso_max_min_adolescencia" class="form-label">Peso máximo/mínimo na adolescência*</label>
-            <input type="text" name="peso_max_min_adolescencia" id="peso_max_min_adolescencia" class="form-control" required pattern="^\d+(\.\d+)?kg\s*-\s*\d+(\.\d+)?kg$" title="Formato: XX.Xkg - YY.Ykg (ex: 70kg - 60kg)">
-            <div class="invalid-feedback">Informe o peso máximo e mínimo no formato XX.Xkg - YY.Ykg.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="peso_max_min_adulta" class="form-label">Peso máximo/mínimo na vida adulta*</label>
-            <input type="text" name="peso_max_min_adulta" id="peso_max_min_adulta" class="form-control" required pattern="^\d+(\.\d+)?kg\s*-\s*\d+(\.\d+)?kg$" title="Formato: XX.Xkg - YY.Ykg (ex: 70kg - 60kg)">
-            <div class="invalid-feedback">Informe o peso máximo e mínimo no formato XX.Xkg - YY.Ykg.</div>
-        </div>
-        <div class="col-12 mb-3">
-            <label for="dificuldades_alimentacao" class="form-label">Dificuldades alimentares*</label>
-            <textarea name="dificuldades_alimentacao" id="dificuldades_alimentacao" class="form-control" rows="3" required></textarea>
-            <div class="invalid-feedback">Descreva as dificuldades alimentares.</div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-between mt-4">
-        <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
-        <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
-    </div>
-</div>
-
-<div class="form-section" id="section-4">
-    <h3 class="h5 mb-4 text-center">Hábitos de Vida</h3>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Frequência de evacuação por dia*</label>
-            <div class="d-flex flex-wrap gap-2">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq1" value="1" required>
-                    <label class="form-check-label" for="freq1">1</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq2" value="2">
-                    <label class="form-check-label" for="freq2">2</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq3" value="3">
-                    <label class="form-check-label" for="freq3">3</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq4" value="4">
-                    <label class="form-check-label" for="freq4">4</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq5" value="5">
-                    <label class="form-check-label" for="freq5">5</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freq6" value="6">
-                    <label class="form-check-label" for="freq6">6</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freq_evacuacao" id="freqNenhum" value="Nenhum">
-                    <label class="form-check-label" for="freqNenhum">Nenhum</label>
-                </div>
-            </div>
-            <div class="invalid-feedback">Por favor, selecione a frequência de evacuação.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Fumante?*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="fumante" id="fumanteSim" value="Sim" required>
-                    <label class="form-check-label" for="fumanteSim">Sim</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="fumante" id="fumanteNao" value="Não">
-                    <label class="form-check-label" for="fumanteNao">Não</label>
-                </div>
-            </div>
-            <div class="invalid-feedback">Por favor, indique se é fumante.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Consome bebidas alcoólicas?*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="alcool" id="alcoolSim" value="Sim" required>
-                    <label class="form-check-label" for="alcoolSim">Sim</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="alcool" id="alcoolNao" value="Não">
-                    <label class="form-check-label" for="alcoolNao">Não</label>
-                </div>
-            </div>
-            <div id="frequencia-alcool-container" class="ms-3 mt-2" style="display: none;">
-                <label for="freq_alcool" class="form-label">Se sim, qual frequência?*</label>
-                <select name="freq_alcool" id="freq_alcool" class="form-select">
-                    <option value="">Selecione...</option>
-                    <option value="Diária">Diária</option>
-                    <option value="Semanal">Semanal</option>
-                    <option value="Mensal">Mensal</option>
-                    <option value="Raramente">Raramente</option>
-                    <option value="Nunca">Nunca</option>
-                </select>
-                <div class="invalid-feedback">Informe a frequência do consumo de álcool.</div>
-            </div>
-            <div class="invalid-feedback">Por favor, indique se consome bebidas alcoólicas.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Apetite*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="apetite" id="apetiteNormal" value="Normal" required>
-                    <label class="form-check-label" for="apetiteNormal">Normal</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="apetite" id="apetiteAumentado" value="Aumentado">
-                    <label class="form-check-label" for="apetiteAumentado">Aumentado</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="apetite" id="apetiteDiminuido" value="Diminuído">
-                    <label class="form-check-label" for="apetiteDiminuido">Diminuído</label>
-                </div>
-            </div>
-            <div class="invalid-feedback">Por favor, selecione seu apetite.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Mastigação*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoNormal" value="Normal" required>
-                    <label class="form-check-label" for="mastigacaoNormal">Normal</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoRapida" value="Rápida">
-                    <label class="form-check-label" for="mastigacaoRapida">Rápida</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="mastigacao" id="mastigacaoLenta" value="Lenta">
-                    <label class="form-check-label" for="mastigacaoLenta">Lenta</label>
-                </div>
-            </div>
-            <div class="invalid-feedback">Por favor, selecione sua mastigação.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="patologias" class="form-label">Patologias (Quais?)*</label>
-            <textarea name="patologias" id="patologias" class="form-control" rows="3" required></textarea>
-            <div class="invalid-feedback">Descreva as patologias.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="historico_familiar" class="form-label">Histórico familiar*</label>
-            <textarea name="historico_familiar" id="historico_familiar" class="form-control" rows="3" required></textarea>
-            <div class="invalid-feedback">Descreva o histórico familiar.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="exames" class="form-label">Exames*</label>
-            <textarea name="exames" id="exames" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Descreva os exames.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="medicacao" class="form-label">Medicação*</label>
-            <textarea name="medicacao" id="medicacao" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Descreva a medicação.</div>
-        </div>
-        <div class="col-12 mb-3">
-            <label class="form-label">Sintomas*</label>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="ansiedade" value="Ansiedade">
-                        <label class="form-check-label" for="ansiedade">Ansiedade</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="ma_circulacao" value="Má circulação">
-                        <label class="form-check-label" for="ma_circulacao">Má circulação</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="refluxo_azia" value="Refluxo, Azia">
-                        <label class="form-check-label" for="refluxo_azia">Refluxo, Azia</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="falta_memoria" value="Falta de Memória">
-                        <label class="form-check-label" for="falta_memoria">Falta de Memória</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="irritabilidade" value="Irritabilidade">
-                        <label class="form-check-label" for="irritabilidade">Irritabilidade</label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="depressao" value="Depressão">
-                        <label class="form-check-label" for="depressao">Depressão</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="fadiga" value="Fadiga">
-                        <label class="form-check-label" for="fadiga">Fadiga</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="indigestao" value="Indigestão">
-                        <label class="form-check-label" for="indigestao">Indigestão</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="dores_corpo" value="Dores no Corpo">
-                        <label class="form-check-label" for="dores_corpo">Dores no Corpo</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="sintomas" id="outros_sintomas" value="Outros">
-                        <label class="form-check-label" for="outros_sintomas">Outros</label>
-                    </div>
-                    <input type="text" name="outros_sintomas_text" id="outros_sintomas_text" class="form-control mt-2" placeholder="Descreva outros sintomas" style="display: none;">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-between mt-4">
-        <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
-        <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
-    </div>
-</div>
-
-<div class="form-section" id="section-5">
-    <hr>
-    <h3 class="h5 mb-4 text-center">Hábitos Alimentares</h3>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Você faz refeições fora de casa?*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="refeicoes_fora" id="refeicoes_fora_sim" value="Sim" required>
-                    <label class="form-check-label" for="refeicoes_fora_sim">Sim</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="refeicoes_fora" id="refeicoes_fora_nao" value="Não">
-                    <label class="form-check-label" for="refeicoes_fora_nao">Não</label>
-                </div>
-            </div>
-            <div id="local-refeicoes-container" class="ms-3 mt-2" style="display: none;">
-                <label for="local_refeicoes" class="form-label">Se sim, onde?*</label>
-                <input type="text" name="local_refeicoes" id="local_refeicoes" class="form-control">
-                <div class="invalid-feedback">Informe o local das refeições fora.</div>
-            </div>
-            <div class="invalid-feedback">Por favor, indique se faz refeições fora de casa.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="quem_compras" class="form-label">Quem faz as compras?*</label>
-            <input type="text" name="quem_compras" id="quem_compras" class="form-control" required>
-            <div class="invalid-feedback">Informe quem faz as compras.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Possui alergia ou intolerância alimentar?*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="alergia" id="alergiaSim" value="Sim" required>
-                    <label class="form-check-label" for="alergiaSim">Sim</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="alergia" id="alergiaNao" value="Não">
-                    <label class="form-check-label" for="alergiaNao">Não</label>
-                </div>
-            </div>
-            <div id="fr-container" class="ms-3 mt-2" style="display: none;">
-                <label for="tipo_alergia" class="form-label">Se sim, qual?*</label>
-                <input type="text" name="tipo_alergia" id="tipo_alergia" class="form-control">
-                <div class="invalid-feedback">Informe o tipo de alergia ou intolerância.</div>
-            </div>
-            <div class="invalid-feedback">Por favor, indique se possui alergia ou intolerância.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="cafe_manha" class="form-label">O que costuma comer no café da manhã?*</label>
-            <textarea name="cafe_manha" id="cafe_manha" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe o que costuma comer no café da manhã.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="almoco" class="form-label">O que costuma comer no almoço?*</label>
-            <textarea name="almoco" id="almoco" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe o que costuma comer no almoço.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="lanche_tarde" class="form-label">O que costuma comer no lanche da tarde?*</label>
-            <textarea name="lanche_tarde" id="lanche_tarde" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe o que costuma comer no lanche da tarde.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="jantar" class="form-label">O que costuma comer no jantar?*</label>
-            <textarea name="jantar" id="jantar" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe o que costuma comer no jantar.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="alimentos_nao_gosta" class="form-label">Quais alimentos você não gosta?*</label>
-            <textarea name="alimentos_nao_gosta" id="alimentos_nao_gosta" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe os alimentos que não gosta.</div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-between mt-4">
-        <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
-        <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
-    </div>
-</div>
-
-<div class="form-section" id="section-6">
-    <hr>
-    <h3 class="h5 mb-4 text-center">Atividades Físicas</h3>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 mb-3">
-            <label for="tipo_atividade" class="form-label">Tipo de atividade física*</label>
-            <textarea name="tipo_atividade" id="tipo_atividade" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe o tipo de atividade física.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="frequencia_atividade" class="form-label">Frequência*</label>
-            <textarea name="frequencia_atividade" id="frequencia_atividade" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe a frequência da atividade física.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="duracao_atividade" class="form-label">Duração*</label>
-            <textarea name="duracao_atividade" id="duracao_atividade" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe a duração da atividade física.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label class="form-label">Realiza alimentado ou em jejum?*</label>
-            <div class="d-flex gap-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="alimentacao_atividade" id="alimentado" value="Alimentado" required>
-                    <label class="form-check-label" for="alimentado">Alimentado</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="alimentacao_atividade" id="jejum" value="Em Jejum">
-                    <label class="form-check-label" for="jejum">Em Jejum</label>
-                </div>
-            </div>
-            <div class="invalid-feedback">Por favor, selecione.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="suplementacao" class="form-label">Suplementação (quais?)*</label>
-            <textarea name="suplementacao" id="suplementacao" class="form-control" rows="2" required></textarea>
-            <div class="invalid-feedback">Informe a suplementação.</div>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <label for="data-consulta" class="form-label">Data da consulta*</label>
-            <input type="date" name="data" id="data-consulta" class="form-control" required>
-            <div class="invalid-feedback">A data deve ser hoje ou posterior.</div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-between mt-4">
-        <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
-        <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
-    </div>
-</div>
-                            <div class="form-section" id="section-7">
-                                <h3 class="h5 mb-4 text-center">Confirmação e Envio</h3>
-                                <div class="alert alert-info" role="alert">
-                                    Revise todas as informações antes de enviar. Um PDF será gerado com os dados.
+ <div class="form-section active" id="section-1">
+                                <h3 class="h5 mb-4 text-center">Identificação</h3>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="nome" class="form-label">Nome completo*</label>
+                                        <input type="text" name="nome" class="form-control" id="nome" required
+                                            pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras e espaços são permitidos.">
+                                        <div class="invalid-feedback">Informe um nome completo válido (apenas letras e
+                                            espaços).</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="endereco" class="form-label">Endereço*</label>
+                                        <input type="text" name="endereco" id="endereco" class="form-control" required>
+                                        <div class="invalid-feedback">Informe seu endereço.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="telefone" class="form-label">Telefone*</label>
+                                        <input type="tel" class="form-control" id="telefone" required
+                                            placeholder="+244 9XX XXX XXX" pattern="^\+244\s9\d{2}\s\d{3}\s\d{3}$"
+                                            title="Formato: +244 9XX XXX XXX">
+                                        <div class="invalid-feedback">Por favor, insira um telefone válido no formato
+                                            +244 9XX XXX XXX.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="email" class="form-label">E-mail*</label>
+                                        <input type="email" class="form-control" id="email" required
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                            title="Por favor, insira um endereço de e-mail válido.">
+                                        <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="data-nascimento" class="form-label">Data de Nascimento*</label>
+                                        <input type="date" name="nascimento" class="form-control" min="1950-01-01"
+                                            max="2020-12-31" id="data-nascimento" required>
+                                        <div class="invalid-feedback">Por favor, insira uma data de nascimento válida
+                                            entre 1950 e 2020.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="idade" class="form-label">Idade*</label>
+                                        <input type="number" name="idade" disabled class="form-control" id="idade"
+                                            min="3" required>
+                                        <div class="invalid-feedback">Informe a idade.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="sexo" class="form-label">Sexo*</label>
+                                        <select name="sexo" id="sexo" class="form-select" required>
+                                            <option value="" disabled selected>Selecione...</option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, selecione seu sexo.</div>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between mt-4">
-                                    <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
-                                    <button type="submit" class="btn btn-success">Gerar PDF e Enviar</button>
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
                                 </div>
                             </div>
+
+                            <div class="form-section" id="section-2">
+                                <h3 class="h5 mb-4 text-center">Dados do Paciente</h3>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="altura" class="form-label">Altura (m)*</label>
+                                        <input type="number" name="altura" id="altura" class="form-control" step="0.01"
+                                            min="1" max="3" required title="Informe uma altura entre 1.00m e 3.00m.">
+                                        <div class="invalid-feedback">Informe uma altura entre 1.00m e 3.00m.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="peso" class="form-label">Peso Atual (kg)*</label>
+                                        <input type="number" name="peso" id="peso" class="form-control" step="0.1"
+                                            min="5" max="300" required
+                                            title="Informe um peso entre 5.0 e 300.0 kg, com até uma casa decimal.">
+                                        <div class="invalid-feedback">Informe um peso válido entre 5kg e 300kg, com até
+                                            uma casa decimal.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="estado-civil" class="form-label">Estado Civil*</label>
+                                        <select id="estado-civil" name="estado_civil" class="form-select" required>
+                                            <option value="">Selecione...</option>
+                                            <option value="solteiro">Solteiro(a)</option>
+                                            <option value="casado">Casado(a)</option>
+                                            <option value="divorciado">Divorciado(a)</option>
+                                            <option value="viuvo">Viúvo(a)</option>
+                                            <option value="uniao-estavel">União Estável</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, selecione um estado civil.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="profissao" class="form-label">Profissão*</label>
+                                        <input type="text" name="profissao" id="profissao" class="form-control" required
+                                            pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras e espaços são permitidos.">
+                                        <div class="invalid-feedback">Informe sua profissão (apenas letras e espaços).
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="ocupacao" class="form-label">Carga Horária*</label>
+                                        <input type="text" name="ocupacao" id="ocupacao" class="form-control" required>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="prevStep()">Anterior</button>
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
+                                </div>
+                            </div>
+
+                            <div class="form-section" id="section-3">
+                                <h3 class="h5 mb-4 text-center">Histórico do Paciente</h3>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="historico" class="form-label">Motivo da consulta*</label>
+                                        <textarea name="historico" id="historico" class="form-control" rows="3"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Descreva o motivo da consulta.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="vida_adulta" class="form-label">O que espera do
+                                            nutricionista?*</label>
+                                        <textarea name="vida_adulta" id="vida_adulta" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Já realizou estratégia para perda de peso
+                                            anteriormente?*</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="alcool1" id="alcoolSim1"
+                                                value="Sim" required>
+                                            <label class="form-check-label" for="alcoolSim1">Sim</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="alcool1" id="alcoolNao1"
+                                                value="Não">
+                                            <label class="form-check-label" for="alcoolNao1">Não</label>
+                                        </div>
+                                        <div id="frequencia-alcool-container1" class="ms-3 mt-2" style="display: none;">
+                                            <label for="freq_alcool1" class="form-label">Se sim, foi com acompanhamento
+                                                profissional?*</label>
+                                            <input name="freq_alcool1" id="freq_alcool1" class="form-control">
+                                            <div class="invalid-feedback">Informe aqui!</div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, indique se já realizou estratégias.
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="Eva" class="form-label">Avaliação durante o processo*</label>
+                                        <textarea name="Eva" id="Eva" class="form-control" rows="2" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="peso_max_min_adolescencia" class="form-label">Peso máximo/mínimo na
+                                            adolescência*</label>
+                                        <input type="text" name="peso_max_min_adolescencia"
+                                            id="peso_max_min_adolescencia" class="form-control"
+                                            pattern="^\d+(\.\d+)?kg\s*-\s*\d+(\.\d+)?kg$"
+                                            title="Formato: XX.Xkg - YY.Ykg (ex: 70kg - 60kg)" required>
+                                        <div class="invalid-feedback">Informe o peso máximo e mínimo no formato XX.Xkg -
+                                            YY.Ykg.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="peso_max_min_adulta" class="form-label">Peso máximo/mínimo na vida
+                                            adulta*</label>
+                                        <input type="text" name="peso_max_min_adulta" id="peso_max_min_adulta"
+                                            class="form-control" pattern="^\d+(\.\d+)?kg\s*-\s*\d+(\.\d+)?kg$"
+                                            title="Formato: XX.Xkg - YY.Ykg (ex: 70kg - 60kg)" required>
+                                        <div class="invalid-feedback">Informe o peso máximo e mínimo no formato XX.Xkg -
+                                            YY.Ykg.</div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="dificuldades_alimentacao" class="form-label">Dificuldades
+                                            alimentares*</label>
+                                        <textarea name="dificuldades_alimentacao" id="dificuldades_alimentacao"
+                                            class="form-control" rows="3" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="prevStep()">Anterior</button>
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
+                                </div>
+                            </div>
+
+                            <div class="form-section" id="section-4">
+                                <h3 class="h5 mb-4 text-center">Hábitos de Vida</h3>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Frequência de evacuação por dia*</label>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freq1" value="1" required>
+                                                <label class="form-check-label" for="freq1">1</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freq2" value="2">
+                                                <label class="form-check-label" for="freq2">2</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freq3" value="3">
+                                                <label class="form-check-label" for="freq3">3</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freq4" value="4">
+                                                <label class="form-check-label" for="freq4">4</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freq5" value="5">
+                                                <label class="form-check-label" for="freq5">5</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freq6" value="6">
+                                                <label class="form-check-label" for="freq6">6</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="freq_evacuacao"
+                                                    id="freqNenhum" value="Nenhum">
+                                                <label class="form-check-label" for="freqNenhum">Nenhum</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, selecione a frequência de evacuação.
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Fumante?*</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="fumante"
+                                                    id="fumanteSim" value="Sim" required>
+                                                <label class="form-check-label" for="fumanteSim">Sim</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="fumante"
+                                                    id="fumanteNao" value="Não">
+                                                <label class="form-check-label" for="fumanteNao">Não</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, indique se é fumante.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Consome bebidas alcoólicas?*</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="alcool"
+                                                    id="alcoolSim" value="Sim" required>
+                                                <label class="form-check-label" for="alcoolSim">Sim</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="alcool"
+                                                    id="alcoolNao" value="Não">
+                                                <label class="form-check-label" for="alcoolNao">Não</label>
+                                            </div>
+                                        </div>
+                                        <div id="frequencia-alcool-container" class="ms-3 mt-2" style="display: none;">
+                                            <label for="freq_alcool" class="form-label">Se sim, qual
+                                                frequência?*</label>
+                                            <select name="freq_alcool" id="freq_alcool" class="form-select">
+                                                <option value="">Selecione...</option>
+                                                <option value="Diária">Diária</option>
+                                                <option value="Semanal">Semanal</option>
+                                                <option value="Mensal">Mensal</option>
+                                                <option value="Raramente">Raramente</option>
+                                                <option value="Nunca">Nunca</option>
+                                            </select>
+                                            <div class="invalid-feedback">Informe a frequência do consumo de álcool.
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, indique se consome bebidas alcoólicas.
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Apetite*</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="apetite"
+                                                    id="apetiteNormal" value="Normal" required>
+                                                <label class="form-check-label" for="apetiteNormal">Normal</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="apetite"
+                                                    id="apetiteAumentado" value="Aumentado">
+                                                <label class="form-check-label" for="apetiteAumentado">Aumentado</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="apetite"
+                                                    id="apetiteDiminuido" value="Diminuído">
+                                                <label class="form-check-label" for="apetiteDiminuido">Diminuído</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, selecione seu apetite.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Mastigação*</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="mastigacao"
+                                                    id="mastigacaoNormal" value="Normal" required>
+                                                <label class="form-check-label" for="mastigacaoNormal">Normal</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="mastigacao"
+                                                    id="mastigacaoRapida" value="Rápida">
+                                                <label class="form-check-label" for="mastigacaoRapida">Rápida</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="mastigacao"
+                                                    id="mastigacaoLenta" value="Lenta">
+                                                <label class="form-check-label" for="mastigacaoLenta">Lenta</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, selecione sua mastigação.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="patologias" class="form-label">Patologias (Quais?)*</label>
+                                        <textarea name="patologias" id="patologias" class="form-control" rows="3"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="historico_familiar" class="form-label">Histórico familiar*</label>
+                                        <textarea name="historico_familiar" id="historico_familiar" class="form-control"
+                                            rows="3" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="exames" class="form-label">Exames*</label>
+                                        <textarea name="exames" id="exames" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="medicacao" class="form-label">Medicação*</label>
+                                        <textarea name="medicacao" id="medicacao" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Sintomas*</label>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="ansiedade" value="Ansiedade" required>
+                                                    <label class="form-check-label" for="ansiedade">Ansiedade</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="ma_circulacao" value="Má circulação">
+                                                    <label class="form-check-label" for="ma_circulacao">Má
+                                                        circulação</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="refluxo_azia" value="Refluxo, Azia">
+                                                    <label class="form-check-label" for="refluxo_azia">Refluxo,
+                                                        Azia</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="falta_memoria" value="Falta de Memória">
+                                                    <label class="form-check-label" for="falta_memoria">Falta de
+                                                        Memória</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="irritabilidade" value="Irritabilidade">
+                                                    <label class="form-check-label"
+                                                        for="irritabilidade">Irritabilidade</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="depressao" value="Depressão">
+                                                    <label class="form-check-label" for="depressao">Depressão</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="fadiga" value="Fadiga">
+                                                    <label class="form-check-label" for="fadiga">Fadiga</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="indigestao" value="Indigestão">
+                                                    <label class="form-check-label" for="indigestao">Indigestão</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="dores_corpo" value="Dores no Corpo">
+                                                    <label class="form-check-label" for="dores_corpo">Dores no
+                                                        Corpo</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="sintomas"
+                                                        id="outros_sintomas" value="Outros">
+                                                    <label class="form-check-label" for="outros_sintomas">Outros</label>
+                                                </div>
+                                                <input type="text" name="outros_sintomas_text" id="outros_sintomas_text"
+                                                    class="form-control mt-2" placeholder="Descreva outros sintomas"
+                                                    style="display: none;">
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Selecione pelo menos um sintoma.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="prevStep()">Anterior</button>
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
+                                </div>
+                            </div>
+
+                            <div class="form-section" id="section-5">
+                                <hr>
+                                <h3 class="h5 mb-4 text-center">Hábitos Alimentares</h3>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Você faz refeições fora de casa?*</label>
+                                        <div class="d-flex gap-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="refeicoes_fora"
+                                                    id="refeicoes_fora_sim" value="Sim" required>
+                                                <label class="form-check-label" for="refeicoes_fora_sim">Sim</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="refeicoes_fora"
+                                                    id="refeicoes_fora_nao" value="Não">
+                                                <label class="form-check-label" for="refeicoes_fora_nao">Não</label>
+                                            </div>
+                                        </div>
+                                        <div id="local-refeicoes-container" class="ms-3 mt-2" style="display: none;">
+                                            <label for="local_refeicoes" class="form-label">Se sim, onde?*</label>
+                                            <input type="text" name="local_refeicoes" id="local_refeicoes"
+                                                class="form-control">
+                                            <div class="invalid-feedback">Informe o local das refeições fora.</div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, indique se faz refeições fora de casa.
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="quem_compras" class="form-label">Quem faz as compras?*</label>
+                                        <input type="text" name="quem_compras" id="quem_compras" class="form-control"
+                                            required>
+                                        <div class="invalid-feedback">Informe quem faz as compras.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Possui alergia ou intolerância alimentar?*</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="alergia"
+                                                    id="alergiaSim" value="Sim" required>
+                                                <label class="form-check-label" for="alergiaSim">Sim</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="alergia"
+                                                    id="alergiaNao" value="Não">
+                                                <label class="form-check-label" for="alergiaNao">Não</label>
+                                            </div>
+                                        </div>
+                                        <div id="fr-container" class="ms-3 mt-2">
+                                            <label for="tipo_alergia" class="form-label">Se sim, qual?*</label>
+                                            <input type="text" name="tipo_alergia" id="tipo_alergia"
+                                                class="form-control">
+                                            <div class="invalid-feedback">Informe o tipo de alergia ou intolerância.
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">Por favor, indique se possui alergia ou
+                                            intolerância.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="cafe_manha" class="form-label">O que costuma comer no café da
+                                            manhã?*</label>
+                                        <textarea name="cafe_manha" id="cafe_manha" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="almoco" class="form-label">O que costuma comer no almoço?*</label>
+                                        <textarea name="almoco" id="almoco" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="lanche_tarde" class="form-label">O que costuma comer no lanche da
+                                            tarde?*</label>
+                                        <textarea name="lanche_tarde" id="lanche_tarde" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="jantar" class="form-label">O que costuma comer no jantar?*</label>
+                                        <textarea name="jantar" id="jantar" class="form-control" rows="2"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="alimentos_nao_gosta" class="form-label">Quais alimentos você não
+                                            gosta?*</label>
+                                        <textarea name="alimentos_nao_gosta" id="alimentos_nao_gosta"
+                                            class="form-control" rows="2" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="prevStep()">Anterior</button>
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
+                                </div>
+                            </div>
+
+                            <div class="form-section" id="section-6">
+                                <hr>
+                                <h3 class="h5 mb-4 text-center">Atividades Físicas</h3>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="tipo_atividade" class="form-label">Tipo de atividade física*</label>
+                                        <textarea name="tipo_atividade" id="tipo_atividade" class="form-control"
+                                            rows="2" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="frequencia_atividade" class="form-label">Frequência*</label>
+                                        <textarea name="frequencia_atividade" id="frequencia_atividade"
+                                            class="form-control" rows="2" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="duracao_atividade" class="form-label">Duração*</label>
+                                        <textarea name="duracao_atividade" id="duracao_atividade" class="form-control"
+                                            rows="2" required></textarea>
+                                        <div class="invalid-feedback">Este campo é obrigatório.</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Realiza alimentado ou em jejum?*</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    name="alimentacao_atividade" id="alimentado" value="Alimentado"
+                                                    required>
+                                                <label class="form-check-label" for="alimentado">Alimentado</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="prevStep()">Anterior</button>
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo</button>
+                                </div>
+                            </div>
+
+                            <div class="form-section" id="section-7">
+                                <h3 class="h5 mb-4 text-center">Confirmação e Envio</h3>
+                                <diFv class="alert alert-info" role="alert">
+                                    Revise todas as informações antes de enviar. Um PDF será gerado com
+                                    os dados.
+                                </diFv>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="prevStep()">Anterior</button>
+                                    <button type="submit" class="btn btn-success">Gerar PDF e
+                                        Enviar</button>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -548,87 +643,97 @@
         </div>
     </div>
 
-    <!-- PDF Output Template - Atualizado para corresponder ao formulário -->
-
-    <div id="pdf-output" style="display:none; border-top: 20px solid #4CAF50; border-radius: 10px 10px 0 10px;">
+    <div id="pdf-output" style="display:none; border-top: 20px solid #4CAF50;  border-radius: 10px 10px 0 10px;">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-            <h1
-                style="margin: 0; text-align: left; font-size: 25px; border-bottom: 5px solid #4CAF50; display: flex; align-items: center;">
+            <h1 style="
+                    margin: 0;
+                    text-align: left;
+                    font-size: 25px;
+                    border-bottom: 5px solid #4CAF50;
+                    display: flex;
+                    align-items: center;">
                 Ficha de Anamnese e <br> Avaliação Nutricional
             </h1>
             <img src="logo.png" alt="Logotipo" width="150" height="150">
         </div>
 
-        <div
-            style="position: fixed; top: 35%; left: 40%; transform: rotate(-30deg); z-index: 0; pointer-events: none; opacity: 0.2;">
+
+        <div style="
+            position: fixed;
+            top: 35%;
+            left: 40%;
+            transform: rotate(-30deg);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.2;">
             <img src="./logo-marca.png" alt="Marca d'água" style="width: 400px;">
         </div>
 
-        <!-- Seção 1: Identificação -->
-        <h3>Identificação</h3>
-        <p><strong>Nome completo:</strong> <span id="pdf-nome"></span></p>
-        <p><strong>Endereço:</strong> <span id="pdf-endereco"></span></p>
-        <p><strong>Telefone:</strong> <span id="pdf-telefone"></span></p>
-        <p><strong>E-mail:</strong> <span id="pdf-email"></span></p>
-        <p><strong>Data de Nascimento:</strong> <span id="pdf-data-nascimento"></span></p>
-        <p><strong>Idade:</strong> <span id="pdf-idade"></span></p>
-        <p><strong>Sexo:</strong> <span id="pdf-sexo"></span></p>
+      <!-- Seção 1: Identificação -->
+<h3>Identificação</h3>
+<p><strong>Nome completo:</strong> <span id="pdf-nome"></span></p>
+<p><strong>Endereço:</strong> <span id="pdf-endereco"></span></p>
+<p><strong>Telefone:</strong> <span id="pdf-telefone"></span></p>
+<p><strong>E-mail:</strong> <span id="pdf-email"></span></p>
+<p><strong>Data de Nascimento:</strong> <span id="pdf-data-nascimento"></span></p>
+<p><strong>Idade:</strong> <span id="pdf-idade"></span></p>
+<p><strong>Sexo:</strong> <span id="pdf-sexo"></span></p>
 
-        <!-- Seção 2: Dados do Paciente -->
-        <h3>Dados do Paciente</h3>
-        <p><strong>Altura (m):</strong> <span id="pdf-altura"></span></p>
-        <p><strong>Peso Atual (kg):</strong> <span id="pdf-peso"></span></p>
-        <p><strong>Estado Civil:</strong> <span id="pdf-estado-civil"></span></p>
-        <p><strong>Profissão:</strong> <span id="pdf-profissao"></span></p>
-        <p><strong>Carga Horária:</strong> <span id="pdf-ocupacao"></span></p>
+<!-- Seção 2: Dados do Paciente -->
+<h3>Dados do Paciente</h3>
+<p><strong>Altura (m):</strong> <span id="pdf-altura"></span></p>
+<p><strong>Peso Atual (kg):</strong> <span id="pdf-peso"></span></p>
+<p><strong>Estado Civil:</strong> <span id="pdf-estado-civil"></span></p>
+<p><strong>Profissão:</strong> <span id="pdf-profissao"></span></p>
+<p><strong>Carga Horária:</strong> <span id="pdf-ocupacao"></span></p>
 
-        <!-- Seção 3: Histórico do Paciente -->
-        <h3>Histórico do Paciente</h3>
-        <p><strong>Motivo da consulta:</strong> <span id="pdf-historico"></span></p>
-        <p><strong>O que espera do nutricionista:</strong> <span id="pdf-vida_adulta"></span></p>
-        <p><strong>Já realizou estratégia para perda de peso:</strong> <span id="pdf-alcool1"></span></p>
-        <p><strong>Com acompanhamento profissional:</strong> <span id="pdf-freq_alcool1"></span></p>
-        <p><strong>Avaliação durante o processo:</strong> <span id="pdf-Eva"></span></p>
-        <p><strong>Peso máximo/mínimo na adolescência:</strong> <span id="pdf-peso_max_min_adolescencia"></span></p>
-        <p><strong>Peso máximo/mínimo na vida adulta:</strong> <span id="pdf-peso_max_min_adulta"></span></p>
-        <p><strong>Dificuldades alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
+<!-- Seção 3: Histórico do Paciente -->
+<h3>Histórico do Paciente</h3>
+<p><strong>Motivo da consulta:</strong> <span id="pdf-historico"></span></p>
+<p><strong>O que espera do nutricionista:</strong> <span id="pdf-vida_adulta"></span></p>
+<p><strong>Já realizou estratégia para perda de peso:</strong> <span id="pdf-alcool1"></span></p>
+<p><strong>Com acompanhamento profissional:</strong> <span id="pdf-freq_alcool1"></span></p>
+<p><strong>Avaliação durante o processo:</strong> <span id="pdf-Eva"></span></p>
+<p><strong>Peso máximo/mínimo na adolescência:</strong> <span id="pdf-peso_max_min_adolescencia"></span></p>
+<p><strong>Peso máximo/mínimo na vida adulta:</strong> <span id="pdf-peso_max_min_adulta"></span></p>
+<p><strong>Dificuldades alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
 
-        <!-- Seção 4: Hábitos de Vida -->
-        <h3>Hábitos de Vida</h3>
-        <p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
-        <p><strong>Fumante:</strong> <span id="pdf-fumante"></span></p>
-        <p><strong>Consome bebidas alcoólicas:</strong> <span id="pdf-alcool"></span></p>
-        <p><strong>Frequência do álcool:</strong> <span id="pdf-freq_alcool"></span></p>
-        <p><strong>Apetite:</strong> <span id="pdf-apetite"></span></p>
-        <p><strong>Mastigação:</strong> <span id="pdf-mastigacao"></span></p>
-        <p><strong>Patologias:</strong> <span id="pdf-patologias"></span></p>
-        <p><strong>Histórico familiar:</strong> <span id="pdf-historico_familiar"></span></p>
-        <p><strong>Exames:</strong> <span id="pdf-exames"></span></p>
-        <p><strong>Medicação:</strong> <span id="pdf-medicacao"></span></p>
-        <p><strong>Sintomas:</strong> <span id="pdf-sintomas"></span></p>
-        <p><strong>Outros sintomas:</strong> <span id="pdf-outros_sintomas_text"></span></p>
+<!-- Seção 4: Hábitos de Vida -->
+<h3>Hábitos de Vida</h3>
+<p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
+<p><strong>Fumante:</strong> <span id="pdf-fumante"></span></p>
+<p><strong>Consome bebidas alcoólicas:</strong> <span id="pdf-alcool"></span></p>
+<p><strong>Frequência do álcool:</strong> <span id="pdf-freq_alcool"></span></p>
+<p><strong>Apetite:</strong> <span id="pdf-apetite"></span></p>
+<p><strong>Mastigação:</strong> <span id="pdf-mastigacao"></span></p>
+<p><strong>Patologias:</strong> <span id="pdf-patologias"></span></p>
+<p><strong>Histórico familiar:</strong> <span id="pdf-historico_familiar"></span></p>
+<p><strong>Exames:</strong> <span id="pdf-exames"></span></p>
+<p><strong>Medicação:</strong> <span id="pdf-medicacao"></span></p>
+<p><strong>Sintomas:</strong> <span id="pdf-sintomas"></span></p>
+<p><strong>Outros sintomas:</strong> <span id="pdf-outros_sintomas_text"></span></p>
 
-        <!-- Seção 5: Hábitos Alimentares -->
-        <h3>Hábitos Alimentares</h3>
-        <p><strong>Refeições fora de casa:</strong> <span id="pdf-refeicoes_fora"></span></p>
-        <p><strong>Onde faz refeições fora:</strong> <span id="pdf-local_refeicoes"></span></p>
-        <p><strong>Quem faz as compras:</strong> <span id="pdf-quem_compras"></span></p>
-        <p><strong>Alergia ou intolerância:</strong> <span id="pdf-alergia"></span></p>
-        <p><strong>Tipo de alergia:</strong> <span id="pdf-tipo_alergia"></span></p>
-        <p><strong>Café da manhã:</strong> <span id="pdf-cafe_manha"></span></p>
-        <p><strong>Almoço:</strong> <span id="pdf-almoco"></span></p>
-        <p><strong>Lanche da tarde:</strong> <span id="pdf-lanche_tarde"></span></p>
-        <p><strong>Jantar:</strong> <span id="pdf-jantar"></span></p>
-        <p><strong>Alimentos que não gosta:</strong> <span id="pdf-alimentos_nao_gosta"></span></p>
+<!-- Seção 5: Hábitos Alimentares -->
+<h3>Hábitos Alimentares</h3>
+<p><strong>Refeições fora de casa:</strong> <span id="pdf-refeicoes_fora"></span></p>
+<p><strong>Onde faz refeições fora:</strong> <span id="pdf-local_refeicoes"></span></p>
+<p><strong>Quem faz as compras:</strong> <span id="pdf-quem_compras"></span></p>
+<p><strong>Alergia ou intolerância:</strong> <span id="pdf-alergia"></span></p>
+<p><strong>Tipo de alergia:</strong> <span id="pdf-tipo_alergia"></span></p>
+<p><strong>Café da manhã:</strong> <span id="pdf-cafe_manha"></span></p>
+<p><strong>Almoço:</strong> <span id="pdf-almoco"></span></p>
+<p><strong>Lanche da tarde:</strong> <span id="pdf-lanche_tarde"></span></p>
+<p><strong>Jantar:</strong> <span id="pdf-jantar"></span></p>
+<p><strong>Alimentos que não gosta:</strong> <span id="pdf-alimentos_nao_gosta"></span></p>
 
-        <!-- Seção 6: Atividades Físicas -->
-        <h3>Atividades Físicas</h3>
-        <p><strong>Tipo de atividade física:</strong> <span id="pdf-tipo_atividade"></span></p>
-        <p><strong>Frequência:</strong> <span id="pdf-frequencia_atividade"></span></p>
-        <p><strong>Duração:</strong> <span id="pdf-duracao_atividade"></span></p>
-        <p><strong>Realiza alimentado ou em jejum:</strong> <span id="pdf-alimentacao_atividade"></span></p>
-        <p><strong>Suplementação:</strong> <span id="pdf-suplementacao"></span></p>
-        <p><strong>Data da consulta:</strong> <span id="pdf-data-consulta"></span></p>
+<!-- Seção 6: Atividades Físicas -->
+<h3>Atividades Físicas</h3>
+<p><strong>Tipo de atividade física:</strong> <span id="pdf-tipo_atividade"></span></p>
+<p><strong>Frequência:</strong> <span id="pdf-frequencia_atividade"></span></p>
+<p><strong>Duração:</strong> <span id="pdf-duracao_atividade"></span></p>
+<p><strong>Realiza alimentado ou em jejum:</strong> <span id="pdf-alimentacao_atividade"></span></p>
+<p><strong>Suplementação:</strong> <span id="pdf-suplementacao"></span></p>
+<p><strong>Data da consulta:</strong> <span id="pdf-data-consulta"></span></p>
 
         <hr>
         <div style="text-align: center; font-size: 12px; margin-top: 20px;">
@@ -641,7 +746,9 @@
             // Preenche a data atual no rodapé
             document.getElementById('data-geracao-pdf').textContent = new Date().toLocaleDateString();
         </script>
+
     </div>
+
     <!-- Inclua o Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -657,11 +764,62 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const input = document.getElementById("telefone");
+
+            input.addEventListener("input", function (e) {
+                let value = input.value.replace(/\D/g, ""); // remove tudo que não é dígito
+
+                if (value.startsWith("244")) {
+                    value = value.slice(3); // remove o 244 duplicado
+                }
+
+                if (value.startsWith("9")) {
+                    // Aplica formatação: +244 9XX XXX XXX
+                    let formatted = "+244 ";
+
+                    if (value.length > 0) formatted += value.substring(0, 3);
+                    if (value.length > 3) formatted += " " + value.substring(3, 6);
+                    if (value.length > 6) formatted += " " + value.substring(6, 9);
+
+                    input.value = formatted;
+                } else {
+                    input.value = "+244 ";
+                }
+            });
+
+            // Garante que o campo já venha com +244
+            input.value = "+244 ";
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const alcoolSim = document.getElementById('alcoolSim');
+            const alcoolNao = document.getElementById('alcoolNao');
+            const freqContainer = document.getElementById('frequencia-alcool-container');
+            const freqSelect = document.getElementById('freq_alcool');
+
+            function toggleFrequenciaAlcool() {
+                if (alcoolSim.checked) {
+                    freqContainer.style.display = 'block';
+                    freqSelect.setAttribute('required', 'required');
+                } else {
+                    freqContainer.style.display = 'none';
+                    freqSelect.removeAttribute('required');
+                    freqSelect.value = ''; // limpa o select
+                }
+            }
+
+            alcoolSim.addEventListener('change', toggleFrequenciaAlcool);
+            alcoolNao.addEventListener('change', toggleFrequenciaAlcool);
+        });
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
