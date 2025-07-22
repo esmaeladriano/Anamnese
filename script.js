@@ -61,32 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Lógica para Data da Consulta
-    const dataConsultaInput = document.getElementById('data-consulta');
-    if (dataConsultaInput) {
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        let mm = today.getMonth() + 1;
-        let dd = today.getDate();
-
-        if (mm < 10) mm = '0' + mm;
-        if (dd < 10) dd = '0' + dd;
-
-        const todayFormatted = `${yyyy}-${mm}-${dd}`;
-        dataConsultaInput.min = todayFormatted;
-
-        dataConsultaInput.addEventListener('change', function () {
-            const selectedDate = new Date(this.value);
-            // Zera as horas para comparar apenas as datas
-            selectedDate.setHours(0, 0, 0, 0);
-            today.setHours(0, 0, 0, 0);
-
-            if (selectedDate < today) {
-                this.setCustomValidity('A data da consulta não pode ser anterior à data atual.');
-            } else {
-                this.setCustomValidity('');
-            }
-            this.reportValidity();
         });
     }
 
