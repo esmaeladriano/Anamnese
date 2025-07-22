@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+    <style>
+        #pdf-output {
+  width: 210mm;
+  height: 594mm; /* 2 páginas A4 */
+  padding: 20mm;
+  box-sizing: border-box;
+  font-size: 12pt;
+  overflow: hidden;
+}
+
+    </style>
 
 <body class="bg-light">
     <div class="container py-5">
@@ -650,7 +661,10 @@
         </div>
     </div>
 
-    <div id="pdf-output" style="display:none; border-top: 20px solid #4CAF50;  border-radius: 10px 10px 0 10px;">
+    <div id="pdf-output" style="display:none; border-top: 20px solid #4CAF50; page-break-inside: avoid;
+  break-inside: avoid; /* Suporte moderno */
+  margin-bottom: 20px;
+  border-radius: 10px 10px 0 10px;">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
             <h1 style="
                     margin: 0;
@@ -707,7 +721,7 @@
         <p><strong>Peso Mínimo:</strong> <span id="pdf-peso_max_min_adolescencia"></span></p>
         <p><strong>Peso Máximo:</strong> <span id="pdf-peso_max_min_adulta"></span></p>
         <p><strong>Dificuldades alimentares:</strong> <span id="pdf-dificuldades_alimentacao"></span></p>
-<br> <br> <br> <br><br>
+
         <!-- Seção 4: Hábitos de Vida -->
         <h3>Hábitos de Vida</h3>
         <p><strong>Frequência de evacuação:</strong> <span id="pdf-freq_evacuacao"></span></p>
@@ -756,6 +770,20 @@
             // Preenche a data atual no rodapé
             document.getElementById('data-geracao-pdf').textContent = new Date().toLocaleDateString();
         </script>
+        <script>
+  const element = document.getElementById('pdf-output');
+
+  const opt = {
+    margin:       0,
+    filename:     'meu-pdf.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+  };
+
+  html2pdf().set(opt).from(element).save();
+</script>
 
     </div>
 
