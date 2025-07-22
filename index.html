@@ -643,7 +643,12 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta" class="form-label">Data da consulta:</label> <input type="text" id="data-consulta" name="data-consulta" class="form-control"> </div> <div class="col-12 col-md-6 mb-3"> <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label> <textarea id="outras-info" name="outras-info" class="form-control" rows="4" placeholder="Escreva aqui..."></textarea> </div>
+                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta" class="form-label">Data da consulta:</label> 
+                                      <input type="date" id="data-consulta" required name="data_consulta" class="form-control" re> 
+                                    </div> 
+                                    <div class="col-12 col-md-6 mb-3"> <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label> 
+<textarea id="outras-info" name="outras_info" class="form-control" rows="4"></textarea>
+                                    </div>
                                 </div>
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-secondary"
