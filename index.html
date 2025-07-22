@@ -31,8 +31,26 @@
         padding-bottom: 2px;
     }
 </style>
+    <style>
+    .linha-dados {
+        display: inline-block;
+        border-bottom: 1px solid #000;
+        min-width: 200px;
+        padding-bottom: 2px;
+        vertical-align: bottom;
+    }
 
-<p><strong>Nome completo:</strong> <span id="pdf-nome">ggg</span></p>
+    p {
+        margin: 4px 0;
+    }
+
+    p strong {
+        display: inline-block;
+        width: 220px;
+    }
+</style>
+
+<p><strong>Nome completo:</strong> <span id="pdf-nome" class="linha-dados">ggg</span></p>
 
 <body class="bg-light">
     <div class="container py-5">
