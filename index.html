@@ -770,20 +770,7 @@
             // Preenche a data atual no rodapé
             document.getElementById('data-geracao-pdf').textContent = new Date().toLocaleDateString();
         </script>
-        <script>
-  const element = document.getElementById('pdf-output');
-
-  const opt = {
-    margin:       0,
-    filename:     'meu-pdf.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 2 },
-    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
-  };
-
-  html2pdf().set(opt).from(element).save();
-</script>
+ 
 
     </div>
 
