@@ -634,15 +634,24 @@
                                                     required>
                                                 <label class="form-check-label" for="alimentado">Alimentado</label>
                                             </div>
-                                           <div class="mb-3">
-  <label for="data-consulta" class="form-label">Data da consulta:</label>
-  <input type="date" id="data-consulta" name="data-consulta" class="form-control">
-</div>
+                                             <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    name="alimentacao_atividade" id="alimentado" value="Alimentado"
+                                                    required>
+                                                <label class="form-check-label" for="alimentado">Em jejum</label>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                           <div class="col-12 col-md-6 mb-3">
+                                              <label for="data-consulta" class="form-label">Data da consulta:</label>
+                                              <input type="text" id="data-consulta" name="data-consulta" class="form-control">
+                                            </div>
 
-<div class="mb-3">
-  <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label>
-  <textarea id="outras-info" name="outras-info" class="form-control" rows="4" placeholder="Escreva aqui..."></textarea>
-</div>
+                                            <div class="col-12 col-md-6 mb-3">
+                                              <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label>
+                                              <textarea id="outras-info" name="outras-info" class="form-control" rows="4" placeholder="Escreva aqui..."></textarea>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -678,7 +687,7 @@
     <div id="pdf-output" style="display:none; border-top: 20px solid #4CAF50; page-break-inside: avoid;
   break-inside: avoid; /* Suporte moderno */
   border-radius: 10px 10px 0 10px;">
-        <div style="display: flex;    width: 90%; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+        <div style="display: flex;    width: 90%; align-items: center; justify-content: space-between; margin-bottom: 10px;">
             <h1 style="
                     margin: 0;
                     text-align: left;
