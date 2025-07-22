@@ -322,16 +322,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const pdfOutputElement = document.getElementById('pdf-output');
 
+
+
+         
         // 3. Gerar o PDF
         try {
             pdfOutputElement.style.display = 'block'; // Torna visível para renderizar corretamente
 
             await html2pdf().from(pdfOutputElement).set({
-                margin: 15,
-                filename: `ficha_anamnese_${data.nome.replace(/\s/g, '_')}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+margin: 0,
+  filename: `ficha_anamnese_${data.nome.replace(/\s/g, '_')}.pdf`,
+  image: { type: 'jpeg', quality: 0.98 },
+  html2canvas: {
+    scale: 2,
+    logging: true,
+    dpi: 192,
+    letterRendering: true
+  },
+  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+  pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
             }).save();
 
             pdfOutputElement.style.display = 'none'; // Opcional: esconde de novo após gerar o PDF
