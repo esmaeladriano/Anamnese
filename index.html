@@ -643,12 +643,14 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta" class="form-label">Data da consulta:</label> 
-                                      <input type="date" id="data-consulta" required name="data_consulta" class="form-control" re> 
-                                    </div> 
-                                    <div class="col-12 col-md-6 mb-3"> <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label> 
-<textarea id="outras-info" name="outras_info" class="form-control" rows="4"></textarea>
+                                     <div class="col-12 col-md-6 mb-3"> 
+                                        <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label> 
+                            <textarea id="outras-info" name="outras_info"    required class="form-control" rows="2"></textarea>
                                     </div>
+                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta" class="form-label">Data da consulta:</label> 
+                                      <input type="date" id="data-consulta" required name="data_consulta" class="form-control" > 
+                                    </div> 
+                                   
                                 </div>
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-secondary"
@@ -783,8 +785,9 @@
   <li><strong>Frequência:</strong> <span id="pdf-frequencia_atividade" class="linha-dados"></span></li>
   <li><strong>Duração:</strong> <span id="pdf-duracao_atividade" class="linha-dados"></span></li>
   <li><strong>Realiza alimentado ou em jejum:</strong> <span id="pdf-alimentacao_atividade" class="linha-dados"></span></li>
+          <li><strong> Algo que não foi perguntado mas gostaria que eu soubesse:</strong> <span id="pdf-outras-info" class="linha-dados"></span></li>
+
      <li> <strong>Data da consulta:</strong> <span id="pdf-data-consulta" class="linha-dados"></span></li>
-      <li><strong>Informações adicionais:</strong> <span id="pdf-outras-info" class="linha-dados"></span></li>
 </ul>
 
 
