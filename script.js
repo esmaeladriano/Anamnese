@@ -316,6 +316,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('pdf-frequencia_atividade').textContent = data.frequencia_atividade || '  ';
         document.getElementById('pdf-duracao_atividade').textContent = data.duracao_atividade || '  ';
         document.getElementById('pdf-alimentacao_atividade').textContent = data.alimentacao_atividade || '  ';
+        document.getElementById('pdf-data-consulta').textContent = data.data_consulta || ' ';
+document.getElementById('pdf-outras-info').textContent = data.outras_info || ' ';
 
 
 
