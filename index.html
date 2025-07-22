@@ -15,9 +15,10 @@
     <style>
         #pdf-output {
   width: 210mm;
-  box-sizing: border-box;
-  font-size: 12pt;
+  max-height: 594mm;
   overflow: hidden;
+  font-size: clamp(10pt, 1.5vw, 12pt); /* se adapta */
+  padding: 10mm;
 }
 
     </style>
