@@ -92,7 +92,7 @@
                             </div>
                         </div>
 
-                        <form id="nutrition-form" class="needs-validation" novalidate>
+             <form id="nutrition-form" class="needs-validation" novalidate>
 
                             <div class="form-section active" id="section-1">
                                 <h3 class="h5 mb-4 text-center">Identificação</h3>
@@ -634,29 +634,17 @@
                                                     required>
                                                 <label class="form-check-label" for="alimentado">Alimentado</label>
                                             </div>
-                                             <div class="form-check">
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio"
-                                                    name="alimentacao_atividade" id="alimentado" value="Alimentado"
+                                                    name="alimentacao_atividade" id="em_jejum" value="Em jejum"
                                                     required>
-                                                <label class="form-check-label" for="alimentado">Em jejum</label>
+                                                <label class="form-check-label" for="em_jejum">em jejum</label>
                                             </div>
-                                            
+
                                         </div>
-                                          <div class="col-12 col-md-6 mb-3">
-                                              <label for="data-consulta" class="form-label">Data da consulta:</label>
-                                              <input type="text" id="data-consulta" name="data-consulta" class="form-control">
-                                            </div>
-
-                                            <div class="col-12 col-md-6 mb-3">
-                                              <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label>
-                                              <textarea id="outras-info" name="outras-info" class="form-control" rows="4" placeholder="Escreva aqui..."></textarea>
-                                            </div>
-
                                     </div>
-                                         
-                                    
-                                    </div>
-                              
+                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta" class="form-label">Data da consulta:</label> <input type="text" id="data-consulta" name="data-consulta" class="form-control"> </div> <div class="col-12 col-md-6 mb-3"> <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label> <textarea id="outras-info" name="outras-info" class="form-control" rows="4" placeholder="Escreva aqui..."></textarea> </div>
+                                </div>
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-secondary"
                                         onclick="prevStep()">Anterior</button>
