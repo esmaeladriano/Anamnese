@@ -332,7 +332,7 @@ document.getElementById('pdf-outras-info').textContent = data.outras_info || ' '
             pdfOutputElement.style.display = 'block'; // Torna visível para renderizar corretamente
 
             await html2pdf().from(pdfOutputElement).set({
-margin: 5,
+margin: 10,
   filename: `ficha_anamnese_${data.nome.replace(/\s/g, '_')}.pdf`,
   image: { type: 'jpeg', quality: 0.98 },
   html2canvas: {
