@@ -13,30 +13,32 @@
 
 </head>
 <style>
-   ul {
+  ul {
   list-style: none;
   padding-left: 0;
 }
 
-li {
-  margin-bottom: 8px;
-}
-
-.linha-dinamica {
-  display: inline-block;
-  border-bottom: 1px solid black;
-  min-width: 100px;
-  padding: 0 4px;
-  margin-right: 12px;
-  line-height: 1.5;
-}
-
-.dupla-linha {
+.linha-bloco {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  width: 80%;
+  margin-bottom: 10px;
 }
+
+.linha-dinamica {
+  border-bottom: 1px solid black;
+  padding: 0 4px;
+  margin-right: 16px;
+  flex-grow: 1;
+  min-width: 100px;
+  line-height: 1.4;
+}
+
+.linha-dinamica.metade {
+  flex-basis: calc(50% - 80px); /* ajusta para dois campos em 80% */
+}
+
 
 </style>
 
@@ -710,42 +712,43 @@ li {
             <img src="logo-marca.png" alt="Logotipo" width="500" height="500">
         </div>
 
-       <!-- Seção 1: Identificação -->
+<!-- Seção 1: Identificação -->
 <h4>1. Identificação</h4>
 <ul>
-  <li>
+  <li class="linha-bloco">
     <b>Nome completo:</b>
     <span class="linha-dinamica" id="pdf-nome"></span>
   </li>
 
-  <li class="dupla-linha">
+  <li class="linha-bloco">
     <b>Idade:</b>
-    <span class="linha-dinamica" id="pdf-idade"></span>
+    <span class="linha-dinamica metade" id="pdf-idade"></span>
 
     <b>Sexo:</b>
-    <span class="linha-dinamica" id="pdf-sexo"></span>
+    <span class="linha-dinamica metade" id="pdf-sexo"></span>
   </li>
 
-  <li>
+  <li class="linha-bloco">
     <b>Telefone:</b>
     <span class="linha-dinamica" id="pdf-telefone"></span>
   </li>
 
-  <li>
+  <li class="linha-bloco">
     <b>E-mail:</b>
     <span class="linha-dinamica" id="pdf-email"></span>
   </li>
 
-  <li>
+  <li class="linha-bloco">
     <b>Profissão:</b>
     <span class="linha-dinamica" id="pdf-profissao"></span>
   </li>
 
-  <li>
+  <li class="linha-bloco">
     <b>Data da consulta:</b>
     <span class="linha-dinamica" id="pdf-data-consulta"></span>
   </li>
 </ul>
+
 
         <!-- Seção 2: Dados do Paciente -->
         <h4>2. Dados do Paciente</h4>
