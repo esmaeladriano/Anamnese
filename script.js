@@ -260,63 +260,62 @@ document.addEventListener('DOMContentLoaded', function () {
         // 2. Popular o conteúdo HTML que será transformado em PDF
 
         // Seção 1: Identificação
-        document.getElementById('pdf-nome').textContent = data.nome || '  ';
-        document.getElementById('pdf-data-nascimento').textContent = data.nascimento || '  ';
-        document.getElementById('pdf-idade').textContent = data.idade|| '  ';
-        document.getElementById('pdf-sexo').textContent = data.sexo || '  ';
-        document.getElementById('pdf-email').textContent = data.email || '  ';
-        document.getElementById('pdf-telefone').textContent = data.telefone || '  ';
-        document.getElementById('pdf-endereco').textContent = data.endereco || '  ';
+        document.getElementById('pdf-nome').textContent = data.nome || ' Opcional';
+        document.getElementById('pdf-data-nascimento').textContent = data.nascimento || ' Opcional';
+        document.getElementById('pdf-idade').textContent = data.idade|| ' Opcional';
+        document.getElementById('pdf-sexo').textContent = data.sexo || ' Opcional';
+        document.getElementById('pdf-email').textContent = data.email || ' Opcional';
+        document.getElementById('pdf-telefone').textContent = data.telefone || ' Opcional';
+        document.getElementById('pdf-endereco').textContent = data.endereco || ' Opcional';
 
         // Seção 2: Dados do Paciente
         document.getElementById('pdf-altura').textContent = data.altura ? `${data.altura} m` : '  ';
         document.getElementById('pdf-peso').textContent = data.peso ? `${data.peso} kg` : '  ';
-        document.getElementById('pdf-estado-civil').textContent = data.estado_civil || '  ';
-        document.getElementById('pdf-profissao').textContent = data.profissao || '  ';
-        document.getElementById('pdf-ocupacao').textContent = data.ocupacao || '  ';
+        document.getElementById('pdf-estado-civil').textContent = data.estado_civil || ' Opcional';
+        document.getElementById('pdf-profissao').textContent = data.profissao || ' Opcional';
+        document.getElementById('pdf-ocupacao').textContent = data.ocupacao || ' Opcional';
 
         // Seção 3: Histórico do Paciente
-        document.getElementById('pdf-historico').textContent = data.historico || '  ';
-        document.getElementById('pdf-vida_adulta').textContent = data.vida_adulta || '  ';
-        document.getElementById('pdf-alcool1').textContent = data.alcool || '  ';
-        document.getElementById('pdf-freq_alcool1').textContent = data.freq_alcool1 || '  ';
-        document.getElementById('pdf-Eva').textContent = data.Eva || '  ';
-        document.getElementById('pdf-peso_max_min_adolescencia').textContent = data.peso_max_min_adolescencia || '  ';
-        document.getElementById('pdf-peso_max_min_adulta').textContent = data.peso_max_min_adulta || '  ';
-        document.getElementById('pdf-dificuldades_alimentacao').textContent = data.dificuldades_alimentacao || '  ';
+        document.getElementById('pdf-historico').textContent = data.historico || ' Opcional';
+        document.getElementById('pdf-vida_adulta').textContent = data.vida_adulta || ' Opcional';
+        document.getElementById('pdf-alcool1').textContent = data.alcool || ' Opcional';
+        document.getElementById('pdf-freq_alcool1').textContent = data.freq_alcool1 || ' Opcional';
+        document.getElementById('pdf-Eva').textContent = data.Eva || ' Opcional';
+        document.getElementById('pdf-peso_max_min_adolescencia').textContent = data.peso_max_min_adolescencia || ' Opcional';
+        document.getElementById('pdf-peso_max_min_adulta').textContent = data.peso_max_min_adulta || ' Opcional';
+        document.getElementById('pdf-dificuldades_alimentacao').textContent = data.dificuldades_alimentacao || ' Opcional';
 
         // Seção 4: Hábitos de Vida
-        document.getElementById('pdf-freq_evacuacao').textContent = data.freq_evacuacao || '  ';
-        document.getElementById('pdf-fumante').textContent = data.fumante || '  ';
-        document.getElementById('pdf-alcool').textContent = data.alcool || '  ';
-        document.getElementById('pdf-freq_alcool').textContent = data.freq_alcool || '  ';
-        document.getElementById('pdf-apetite').textContent = data.apetite || '  ';
-        document.getElementById('pdf-mastigacao').textContent = data.mastigacao || '  ';
-        document.getElementById('pdf-patologias').textContent = data.patologias || '  ';
-        document.getElementById('pdf-historico_familiar').textContent = data.historico_familiar || '  ';
-        document.getElementById('pdf-exames').textContent = data.exames || '  ';
-        document.getElementById('pdf-medicacao').textContent = data.medicacao || '  ';
+        document.getElementById('pdf-freq_evacuacao').textContent = data.freq_evacuacao || ' Opcional';
+        document.getElementById('pdf-fumante').textContent = data.fumante || ' Opcional';
+        document.getElementById('pdf-alcool').textContent = data.alcool || ' Opcional';
+        document.getElementById('pdf-freq_alcool').textContent = data.freq_alcool || ' Opcional';
+        document.getElementById('pdf-apetite').textContent = data.apetite || ' Opcional';
+        document.getElementById('pdf-mastigacao').textContent = data.mastigacao || ' Opcional';
+        document.getElementById('pdf-patologias').textContent = data.patologias || ' Opcional';
+        document.getElementById('pdf-historico_familiar').textContent = data.historico_familiar || ' Opcional';
+        document.getElementById('pdf-medicacao').textContent = data.medicacao || ' Opcional';
         document.getElementById('pdf-sintomas').textContent = data.sintomas || 'Nenhum selecionado';
-        document.getElementById('pdf-outros_sintomas_text').textContent = data.outros_sintomas_text || '  ';
+        document.getElementById('pdf-outros_sintomas_text').textContent = data.outros_sintomas_text || ' Opcional';
 
         // Seção 5: Hábitos Alimentares
-        document.getElementById('pdf-refeicoes_fora').textContent = data.refeicoes_fora || '  ';
-        document.getElementById('pdf-local_refeicoes').textContent = data.local_refeicoes || '  ';
-        document.getElementById('pdf-quem_compras').textContent = data.quem_compras || '  ';
-        document.getElementById('pdf-alergia').textContent = data.alergia || '  ';
-        document.getElementById('pdf-tipo_alergia').textContent = data.tipo_alergia || '  ';
-        document.getElementById('pdf-cafe_manha').textContent = data.cafe_manha || '  ';
-        document.getElementById('pdf-almoco').textContent = data.almoco || '  ';
-        document.getElementById('pdf-lanche_tarde').textContent = data.lanche_tarde || '  ';
-        document.getElementById('pdf-jantar').textContent = data.jantar || '  ';
-        document.getElementById('pdf-alimentos_nao_gosta').textContent = data.alimentos_nao_gosta || '  ';
+        document.getElementById('pdf-refeicoes_fora').textContent = data.refeicoes_fora || ' Opcional';
+        document.getElementById('pdf-local_refeicoes').textContent = data.local_refeicoes || ' Opcional';
+        document.getElementById('pdf-quem_compras').textContent = data.quem_compras || ' Opcional';
+        document.getElementById('pdf-alergia').textContent = data.alergia || ' Opcional';
+        document.getElementById('pdf-tipo_alergia').textContent = data.tipo_alergia || ' Opcional';
+        document.getElementById('pdf-cafe_manha').textContent = data.cafe_manha || ' Opcional';
+        document.getElementById('pdf-almoco').textContent = data.almoco || ' Opcional';
+        document.getElementById('pdf-lanche_tarde').textContent = data.lanche_tarde || ' Opcional';
+        document.getElementById('pdf-jantar').textContent = data.jantar || ' Opcional';
+        document.getElementById('pdf-alimentos_nao_gosta').textContent = data.alimentos_nao_gosta || ' Opcional';
 
 
         // Seção 6: Atividades Físicas
-        document.getElementById('pdf-tipo_atividade').textContent = data.tipo_atividade || '  ';
-        document.getElementById('pdf-frequencia_atividade').textContent = data.frequencia_atividade || '  ';
-        document.getElementById('pdf-duracao_atividade').textContent = data.duracao_atividade || '  ';
-        document.getElementById('pdf-alimentacao_atividade').textContent = data.alimentacao_atividade || '  ';
+        document.getElementById('pdf-tipo_atividade').textContent = data.tipo_atividade || ' Opcional';
+        document.getElementById('pdf-frequencia_atividade').textContent = data.frequencia_atividade || ' Opcional';
+        document.getElementById('pdf-duracao_atividade').textContent = data.duracao_atividade || ' Opcional';
+        document.getElementById('pdf-alimentacao_atividade').textContent = data.alimentacao_atividade || ' Opcional';
         document.getElementById('pdf-data-consulta').textContent = data.data_consulta || ' ';
 document.getElementById('pdf-outras-info').textContent = data.outras_info || ' ';
 
