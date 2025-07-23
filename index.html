@@ -13,24 +13,31 @@
 
 </head>
 <style>
-    .linha-dinamica {
-       display: block;
-    width: 90%;
-    border-bottom: 1px solid black;
-    padding-bottom: 0.5rem;
-    line-height: 1;
-    }
+   ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-    /*  ul {
-        padding-left: 20px;
-        list-style-type: disc;
-    }
+li {
+  margin-bottom: 8px;
+}
 
-    li {
-        margin-bottom: 8px;
-        line-height: 1.5;
-        white-space: nowrap;
-    }
+.linha-dinamica {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  min-width: 100px;
+  padding: 0 4px;
+  margin-right: 12px;
+  line-height: 1.5;
+}
+
+.dupla-linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
 </style>
 
 
@@ -703,17 +710,42 @@
             <img src="logo-marca.png" alt="Logotipo" width="500" height="500">
         </div>
 
-        <!-- Seção 1: Identificação -->
-        <h4> 1. Identificação</h4>
-        <ul>
-            <li><b>Nome completo:</b> <u><span id="pdf-nome" class="linha-dinamica"></span></u></li>
-            <li><b>Idade:</b> <u><span id="pdf-idade" class="linha-dinamica"></span>  <b>Sexo:</b> <u><span id="pdf-sexo" class="linha-dinamica"></span> </u></li>
-            <li></u></li>
-            <li><b>Telefone:</b><u><span id="pdf-telefone" class="linha-dinamica"></span></u></li>
-            <li><b>E-mail:</b> <u><span id="pdf-email" class="linha-dinamica"></span></u></li>
-            <li><b>Profissão:</b> <u><span id="pdf-profissao" class="linha-dinamica"></span></u></li>
-            <li><b>Data da consulta:</b> <u><span id="pdf-data-consulta" class="linha-dinamica"></span></u></li>
-        </ul>
+       <!-- Seção 1: Identificação -->
+<h4>1. Identificação</h4>
+<ul>
+  <li>
+    <b>Nome completo:</b>
+    <span class="linha-dinamica" id="pdf-nome"></span>
+  </li>
+
+  <li class="dupla-linha">
+    <b>Idade:</b>
+    <span class="linha-dinamica" id="pdf-idade"></span>
+
+    <b>Sexo:</b>
+    <span class="linha-dinamica" id="pdf-sexo"></span>
+  </li>
+
+  <li>
+    <b>Telefone:</b>
+    <span class="linha-dinamica" id="pdf-telefone"></span>
+  </li>
+
+  <li>
+    <b>E-mail:</b>
+    <span class="linha-dinamica" id="pdf-email"></span>
+  </li>
+
+  <li>
+    <b>Profissão:</b>
+    <span class="linha-dinamica" id="pdf-profissao"></span>
+  </li>
+
+  <li>
+    <b>Data da consulta:</b>
+    <span class="linha-dinamica" id="pdf-data-consulta"></span>
+  </li>
+</ul>
 
         <!-- Seção 2: Dados do Paciente -->
         <h4>2. Dados do Paciente</h4>
