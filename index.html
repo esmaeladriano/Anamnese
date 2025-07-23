@@ -16,7 +16,7 @@
 ul {
   padding-left: 0;
 }
-
+/*
 .linha-bloco {
   display: flex;
   flex-wrap: wrap;
@@ -43,6 +43,30 @@ ul {
   min-height: 20px;
 }
 
+*/
+    .linha-bloco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.linha-dinamica.metade {
+  flex: 1 1 calc(50% - 80px); /* ou ajuste conforme o seu layout */
+  border-bottom: 1px solid #000;
+  min-height: 20px;
+}
+
+.linha-dinamica.metade {
+  flex: 1 1 calc(50% - 80px);
+  min-height: 20px;
+}
+
+.linha-dinamica {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 </style>
