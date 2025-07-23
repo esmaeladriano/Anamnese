@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('pdf-endereco').textContent = data.endereco || ' Opcional';
 
         // Seção 2: Dados do Paciente
-        document.getElementById('pdf-altura').textContent = data.altura ? `${data.altura} m` : '  ';
-        document.getElementById('pdf-peso').textContent = data.peso ? `${data.peso} kg` : '  ';
+        document.getElementById('pdf-altura').textContent = data.altura ? `${data.altura} m` : || ' Opcional';
+        document.getElementById('pdf-peso').textContent = data.peso ? `${data.peso} kg` : || ' Opcional';
         document.getElementById('pdf-estado-civil').textContent = data.estado_civil || ' Opcional';
         document.getElementById('pdf-profissao').textContent = data.profissao || ' Opcional';
         document.getElementById('pdf-ocupacao').textContent = data.ocupacao || ' Opcional';
@@ -316,8 +316,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('pdf-frequencia_atividade').textContent = data.frequencia_atividade || ' Opcional';
         document.getElementById('pdf-duracao_atividade').textContent = data.duracao_atividade || ' Opcional';
         document.getElementById('pdf-alimentacao_atividade').textContent = data.alimentacao_atividade || ' Opcional';
-        document.getElementById('pdf-data-consulta').textContent = data.data_consulta || ' ';
-document.getElementById('pdf-outras-info').textContent = data.outras_info || ' ';
+        document.getElementById('pdf-data-consulta').textContent = data.data_consulta || ' Opcional';
+document.getElementById('pdf-outras-info').textContent = data.outras_info || ' Opcional';
 
 
 
