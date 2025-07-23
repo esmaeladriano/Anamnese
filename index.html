@@ -61,7 +61,10 @@ ul {
   flex: 1 1 calc(50% - 80px);
   min-height: 20px;
 }
-
+.metade1 {
+  flex: 1 1 40%;
+  min-height: 20px;
+}
 .linha-dinamica {
   white-space: nowrap;
   overflow: hidden;
@@ -746,8 +749,7 @@ ul {
 <ul>
   <li class="linha-bloco">
     <b>Nome completo:</b>
-    <span class="linha-dinamica metade" id="pdf-nome"></span>
-       <span class="linha-dinamica" > </span>
+    <span class="linha-dinamica metade1" id="pdf-nome"></span>
   </li>
   <li class="linha-bloco">
     <b>Idade:</b>
@@ -763,12 +765,12 @@ ul {
   </li>
   <li class="linha-bloco">
     <b>Profissão:</b>
-    <span class="linha-dinamica metade" id="pdf-profissao"></span>
-       <span class="linha-dinamica" > </span>
+    <span class="linha-dinamica metade1" id="pdf-profissao"></span>
+     
   </li>
      <li class="linha-bloco">
     <b>Data da consulta:</b>
-    <span class="linha-dinamica metade" id="pdf-data-consulta"></span>
+    <span class="linha-dinamica metade1" id="pdf-data-consulta"></span>
            <span class="linha-dinamica" > </span>
   </li>
 </ul>
