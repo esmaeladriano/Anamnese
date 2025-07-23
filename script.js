@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('pdf-endereco').textContent = data.endereco || ' Opcional';
 
         // Seção 2: Dados do Paciente
-        document.getElementById('pdf-altura').textContent = data.altura ? `${data.altura} m` : || ' Opcional';
-        document.getElementById('pdf-peso').textContent = data.peso ? `${data.peso} kg` : || ' Opcional';
+        document.getElementById('pdf-altura').textContent = data.altura ? `${data.altura} m` : ' Opcional';
+        document.getElementById('pdf-peso').textContent = data.peso ? `${data.peso} kg` : ' Opcional';
         document.getElementById('pdf-estado-civil').textContent = data.estado_civil || ' Opcional';
         document.getElementById('pdf-profissao').textContent = data.profissao || ' Opcional';
         document.getElementById('pdf-ocupacao').textContent = data.ocupacao || ' Opcional';
