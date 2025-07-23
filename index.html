@@ -12,28 +12,29 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-    <style>
-        #pdf-output {
-  width: 210mm;
- 
-  overflow: hidden;
-  font-size: clamp(10pt, 1.5vw, 12pt); /* se adapta */
-  padding: 5mm;
-}
+<style>
+    .linha-dinamica {
+        display: inline-block;
+        border-bottom: 1px solid black;
+        white-space: nowrap;
+        padding-bottom: 0;
+        line-height: 1;
+    }
 
-    </style>
+    /*  ul {
+        padding-left: 20px;
+        list-style-type: disc;
+    }
+
+    li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+</style>
 
 
 <style>
-    .linha-dados {
-        display: inline-block;
-        border-bottom: 1px solid #000;
-        min-width: 220px;
-        padding-bottom: 0.5px;
-        vertical-align: bottom;
-        width: 50%;
-    }
-
     p {
         margin: 4px 0;
     }
@@ -41,6 +42,8 @@
     p strong {
         display: inline-block;
     }
+
+    */
 </style>
 
 <body class="bg-light">
@@ -92,7 +95,7 @@
                             </div>
                         </div>
 
-             <form id="nutrition-form" class="needs-validation" novalidate>
+                        <form id="nutrition-form" class="needs-validation" novalidate>
 
                             <div class="form-section active" id="section-1">
                                 <h3 class="h5 mb-4 text-center">Identificação</h3>
@@ -124,25 +127,21 @@
                                             title="Por favor, insira um endereço de e-mail válido.">
                                         <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
                                     </div>
-                                   <div class="col-12 col-md-6 mb-3">
-    <label for="data-nascimento" class="form-label">Data de Nascimento*</label>
-    <input type="text"
-           name="nascimento"
-           class="form-control"
-           id="data-nascimento"
-           placeholder="DD/MM/AAAA"
-           required
-           pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19[5-9][0-9]|20[0-1][0-9]|2020)$"
-           title="Insira uma data entre 01/01/1950 e 31/12/2020 no formato DD/MM/AAAA.">
-    <div class="invalid-feedback">
-        Por favor, insira uma data válida entre 1950 e 2020 no formato DD/MM/AAAA.
-    </div>
-</div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="data-nascimento" class="form-label">Data de Nascimento*</label>
+                                        <input type="text" name="nascimento" class="form-control" id="data-nascimento"
+                                            placeholder="DD/MM/AAAA" required
+                                            pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19[5-9][0-9]|20[0-1][0-9]|2020)$"
+                                            title="Insira uma data entre 01/01/1950 e 31/12/2020 no formato DD/MM/AAAA.">
+                                        <div class="invalid-feedback">
+                                            Por favor, insira uma data válida entre 1950 e 2020 no formato DD/MM/AAAA.
+                                        </div>
+                                    </div>
 
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="idade" class="form-label">Idade*</label>
-                                        <input type="number" name="idade" class="form-control" id="idade"
-                                            min="3" required>
+                                        <input type="number" name="idade" class="form-control" id="idade" min="3"
+                                            required>
                                         <div class="invalid-feedback">Informe a idade.</div>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
@@ -253,22 +252,22 @@
                                         <div class="invalid-feedback">Este campo é obrigatório.</div>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
-                                        <label for="peso_max_min_adolescencia" class="form-label">Peso mínimo já atingido
+                                        <label for="peso_max_min_adolescencia" class="form-label">Peso mínimo já
+                                            atingido
                                             *</label>
                                         <input type="text" name="peso_max_min_adolescencia"
-                                            id="peso_max_min_adolescencia" class="form-control"
-                                          required>
-                                        <div class="invalid-feedback">Informe o peso  mínimo no formato </div>
+                                            id="peso_max_min_adolescencia" class="form-control" required>
+                                        <div class="invalid-feedback">Informe o peso mínimo no formato </div>
                                     </div>
-                               <div class="col-12 col-md-6 mb-3">
-                                        <label for="peso_max_min_adolescencia" class="form-label">Peso Máximo já atingido
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="peso_max_min_adolescencia" class="form-label">Peso Máximo já
+                                            atingido
                                             *</label>
-                                        <input type="text" name="peso_max_min_adolescencia"
-                                            id="peso_max_min_adolescencia" class="form-control"
-                                          required>
-                                        <div class="invalid-feedback">Informe o peso  máximo no formato </div>
+                                        <input type="text" name="peso_max_min_adulta" id="peso_max_min_adolescencia"
+                                            class="form-control" required>
+                                        <div class="invalid-feedback">Informe o peso máximo no formato </div>
                                     </div>
-                                 
+
                                     <div class="col-12 mb-3">
                                         <label for="dificuldades_alimentacao" class="form-label">Dificuldades
                                             alimentares*</label>
@@ -430,11 +429,10 @@
                                             rows="3" required></textarea>
                                         <div class="invalid-feedback">Este campo é obrigatório.</div>
                                     </div>
-                             
+
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="medicacao" class="form-label">Faz alguma Medicação ?*</label>
-                                        <input name="medicacao" id="medicacao" class="form-control"
-                                            required>
+                                        <input name="medicacao" id="medicacao" class="form-control" required>
                                         <div class="invalid-feedback">Este campo é obrigatório.</div>
                                     </div>
                                     <div class="col-12 mb-3">
@@ -560,7 +558,7 @@
                                                 <label class="form-check-label" for="alergiaNao">Não</label>
                                             </div>
                                         </div>
-                                    
+
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="cafe_manha" class="form-label">O que costuma comer no café da
@@ -643,14 +641,18 @@
 
                                         </div>
                                     </div>
-                                     <div class="col-12 col-md-6 mb-3"> 
-                                        <label for="outras-info" class="form-label">Algo que não foi perguntado mas gostaria que eu soubesse:</label> 
-                            <textarea id="outras-info" name="outras_info"    required class="form-control" rows="2"></textarea>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="outras-info" class="form-label">Algo que não foi perguntado mas
+                                            gostaria que eu soubesse:</label>
+                                        <textarea id="outras-info" name="outras_info" required class="form-control"
+                                            rows="2"></textarea>
                                     </div>
-                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta" class="form-label">Data da consulta:</label> 
-                                      <input type="date" id="data-consulta" required name="data_consulta" class="form-control" > 
-                                    </div> 
-                                   
+                                    <div class="col-12 col-md-6 mb-3"> <label for="data-consulta"
+                                            class="form-label">Data da consulta:</label>
+                                        <input type="date" id="data-consulta" required name="data_consulta"
+                                            class="form-control">
+                                    </div>
+
                                 </div>
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-secondary"
@@ -680,10 +682,10 @@
         </div>
     </div>
 
-    <div id="pdf-output" style="display:none; border-top: 20px solid #4CAF50; page-break-inside: avoid;
+    <div id="pdf-output" style="display: none; border-top: 20px solid #4CAF50; page-break-inside: avoid;
   break-inside: avoid; /* Suporte moderno */
   border-radius: 10px 10px 0 10px;">
-        <div style="display: flex;    width: 90%; align-items: center; justify-content: space-between; margin-bottom: 5px;">
+        <div style="display: flex; width: 90%; align-items: center; justify-content: space-between;">
             <h1 style="
                     margin: 0;
                     text-align: left;
@@ -693,106 +695,103 @@
                     align-items: center;">
                 Ficha de Anamnese
             </h1>
-          <img src="logo1.png" alt="Logotipo" width="200">
+            <img src="logo1.png" alt="Logotipo" width="200">
 
         </div>
 
-<div style="
-    position: fixed;
-    top: 120%;
-    left: 60%;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    pointer-events: none;
-    opacity: 0.90;
-    z-index: 0;
-    text-align: center;
-">
-    <img src="logo-marca.png" alt="Logotipo" width="300" height="300">
-</div>
+        <div class="sua-classe">
+            <img src="logo-marca.png" alt="Logotipo" width="500" height="500">
+        </div>
 
+        <!-- Seção 1: Identificação -->
+        <h4>Identificação</h4>
+        <ul>
+            <li><b>Nome completo:</b> <u><span id="pdf-nome" class="linha-dinamica"></span></u></li>
+            <li><b>Endereço:</b> <u><span id="pdf-endereco" class="linha-dinamica"></span></u></li>
+            <li><b>Telefone:</b><u><span id="pdf-telefone" class="linha-dinamica"></span></u></li>
+            <li><b>E-mail:</b> <u><span id="pdf-email" class="linha-dinamica"></span></u></li>
+            <li><b>Data de Nascimento:</b> <u><span id="pdf-data-nascimento" class="linha-dinamica"></span></u></li>
+            <li><b>Idade:</b> <u><span id="pdf-idade" class="linha-dinamica"></span></u></li>
+            <li><b>Sexo:</b> <u><span id="pdf-sexo" class="linha-dinamica"></span></u></li>
+        </ul>
 
-<!-- Seção 1: Identificação -->
-<h4>Identificação</h4>
-<ul>
-  <li><b>Nome completo:</b> <u><span id="pdf-nome"></span></u></li>
-  <li><b>Endereço:</b> <u><span id="pdf-endereco"></span></u></li>
-  <li><b>Telefone:</b> <u><span id="pdf-telefone"></span></u></li>
-  <li><b>E-mail:</b> <u><span id="pdf-email"></span></u></li>
-  <li><b>Data de Nascimento:</b> <u><span id="pdf-data-nascimento"></span></u></li>
-  <li><b>Idade:</b> <u><span id="pdf-idade"></span></u></li>
-  <li><b>Sexo:</b> <u><span id="pdf-sexo"></span></u></li>
-</ul>
+        <!-- Seção 2: Dados do Paciente -->
+        <h4>Dados do Paciente</h4>
+        <ul>
+            <li><b>Altura (m):</b> <u><span id="pdf-altura" class="linha-dinamica"></span></u></li>
+            <li><b>Peso Atual (kg):</b> <u><span id="pdf-peso" class="linha-dinamica"></span></u></li>
+            <li><b>Estado Civil:</b> <u><span id="pdf-estado-civil" class="linha-dinamica"></span></u></li>
+            <li><b>Profissão:</b> <u><span id="pdf-profissao" class="linha-dinamica"></span></u></li>
+            <li><b>Carga Horária:</b> <u><span id="pdf-ocupacao" class="linha-dinamica"></span></u></li>
+        </ul>
 
-<!-- Seção 2: Dados do Paciente -->
-<h4>Dados do Paciente</h4>
-<ul>
-  <li><b>Altura (m):</b> <u><span id="pdf-altura"></span></u></li>
-  <li><b>Peso Atual (kg):</b> <u><span id="pdf-peso"></span></u></li>
-  <li><b>Estado Civil:</b> <u><span id="pdf-estado-civil"></span></u></li>
-  <li><b>Profissão:</b> <u><span id="pdf-profissao"></span></u></li>
-  <li><b>Carga Horária:</b> <u><span id="pdf-ocupacao"></span></u></li>
-</ul>
+        <!-- Seção 3: Histórico do Paciente -->
+        <h4>Histórico do Paciente</h4>
+        <ul>
+            <li><b>Motivo da consulta:</b> <u><span id="pdf-historico" class="linha-dinamica"></span></u></li>
+            <li><b>O que espera do nutricionista:</b> <u><span id="pdf-vida_adulta" class="linha-dinamica"></span></u>
+            </li>
+            <li><b>Já realizou estratégia para perda de peso:</b> <u><span id="pdf-alcool1"
+                        class="linha-dinamica"></span></u></li>
+            <li><b>Com acompanhamento profissional:</b> <u><span id="pdf-freq_alcool1"
+                        class="linha-dinamica"></span></u></li>
+            <li><b>Avaliação durante o processo:</b> <u><span id="pdf-Eva" class="linha-dinamica"></span></u></li>
+            <li><b>Peso Mínimo:</b> <u><span id="pdf-peso_max_min_adolescencia" class="linha-dinamica"></span></u></li>
+            <li><b>Peso Máximo:</b> <u><span id="pdf-peso_max_min_adulta" class="linha-dinamica"></span></u></li>
+            <li><b>Dificuldades alimentares:</b> <u><span id="pdf-dificuldades_alimentacao"
+                        class="linha-dinamica"></span></u></li>
+        </ul>
+    <br><br>
+        <!-- Seção 4: Hábitos de Vida -->
+        <h4>Hábitos de Vida</h4>
+        <ul>
+            <li><b>Frequência de evacuação:</b> <u><span id="pdf-freq_evacuacao" class="linha-dinamica"></span></u></li>
+            <li><b>Fumante:</b> <u><span id="pdf-fumante" class="linha-dinamica"></span></u></li>
+            <li><b>Consome bebidas alcoólicas:</b> <u><span id="pdf-alcool" class="linha-dinamica"></span></u></li>
+            <li><b>Frequência do álcool:</b> <u><span id="pdf-freq_alcool" class="linha-dinamica"></span></u></li>
+            <li><b>Apetite:</b> <u><span id="pdf-apetite" class="linha-dinamica"></span></u></li>
+            <li><b>Mastigação:</b> <u><span id="pdf-mastigacao" class="linha-dinamica"></span></u></li>
+            <li><b>Patologias:</b> <u><span id="pdf-patologias" class="linha-dinamica"></span></u></li>
+            <li><b>Histórico familiar:</b> <u><span id="pdf-historico_familiar" class="linha-dinamica"></span></u></li>
+            <li><b>Exames:</b> <u><span id="pdf-exames" class="linha-dinamica"></span></u></li>
+            <li><b>Medicação:</b> <u><span id="pdf-medicacao" class="linha-dinamica"></span></u></li>
+            <li><b>Sintomas:</b> <u><span id="pdf-sintomas" class="linha-dinamica"></span></u></li>
+            <li><b>Outros sintomas:</b> <u><span id="pdf-outros_sintomas_text" class="linha-dinamica"></span></u></li>
+        </ul>
 
-<!-- Seção 3: Histórico do Paciente -->
-<h4>Histórico do Paciente</h4>
-<ul>
-  <li><b>Motivo da consulta:</b> <u><span id="pdf-historico"></span></u></li>
-  <li><b>O que espera do nutricionista:</b> <u><span id="pdf-vida_adulta"></span></u></li>
-  <li><b>Já realizou estratégia para perda de peso:</b> <u><span id="pdf-alcool1"></span></u></li>
-  <li><b>Com acompanhamento profissional:</b> <u><span id="pdf-freq_alcool1"></span></u></li>
-  <li><b>Avaliação durante o processo:</b> <u><span id="pdf-Eva"></span></u></li>
-  <li><b>Peso Mínimo:</b> <u><span id="pdf-peso_max_min_adolescencia"></span></u></li>
-  <li><b>Peso Máximo:</b> <u><span id="pdf-peso_max_min_adulta"></span></u></li>
-  <li><b>Dificuldades alimentares:</b> <u><span id="pdf-dificuldades_alimentacao"></span></u></li>
-</ul>
+        <!-- Seção 5: Hábitos Alimentares -->
+        <h4>Hábitos Alimentares</h4>
+        <ul>
+            <li><b>Refeições fora de casa:</b> <u><span id="pdf-refeicoes_fora" class="linha-dinamica"></span></u></li>
+            <li><b>Onde faz refeições fora:</b> <u><span id="pdf-local_refeicoes" class="linha-dinamica"></span></u>
+            </li>
+            <li><b>Quem faz as compras:</b> <u><span id="pdf-quem_compras" class="linha-dinamica"></span></u></li>
+            <li><b>Alergia ou intolerância:</b> <u><span id="pdf-alergia" class="linha-dinamica"></span></u></li>
+            <li><b>Tipo de alergia:</b> <u><span id="pdf-tipo_alergia" class="linha-dinamica"></span></u></li>
+            <li><b>Café da manhã:</b> <u><span id="pdf-cafe_manha" class="linha-dinamica"></span></u></li>
+            <li><b>Almoço:</b> <u><span id="pdf-almoco" class="linha-dinamica"></span></u></li>
+            <li><b>Lanche da tarde:</b> <u><span id="pdf-lanche_tarde" class="linha-dinamica"></span></u></li>
+            <li><b>Jantar:</b> <u><span id="pdf-jantar" class="linha-dinamica"></span></u></li>
+            <li><b>Alimentos que não gosta:</b> <u><span id="pdf-alimentos_nao_gosta" class="linha-dinamica"></span></u>
+            </li>
+        </ul>
 
-<!-- Seção 4: Hábitos de Vida -->
-<h4>Hábitos de Vida</h4>
-<ul>
-  <li><b>Frequência de evacuação:</b> <u><span id="pdf-freq_evacuacao"></span></u></li>
-  <li><b>Fumante:</b> <u><span id="pdf-fumante"></span></u></li>
-  <li><b>Consome bebidas alcoólicas:</b> <u><span id="pdf-alcool"></span></u></li>
-  <li><b>Frequência do álcool:</b> <u><span id="pdf-freq_alcool"></span></u></li>
-  <li><b>Apetite:</b> <u><span id="pdf-apetite"></span></u></li>
-  <li><b>Mastigação:</b> <u><span id="pdf-mastigacao"></span></u></li>
-  <li><b>Patologias:</b> <u><span id="pdf-patologias"></span></u></li>
-  <li><b>Histórico familiar:</b> <u><span id="pdf-historico_familiar"></span></u></li>
-  <li><b>Exames:</b> <u><span id="pdf-exames"></span></u></li>
-  <li><b>Medicação:</b> <u><span id="pdf-medicacao"></span></u></li>
-  <li><b>Sintomas:</b> <u><span id="pdf-sintomas"></span></u></li>
-  <li><b>Outros sintomas:</b> <u><span id="pdf-outros_sintomas_text"></span></u></li>
-</ul>
+        <!-- Seção 6: Atividades Físicas -->
+        <h4>Atividades Físicas</h4>
+        <ul>
+            <li><b>Tipo de atividade física:</b> <u><span id="pdf-tipo_atividade" class="linha-dinamica"></span></u>
+            </li>
+            <li><b>Frequência:</b> <u><span id="pdf-frequencia_atividade" class="linha-dinamica"></span></u></li>
+            <li><b>Duração:</b> <u><span id="pdf-duracao_atividade" class="linha-dinamica"></span></u></li>
+            <li><b>Realiza alimentado ou em jejum:</b> <u><span id="pdf-alimentacao_atividade"
+                        class="linha-dinamica"></span></u></li>
+            <li><b>Algo que não foi perguntado mas gostaria que eu soubesse:</b> <u><span id="pdf-outras-info"
+                        class="linha-dinamica"></span></u></li>
+            <li><b>Data da consulta:</b> <u><span id="pdf-data-consulta" class="linha-dinamica"></span></u></li>
+        </ul>
 
-<!-- Seção 5: Hábitos Alimentares -->
-<h4>Hábitos Alimentares</h4>
-<ul>
-  <li><b>Refeições fora de casa:</b> <u><span id="pdf-refeicoes_fora"></span></u></li>
-  <li><b>Onde faz refeições fora:</b> <u><span id="pdf-local_refeicoes"></span></u></li>
-  <li><b>Quem faz as compras:</b> <u><span id="pdf-quem_compras"></span></u></li>
-  <li><b>Alergia ou intolerância:</b> <u><span id="pdf-alergia"></span></u></li>
-  <li><b>Tipo de alergia:</b> <u><span id="pdf-tipo_alergia"></span></u></li>
-  <li><b>Café da manhã:</b> <u><span id="pdf-cafe_manha"></span></u></li>
-  <li><b>Almoço:</b> <u><span id="pdf-almoco"></span></u></li>
-  <li><b>Lanche da tarde:</b> <u><span id="pdf-lanche_tarde"></span></u></li>
-  <li><b>Jantar:</b> <u><span id="pdf-jantar"></span></u></li>
-  <li><b>Alimentos que não gosta:</b> <u><span id="pdf-alimentos_nao_gosta"></span></u></li>
-</ul>
+        </ul>
 
-<!-- Seção 6: Atividades Físicas -->
-<h4>Atividades Físicas</h4>
-<ul>
-  <li><b>Tipo de atividade física:</b> <u><span id="pdf-tipo_atividade"></span></u></li>
-  <li><b>Frequência:</b> <u><span id="pdf-frequencia_atividade"></span></u></li>
-  <li><b>Duração:</b> <u><span id="pdf-duracao_atividade"></span></u></li>
-  <li><b>Realiza alimentado ou em jejum:</b> <u><span id="pdf-alimentacao_atividade"></span></u></li>
-  <li><b>Algo que não foi perguntado mas gostaria que eu soubesse:</b> <u><span id="pdf-outras-info"></span></u></li>
-  <li><b>Data da consulta:</b> <u><span id="pdf-data-consulta"></span></u></li>
-</ul>
-
-</ul>
-
-
-   
         <div style="text-align: center; font-size: 20px; margin-top: 20px;">
             📞 Telefone: (+244) 948 781 761 &nbsp; | &nbsp; ✉️ Email: mariaetosi@hotmail.com &nbsp; | &nbsp; 📍 Luanda -
             Angola<br>
@@ -803,7 +802,7 @@
             // Preenche a data atual no rodapé
             document.getElementById('data-geracao-pdf').textContent = new Date().toLocaleDateString();
         </script>
- 
+
 
     </div>
 
@@ -875,30 +874,30 @@
         });
     </script>
     <script>
-document.getElementById('data-nascimento').addEventListener('blur', function () {
-    const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
-    const match = this.value.match(regex);
+        document.getElementById('data-nascimento').addEventListener('blur', function () {
+            const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+            const match = this.value.match(regex);
 
-    if (!match) {
-        this.setCustomValidity('Formato inválido. Use DD/MM/AAAA.');
-        return;
-    }
+            if (!match) {
+                this.setCustomValidity('Formato inválido. Use DD/MM/AAAA.');
+                return;
+            }
 
-    const dia = parseInt(match[1], 10);
-    const mes = parseInt(match[2], 10) - 1;
-    const ano = parseInt(match[3], 10);
-    const data = new Date(ano, mes, dia);
+            const dia = parseInt(match[1], 10);
+            const mes = parseInt(match[2], 10) - 1;
+            const ano = parseInt(match[3], 10);
+            const data = new Date(ano, mes, dia);
 
-    const min = new Date(1950, 0, 1);
-    const max = new Date(2020, 11, 31);
+            const min = new Date(1950, 0, 1);
+            const max = new Date(2020, 11, 31);
 
-    if (data < min || data > max) {
-        this.setCustomValidity('Data fora do intervalo permitido.');
-    } else {
-        this.setCustomValidity('');
-    }
-});
-</script>
+            if (data < min || data > max) {
+                this.setCustomValidity('Data fora do intervalo permitido.');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    </script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
