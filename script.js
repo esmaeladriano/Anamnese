@@ -323,13 +323,17 @@ document.getElementById('pdf-outras-info').textContent = data.outras_info || ' O
 
         const pdfOutputElement = document.getElementById('pdf-output');
 
+         const meu = document.getElementById('meu');
+
 
 
          
         // 3. Gerar o PDF
         try {
-            form.style.display = 'none';
             pdfOutputElement.style.display = 'block'; // Torna visível para renderizar corretamente
+            form.style.display = 'none';
+            meu.style.display = 'none';
+            
             
             await html2pdf().from(pdfOutputElement).set({
 margin: 10,
