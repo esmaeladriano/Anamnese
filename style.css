@@ -157,10 +157,10 @@
      @media screen and (max-width: 767px) {
          .sua-classe {
              top: 70%;
-             left: 60%;
+             left: 70%;
          }
             .sua-classe1 {
-             top: 150%;
+             top: 170%;
              left: 70%;
          }
      }
@@ -168,10 +168,10 @@
      @media screen and (min-width: 768px) {
          .sua-classe {
              top: 50%;
-             left: 70%;
+             left: 50%;
          }
            .sua-classe1 {
-             top: 100%;
-             left: 75%;
+             top: 150%;
+             left: 50%;
          }
      }
