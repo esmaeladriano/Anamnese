@@ -144,11 +144,24 @@
          z-index: 0;
          text-align: center;
      }
+.sua-classe1 {
+         position: fixed;
+         transform: translate(-50%, -50%) rotate(-30deg);
+         pointer-events: none;
+         opacity: 0.90;
+         z-index: 0;
+         text-align: center;
+     }
+
 
      @media screen and (max-width: 767px) {
          .sua-classe {
              top: 70%;
              left: 60%;
+         }
+            .sua-classe1 {
+             top: 150%;
+             left: 70%;
          }
      }
 
@@ -156,5 +169,9 @@
          .sua-classe {
              top: 50%;
              left: 70%;
+         }
+           .sua-classe1 {
+             top: 100%;
+             left: 75%;
          }
      }
