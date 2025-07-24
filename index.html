@@ -782,6 +782,8 @@ ul {
   <li class="linha-bloco">
     <b>Data de Nascimento:</b>
     <span class="linha-dinamica metade" id="pdf-data-nascimento"></span>
+       </li>
+       <li class="linha-bloco">
     <b>Estado Civil:</b>
     <span class="linha-dinamica metade" id="pdf-estado-civil"></span>
   </li>
@@ -794,7 +796,9 @@ ul {
       <li class="linha-bloco">
     <b>Altura:</b>
     <span class="linha-dinamica metade" id="pdf-altura"></span>
-     <b>Carga Horária:</b>
+          </li>
+      <li class="linha-bloco">
+          <b>Carga Horária:</b>
     <span class="linha-dinamica metade" id="pdf-ocupacao"></span>
   </li>
    
@@ -809,10 +813,11 @@ ul {
   <li class="linha-bloco"><b>Com acompanhamento profissional:</b><span class="linha-dinamica metade" id="pdf-freq_alcool1"></span></li>
   <li class="linha-bloco"><b>Avaliação durante o processo:</b><span class="linha-dinamica metade" id="pdf-Eva"></span></li>
   <li class="linha-bloco">
-      <b>Peso Mínimo & Peso Máximo:</b>
-    <span class="linha-dinamica metade" id="pdf-peso_max_min_adolescencia"></span>
-      -----
-    <span class="linha-dinamica metade" id="pdf-peso_max_min_adulta"></span>
+     (<span class="linha-dinamica" id="pdf-peso_max_min_adolescencia"></span>) <b>Peso Mínimo</b>
+
+        </li>
+       <li class="linha-bloco">
+          (<span class="linha-dinamica" id="pdf-peso_max_min_adulta"></span>)  <b> Peso Máximo:</b>
   </li>
   <li class="linha-bloco"><b>Dificuldades alimentares:</b><span class="linha-dinamica metade" id="pdf-dificuldades_alimentacao"></span></li>
 </ul>
@@ -820,12 +825,16 @@ ul {
 <!-- Seção 4: Hábitos de Vida -->
 <h4>4. Hábitos de Vida</h4>
 <ul>
-  <li class="linha-bloco"> (<span class="linha-dinamica" id="pdf-freq_evacuacao"></span>)<b>Frequência de evacuação:</b></li>
+  <li class="linha-bloco">
+      (<span class="linha-dinamica" id="pdf-freq_evacuacao"></span>)<b>Frequência de evacuação:</b>
+    (<span class="linha-dinamica" id="pdf-fumante"></span>)<b>Fumante:</b>
+      </li>
+    
   <li class="linha-bloco"> 
-      (<span class="linha-dinamica" id="pdf-fumante"></span>)<b>Fumante:</b>
   (<span class="linha-dinamica" id="pdf-alcool"></span>)  <b>Bebida alcoólicas:</b>
+  (<span class="linha-dinamica metade" id="pdf-freq_alcool"></span>)  <b>Frequência do álcool:</b>
   </li>
-  <li class="linha-bloco"><b>Frequência do álcool:</b><span class="linha-dinamica metade" id="pdf-freq_alcool"></span></li>
+
   <li class="linha-bloco"><b>Apetite:</b><span class="linha-dinamica metade" id="pdf-apetite"></span>
     <b>Mastigação:</b><span class="linha-dinamica metade" id="pdf-mastigacao"></span>
   </li>
@@ -841,19 +850,22 @@ ul {
 <!-- Seção 5: Hábitos Alimentares -->
 <h4>5. Hábitos Alimentares</h4>
 <ul>
-  <li class="linha-bloco"><b>Refeições fora de casa:</b><span class="linha-dinamica" id="pdf-refeicoes_fora"></span></li>
-  <li class="linha-bloco"><b>Onde faz refeições fora:</b><span class="linha-dinamica" id="pdf-local_refeicoes"></span></li>
-  <li class="linha-bloco"><b>Quem faz as compras:</b><span class="linha-dinamica" id="pdf-quem_compras"></span></li>
-  <li class="linha-bloco"><b>Alergia ou intolerância:</b><span class="linha-dinamica metade" id="pdf-alergia"></span>
-    <b>Tipo de alergia:</b><span class="linha-dinamica metade" id="pdf-tipo_alergia"></span>
+  <li class="linha-bloco">(<span class="linha-dinamica" id="pdf-refeicoes_fora"></span>)<b>Refeições fora de casa:</b></li>
+  <li class="linha-bloco"><b>Onde faz refeições fora:</b><span class="linha-dinamica metade" id="pdf-local_refeicoes"></span></li>
+  <li class="linha-bloco"><b>Quem faz as compras:</b><span class="linha-dinamica metade" id="pdf-quem_compras"></span></li>
+  <li class="linha-bloco">(<span class="linha-dinamica metade" id="pdf-alergia"></span>)<b>Alergia ou intolerância:</b> </li>
+     <li class="linha-bloco">
+      <b>Tipo de alergia:</b><span class="linha-dinamica metade" id="pdf-tipo_alergia"></span>
   </li>
-  <li class="linha-bloco"><b>Café da manhã:</b><span class="linha-dinamica metade" id="pdf-cafe_manha"></span>
+  <li class="linha-bloco">
+      <b>Café da manhã:</b><span class="linha-dinamica metade" id="pdf-cafe_manha"></span>  </li>
+        <li class="linha-bloco">
     <b>Almoço:</b><span class="linha-dinamica metade" id="pdf-almoco"></span>
   </li>
-  <li class="linha-bloco"><b>Lanche da tarde:</b><span class="linha-dinamica metade" id="pdf-lanche_tarde"></span>
-    <b>Jantar:</b><span class="linha-dinamica metade" id="pdf-jantar"></span>
+  <li class="linha-bloco"><b>Lanche da tarde:</b><span class="linha-dinamica metade" id="pdf-lanche_tarde"></span> </li>
+     <li class="linha-bloco"><b>Jantar:</b><span class="linha-dinamica metade" id="pdf-jantar"></span>
   </li>
-  <li class="linha-bloco"><b>Alimentos que não gosta:</b><span class="linha-dinamica" id="pdf-alimentos_nao_gosta"></span></li>
+  <li class="linha-bloco"><b>Alimentos que não gosta:</b><span class="linha-dinamica metade" id="pdf-alimentos_nao_gosta"></span></li>
 </ul>
 
 <!-- Seção 6: Atividades Físicas -->
