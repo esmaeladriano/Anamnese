@@ -788,7 +788,20 @@
 
   <li class="linha-bloco"><b>Dificuldades alimentares:</b><span class="linha-dinamica metade" id="pdf-dificuldades_alimentacao"></span></li>
 </ul>
+        <style>
+            .quebra-pagina {
+  page-break-before: always;
+}
 
+@media print {
+  .quebra-pagina {
+    display: block;
+    page-break-before: always;
+  }
+}
+
+        </style>
+<div class="quebra-pagina"></div>
 <!-- Seção 4: Hábitos de Vida -->
 <h5>4. Hábitos de Vida</h5>
 <ul>
