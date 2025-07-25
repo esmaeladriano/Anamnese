@@ -39,7 +39,7 @@ if (dataNascimentoInput && idadeInput) {
         }
 
         idadeInput.reportValidity();
-    });
+    });}
 
 
     // Lógica para mostrar/ocultar campo "Outros Sintomas"
