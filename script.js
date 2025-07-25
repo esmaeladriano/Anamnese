@@ -122,14 +122,6 @@ if (dataNascimentoInput && idadeInput) {
         const inputs = currentSection.querySelectorAll('input, select, textarea');
         let sectionIsValid = true;
 
-        inputs.forEach(input => {
-            // Se o campo for opcional (como o BI), não force a validação se estiver vazio
-            if (input.id === 'bi' && input.value === '') {
-                input.setCustomValidity(''); // Garante que BI vazio seja considerado válido
-                input.classList.remove('is-invalid');
-                input.classList.add('is-valid');
-                return;
-            }
 
             // Para radio buttons, verifique se ao menos um está selecionado no grupo
             if (input.type === 'radio' && input.name) {
@@ -193,12 +185,7 @@ if (dataNascimentoInput && idadeInput) {
         let formIsValid = true;
 
         inputs.forEach(input => {
-            if (input.id === 'bi' && input.value === '') {
-                input.setCustomValidity('');
-                input.classList.remove('is-invalid');
-                input.classList.add('is-valid');
-                return;
-            }
+
             if (input.type === 'radio' && input.name) {
                 const radioGroup = document.querySelectorAll(`input[name="${input.name}"]`);
                 const isChecked = Array.from(radioGroup).some(radio => radio.checked);
