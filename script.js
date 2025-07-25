@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const idadeInput = document.getElementById('idade');
 
 if (dataNascimentoInput && idadeInput) {
-    dataNascimentoInput.addEventListener('keyup', function () {
+    dataNascimentoInput.addEventListener('change', function () {
         const valor = this.value.trim();
 
     
