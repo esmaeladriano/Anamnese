@@ -266,7 +266,7 @@
                                         <label for="peso_max_min_adolescencia" class="form-label">Peso mínimo já
                                             atingido
                                             *</label>
-                                        <input type="text" name="peso_max_min_adolescencia"
+                                        <input type="number" min="0" step="0.1" name="peso_max_min_adolescencia"
                                             id="peso_max_min_adolescencia" class="form-control" required>
                                         <div class="invalid-feedback">Informe o peso mínimo no formato </div>
                                     </div>
@@ -274,7 +274,7 @@
                                         <label for="peso_max_min_adolescencia" class="form-label">Peso Máximo já
                                             atingido
                                             *</label>
-                                        <input type="text" name="peso_max_min_adulta" id="peso_max_min_adolescencia"
+                                        <input type="number" min="0" step="0.1" name="peso_max_min_adulta" id="peso_max_min_adolescencia"
                                             class="form-control" required>
                                         <div class="invalid-feedback">Informe o peso máximo no formato </div>
                                     </div>
@@ -298,6 +298,12 @@
                                 <h3 class="h5 mb-4 text-center">Hábitos de Vida</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
+                                        <div class="col-12 col-md-6 mb-3">
+    <label for="agua_por_dia" class="form-label">Quantidade de água por dia?*</label>
+    <input type="number" name="agua_por_dia" id="agua_por_dia" class="form-control" placeholder="Em litros..." min="0" step="0.1" required>
+    <div class="invalid-feedback">Informe a quantidade de água que consome por dia.</div>
+</div>
+
                                         <label class="form-label">Frequência de evacuação por dia*</label>
                                         <div class="d-flex flex-wrap gap-2">
                                             <div class="form-check">
@@ -526,29 +532,30 @@
                                 <hr>
                                 <h3 class="h5 mb-4 text-center">Hábitos Alimentares</h3>
                                 <div class="row g-3">
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label class="form-label">Você faz refeições fora de casa?*</label>
-                                        <div class="d-flex gap-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="refeicoes_fora"
-                                                    id="refeicoes_fora_sim" value="Sim" required>
-                                                <label class="form-check-label" for="refeicoes_fora_sim">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="refeicoes_fora"
-                                                    id="refeicoes_fora_nao" value="Não">
-                                                <label class="form-check-label" for="refeicoes_fora_nao">Não</label>
-                                            </div>
-                                        </div>
-                                        <div id="local-refeicoes-container" class="ms-3 mt-2" style="display: none;">
-                                            <label for="local_refeicoes" class="form-label">Se sim, onde?*</label>
-                                            <input type="text" name="local_refeicoes" id="local_refeicoes"
-                                                class="form-control">
-                                            <div class="invalid-feedback">Informe o local das refeições fora.</div>
-                                        </div>
-                                        <div class="invalid-feedback">Por favor, indique se faz refeições fora de casa.
-                                        </div>
-                                    </div>
+                               <div class="col-12 col-md-6 mb-3">
+    <label class="form-label">Faz as refeições fora de casa?*</label>
+    <div class="d-flex gap-2">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="refeicoes_fora" id="refeicoes_fora_sim" value="Sim" required>
+            <label class="form-check-label" for="refeicoes_fora_sim">Sim</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="refeicoes_fora" id="refeicoes_fora_nao" value="Não">
+            <label class="form-check-label" for="refeicoes_fora_nao">Não</label>
+        </div>
+    </div>
+
+    <!-- Campo condicional -->
+    <div id="local-refeicoes-container" class="ms-3 mt-2" style="display: none;">
+        <label for="local_refeicoes" class="form-label">Se sim, onde?*</label>
+        <input type="text" name="local_refeicoes" id="local_refeicoes" class="form-control">
+        <div class="invalid-feedback">Informe o local das refeições fora.</div>
+    </div>
+
+    <!-- Feedback principal -->
+    <div class="invalid-feedback">Por favor, indique se faz refeições fora de casa.</div>
+</div>
+
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="quem_compras" class="form-label">Quem faz as compras?*</label>
                                         <input type="text" name="quem_compras" id="quem_compras" class="form-control"
@@ -659,7 +666,7 @@
                                             rows="2"></textarea>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3"> <label for="data-consulta"
-                                            class="form-label">Data da consulta:</label>
+                                            class="form-label">Data da 1° consulta:</label>
                                         <input type="date" id="data-consulta" required name="data_consulta"
                                             class="form-control">
                                     </div>
@@ -736,7 +743,7 @@
      
   </li>
      <li class="linha-bloco">
-    <b>Data da consulta:</b>
+    <b>Data da 1ª consulta:</b>
     <span class="metade1" id="pdf-data-consulta"></span>
            <span class="linha-dinamica" > </span>
   </li>
@@ -812,6 +819,10 @@
 <!-- Seção 4: Hábitos de Vida -->
 <h4 style="margin-top: 35px;">4. Hábitos de Vida</h4>
 <ul>
+    <li class="linha-bloco">
+  <b>Quantidade de água por dia:</b>
+  (<span class="linha-dinamica" id="pdf-agua_por_dia"></span>)
+</li>
   <li class="linha-bloco">
       <b>Frequência de evacuação:</b> (<span class="linha-dinamica" id="pdf-freq_evacuacao"></span>)
         <b>Fumante: </b> (<span class="linha-dinamica" id="pdf-fumante"></span>)
@@ -837,7 +848,11 @@
 <!-- Seção 5: Hábitos Alimentares -->
 <h4 style="margin-top: 45px;">5. Hábitos Alimentares</h4>
 <ul>
-  <li class="linha-bloco"><b>Refeições fora de casa:</b> (<span class="linha-dinamica" id="pdf-refeicoes_fora"></span>)</li>
+  <li class="linha-bloco">
+  <b>Refeições fora de casa:</b>
+  (<span class="linha-dinamica" id="pdf-refeicoes_fora"></span>)
+  <span id="pdf-local_refeicoes" class="linha-detalhe" style="display: none;"> - Local: <span id="pdf-local_refeicoes_valor"></span></span>
+</li>
   <li class="linha-bloco"><b>Onde faz refeições fora:</b><span class="linha-dinamica metade" id="pdf-local_refeicoes"></span></li>
   <li class="linha-bloco"><b>Quem faz as compras:</b><span class="linha-dinamica metade" id="pdf-quem_compras"></span></li>
   <li class="linha-bloco"><b>Alergia ou intolerância:</b> (<span class="linha-dinamica" id="pdf-alergia"></span>) </li>
@@ -979,6 +994,31 @@
                 this.setCustomValidity('');
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const radioSim = document.getElementById('refeicoes_fora_sim');
+    const radioNao = document.getElementById('refeicoes_fora_nao');
+    const container = document.getElementById('local-refeicoes-container');
+    const inputLocal = document.getElementById('local_refeicoes');
+
+    function toggleLocalInput() {
+        if (radioSim.checked) {
+            container.style.display = 'block';
+            inputLocal.setAttribute('required', 'required');
+        } else {
+            container.style.display = 'none';
+            inputLocal.removeAttribute('required');
+            inputLocal.value = '';
+        }
+    }
+
+    radioSim.addEventListener('change', toggleLocalInput);
+    radioNao.addEventListener('change', toggleLocalInput);
+
+    // Executa na inicialização
+    toggleLocalInput();
+});
+
     </script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
