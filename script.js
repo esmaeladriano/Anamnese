@@ -6,24 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentStep = 0;
 
 
-    // Função para calcular a idade a partir da data de nascimento
-    const dataNascimentoInput = document.getElementById('data-nascimento');
-    const idadeInput = document.getElementById('idade');
 
-    if (dataNascimentoInput && idadeInput) {
-        dataNascimentoInput.addEventListener('change', function () {
-            const dob = new Date(this.value);
-            const today = new Date();
-            let age = today.getFullYear() - dob.getFullYear();
-            const m = today.getMonth() - dob.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-                age--;
-            }
-            idadeInput.value = age > 0 ? age : ''; // Define a idade, ou deixa vazio se for inválida/futura
-            idadeInput.setCustomValidity(age < 3 || age > 75 ? 'A idade deve ser entre 3 e 75 anos.' : '');
-            idadeInput.reportValidity(); // Mostra a mensagem de validação
-        });
-    }
 
     // Lógica para mostrar/ocultar campo "Outros Sintomas"
     const outrosSintomasCheckbox = document.getElementById('outros_sintomas');
