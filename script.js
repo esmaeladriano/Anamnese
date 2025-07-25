@@ -5,7 +5,41 @@ document.addEventListener('DOMContentLoaded', function () {
     const progressBar = document.getElementById('form-progress');
     let currentStep = 0;
 
+  const dataNascimentoInput = document.getElementById('data-nascimento');
+const idadeInput = document.getElementById('idade');
 
+if (dataNascimentoInput && idadeInput) {
+    dataNascimentoInput.addEventListener('keyup', function () {
+        const valor = this.value.trim();
+
+    
+        const regexData = /^\d{2}-\d{2}-\d{4}$/;
+        if (!regexData.test(valor)) {
+            idadeInput.value = '';
+            idadeInput.setCustomValidity('Formato inválido. Use DD-MM-AAAA');
+            idadeInput.reportValidity();
+            return;
+        }
+
+        const dob = new Date(valor);
+        const hoje = new Date();
+        let idade = hoje.getFullYear() - dob.getFullYear();
+        const m = hoje.getMonth() - dob.getMonth();
+
+        if (m < 0 || (m === 0 && hoje.getDate() < dob.getDate())) {
+            idade--;
+        }
+
+        if (idade >= 3 && idade <= 90) {
+            idadeInput.value = idade;
+            idadeInput.setCustomValidity('');
+        } else {
+            idadeInput.value = '';
+            idadeInput.setCustomValidity('A idade deve estar entre 3 e 90 anos.');
+        }
+
+        idadeInput.reportValidity();
+    });
 
 
     // Lógica para mostrar/ocultar campo "Outros Sintomas"
@@ -24,26 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
-    // Lógica para BI opcional (apenas valida se preenchido)
-    const biInput = document.getElementById('bi');
-    if (biInput) {
-        biInput.addEventListener('input', function () {
-            if (this.value === '') {
-                this.setCustomValidity(''); // Campo vazio é válido
-            } else {
-                // Valida o padrão apenas se o campo não estiver vazio
-                const pattern = new RegExp(this.pattern);
-                if (!pattern.test(this.value)) {
-                    this.setCustomValidity(this.title);
-                } else {
-                    this.setCustomValidity('');
-                }
-            }
-            this.reportValidity();
-        });
-    }
-
+    
     // Lógica para Data da Consulta
     const dataConsultaInput = document.getElementById('data-consulta');
     if (dataConsultaInput) {
