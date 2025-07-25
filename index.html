@@ -142,10 +142,10 @@
                                         <label for="data-nascimento" class="form-label">Data de Nascimento*</label>
                                         <input type="text" name="nascimento" class="form-control" id="data-nascimento"
                                             placeholder="DD/MM/AAAA" required
-                                            pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19[5-9][0-9]|20[0-1][0-9]|2020)$"
-                                            title="Insira uma data entre 01/01/1950 e 31/12/2020 no formato DD/MM/AAAA.">
+                                           
+                                            title="Insira uma data  no formato DD-MM-AAAA.">
                                         <div class="invalid-feedback">
-                                            Por favor, insira uma data válida entre 1950 e 2020 no formato DD/MM/AAAA.
+                                            Por favor, insira uma data válida entre no formato DD-MM-AAAA.
                                         </div>
                                     </div>
 
@@ -918,38 +918,43 @@
         </div>
     </div>
 <script>
-   // === Cálculo automático da idade com base na data de nascimento ===
-
-// Seleciona os campos de data de nascimento e idade
-const dataNascimentoInput = document.getElementById('data-nascimento');
+   const dataNascimentoInput = document.getElementById('data-nascimento');
 const idadeInput = document.getElementById('idade');
 
-// Verifica se os elementos existem antes de aplicar o evento
 if (dataNascimentoInput && idadeInput) {
-    dataNascimentoInput.addEventListener('change', function () {
-        const dataNascimento = new Date(this.value);
+    dataNascimentoInput.addEventListener('keyup', function () {
+        const valor = this.value.trim();
+
+    
+        const regexData = /^\d{2}-\d{2}-\d{4}$/;
+        if (!regexData.test(valor)) {
+            idadeInput.value = '';
+            idadeInput.setCustomValidity('Formato inválido. Use DD-MM-AAAA');
+            idadeInput.reportValidity();
+            return;
+        }
+
+        const dob = new Date(valor);
         const hoje = new Date();
+        let idade = hoje.getFullYear() - dob.getFullYear();
+        const m = hoje.getMonth() - dob.getMonth();
 
-        // Cálculo da idade
-        let idade = hoje.getFullYear() - dataNascimento.getFullYear();
-        const mes = hoje.getMonth() - dataNascimento.getMonth();
-
-        // Ajuste se ainda não fez aniversário no ano atual
-        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+        if (m < 0 || (m === 0 && hoje.getDate() < dob.getDate())) {
             idade--;
         }
 
-        // Atualiza o campo de idade
-        idadeInput.value = idade > 0 ? idade : '';
+        if (idade >= 3 && idade <= 90) {
+            idadeInput.value = idade;
+            idadeInput.setCustomValidity('');
+        } else {
+            idadeInput.value = '';
+            idadeInput.setCustomValidity('A idade deve estar entre 3 e 90 anos.');
+        }
 
-        // Validação da idade permitida
-        const idadeInvalida = idade < 3 || idade > 75;
-        idadeInput.setCustomValidity(idadeInvalida ? 'A idade deve ser entre 3 e 75 anos.' : '');
-
-        // Exibe mensagem de erro, se houver
         idadeInput.reportValidity();
     });
 }
+
 
 </script>
     <script>
