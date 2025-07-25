@@ -141,8 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     sectionIsValid = false;
                     // Adiciona a classe is-invalid a todos os radios do grupo para feedback visual
                     radioGroup.forEach(radio => radio.classList.add('is-invalid'));
-                    // Para mostrar a mensagem de feedback, podemos usar o primeiro radio no grupo
-                    radioGroup[0].closest('.mb-3, .row').querySelector('.invalid-feedback').style.display = 'block';
+                
                 } else {
                     radioGroup.forEach(radio => {
                         radio.classList.remove('is-invalid');
