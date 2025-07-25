@@ -1,0 +1,177 @@
+     .card-header {
+         background-color: #4CAF50;
+     }
+
+     .form-section {
+         display: none;
+     }
+
+     .form-section.active {
+         display: block;
+         animation: fadeIn 0.5s;
+     }
+
+     @keyframes fadeIn {
+         from {
+             opacity: 0;
+         }
+
+         to {
+             opacity: 1;
+         }
+     }
+
+     .progress {
+         height: 10px;
+     }
+
+     .invalid-feedback {
+         display: none;
+         color: #dc3545;
+     }
+
+     .was-validated .form-control:invalid~.invalid-feedback,
+     .was-validated .form-check-input:invalid~.invalid-feedback {
+         display: block;
+     }
+
+     .step-indicator {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 30px;
+     }
+
+     .step {
+         text-align: center;
+         position: relative;
+         flex: 1;
+     }
+
+     .step-number {
+         width: 40px;
+         height: 40px;
+         line-height: 40px;
+         border-radius: 50%;
+         background-color: #dee2e6;
+         color: #495057;
+         display: inline-block;
+         margin-bottom: 10px;
+     }
+
+     .step.active .step-number {
+         background-color: #4CAF50;
+         color: white;
+     }
+
+     .step.completed .step-number {
+         background-color: #198754;
+         color: white;
+     }
+
+     .step-title {
+         font-size: 14px;
+         color: #6c757d;
+     }
+
+     .step.active .step-title {
+         color: #4CAF50;
+         font-weight: bold;
+     }
+
+     .step.completed .step-title {
+         color: #198754;
+     }
+
+
+
+     .pdf-box {
+         border: 2px solid #333;
+         padding: 20px;
+         border-radius: 10px;
+         font-family: Arial, sans-serif;
+     }
+
+
+     #pdf-output {
+         max-width: 820px;
+         margin: auto;
+         color: #222;
+         font-size: 18px;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         line-height: 1.4;
+         word-break: break-word;
+         overflow-wrap: break-word;
+     }
+
+
+     #pdf-output h2,
+     #pdf-output h3 {
+
+
+         padding-bottom: 5px;
+     }
+
+     #pdf-output p {
+         margin: 3px 0;
+     }
+
+     #pdf-output strong {
+         display: inline-block;
+         width: 200px;
+     }
+
+     @media print {
+
+         img,
+         .marca-dagua {
+             max-width: 100%;
+             height: auto;
+         }
+
+         body,
+         html {
+             margin: 0;
+             padding: 0;
+         }
+     }
+
+     .sua-classe {
+         position: fixed;
+
+         transform: translate(-50%, -50%) rotate(-30deg);
+         pointer-events: none;
+         opacity: 0.90;
+         z-index: 0;
+         text-align: center;
+     }
+.sua-classe1 {
+         position: fixed;
+         transform: translate(-50%, -50%) rotate(-30deg);
+         pointer-events: none;
+         opacity: 0.90;
+         z-index: 0;
+         text-align: center;
+     }
+
+
+     @media screen and (max-width: 767px) {
+         .sua-classe {
+             top: 70%;
+             left: 70%;
+         }
+            .sua-classe1 {
+             top: 170%;
+             left: 70%;
+         }
+     }
+
+     @media screen and (min-width: 768px) {
+         .sua-classe {
+               top: 60%;
+               left: 35%;
+         }
+            .sua-classe1 {
+               top: 90%;
+               left: 10%;
+         }
+     }
