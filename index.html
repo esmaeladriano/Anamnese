@@ -1010,29 +1010,7 @@ if (dataNascimentoInput && idadeInput) {
         });
     </script>
     <script>
-        document.getElementById('data-nascimento').addEventListener('blur', function () {
-            const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
-            const match = this.value.match(regex);
-
-            if (!match) {
-                this.setCustomValidity('Formato inválido. Use DD/MM/AAAA.');
-                return;
-            }
-
-            const dia = parseInt(match[1], 10);
-            const mes = parseInt(match[2], 10) - 1;
-            const ano = parseInt(match[3], 10);
-            const data = new Date(ano, mes, dia);
-
-            const min = new Date(1950, 0, 1);
-            const max = new Date(2020, 11, 31);
-
-            if (data < min || data > max) {
-                this.setCustomValidity('Data fora do intervalo permitido.');
-            } else {
-                this.setCustomValidity('');
-            }
-        });
+       
 
         document.addEventListener('DOMContentLoaded', function () {
     const radioSim = document.getElementById('refeicoes_fora_sim');
