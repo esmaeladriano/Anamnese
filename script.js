@@ -122,42 +122,34 @@ if (dataNascimentoInput && idadeInput) {
         const inputs = currentSection.querySelectorAll('input, select, textarea');
         let sectionIsValid = true;
 
-
-          // Para radio buttons, verifique se ao menos um está selecionado no grupo
-if (input.type === 'radio' && input.name) {
-    const radioGroup = document.querySelectorAll(`input[name="${input.name}"]`);
-    const isChecked = Array.from(radioGroup).some(radio => radio.checked);
-
-    if (!isChecked && input.hasAttribute('required')) {
-        sectionIsValid = false;
-
-        // Marca todos como inválidos visualmente
-        radioGroup.forEach(radio => radio.classList.add('is-invalid'));
-
-        // Mostra a mensagem de feedback apenas uma vez
-        const feedback = radioGroup[0].closest('.mb-3, .row').querySelector('.invalid-feedback');
-        if (feedback) feedback.style.display = 'block';
-    } else {
-        // Marca todos como válidos
-        radioGroup.forEach(radio => {
-            radio.classList.remove('is-invalid');
-            radio.classList.add('is-valid');
-        });
-
-        // Esconde a mensagem de feedback se estiver visível
-        const feedback = radioGroup[0].closest('.mb-3, .row').querySelector('.invalid-feedback');
-        if (feedback) feedback.style.display = 'none';
-    }
-
-} else if (input.checkValidity() === false) {
-    sectionIsValid = false;
-    input.classList.add('is-invalid');
-    input.classList.remove('is-valid');
-} else {
-    input.classList.remove('is-invalid');
-    input.classList.add('is-valid');
-}
-
+// Para radio buttons, verifique se ao menos um está selecionado no grupo
+            if (input.type === 'radio' && input.name) {
+                const radioGroup = document.querySelectorAll(input[name="${input.name}"]);
+                const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+                if (!isChecked && input.hasAttribute('required')) {
+                    sectionIsValid = false;
+                    // Adiciona a classe is-invalid a todos os radios do grupo para feedback visual
+                    radioGroup.forEach(radio => radio.classList.add('is-invalid'));
+                    // Para mostrar a mensagem de feedback, podemos usar o primeiro radio no grupo
+                    radioGroup[0].closest('.mb-3, .row').querySelector('.invalid-feedback').style.display = 'block';
+                } else {
+                    radioGroup.forEach(radio => {
+                        radio.classList.remove('is-invalid');
+                        radio.classList.add('is-valid');
+                    });
+                    if (radioGroup[0].closest('.mb-3, .row').querySelector('.invalid-feedback')) {
+                        radioGroup[0].closest('.mb-3, .row').querySelector('.invalid-feedback').style.display = 'none';
+                    }
+                }
+            } else if (input.checkValidity() === false) {
+                sectionIsValid = false;
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+            } else {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+            }
+     
 
         // Se a seção atual não for válida, para aqui
         if (!sectionIsValid) {
