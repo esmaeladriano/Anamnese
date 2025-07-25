@@ -918,29 +918,39 @@
         </div>
     </div>
 <script>
-    document.getElementById('data-nascimento').addEventListener('input', function () {
-        const dataInput = this.value;
-        const partes = dataInput.split('/');
-        if (partes.length === 3) {
-            const dia = parseInt(partes[0], 10);
-            const mes = parseInt(partes[1], 10) - 1; // mês em JS é de 0 a 11
-            const ano = parseInt(partes[2], 10);
-            const dataNascimento = new Date(ano, mes, dia);
-            const hoje = new Date();
-            let idade = hoje.getFullYear() - dataNascimento.getFullYear();
-            const m = hoje.getMonth() - dataNascimento.getMonth();
-            if (m < 0 || (m === 0 && hoje.getDate() < dataNascimento.getDate())) {
-                idade--;
-            }
-            if (!isNaN(idade) && idade >= 0) {
-                document.getElementById('idade').value = idade;
-            } else {
-                document.getElementById('idade').value = '';
-            }
-        } else {
-            document.getElementById('idade').value = '';
+   // === Cálculo automático da idade com base na data de nascimento ===
+
+// Seleciona os campos de data de nascimento e idade
+const dataNascimentoInput = document.getElementById('data-nascimento');
+const idadeInput = document.getElementById('idade');
+
+// Verifica se os elementos existem antes de aplicar o evento
+if (dataNascimentoInput && idadeInput) {
+    dataNascimentoInput.addEventListener('change', function () {
+        const dataNascimento = new Date(this.value);
+        const hoje = new Date();
+
+        // Cálculo da idade
+        let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+        const mes = hoje.getMonth() - dataNascimento.getMonth();
+
+        // Ajuste se ainda não fez aniversário no ano atual
+        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+            idade--;
         }
+
+        // Atualiza o campo de idade
+        idadeInput.value = idade > 0 ? idade : '';
+
+        // Validação da idade permitida
+        const idadeInvalida = idade < 3 || idade > 75;
+        idadeInput.setCustomValidity(idadeInvalida ? 'A idade deve ser entre 3 e 75 anos.' : '');
+
+        // Exibe mensagem de erro, se houver
+        idadeInput.reportValidity();
     });
+}
+
 </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
