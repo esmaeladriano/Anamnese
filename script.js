@@ -5,42 +5,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const progressBar = document.getElementById('form-progress');
     let currentStep = 0;
 
-  const dataNascimentoInput = document.getElementById('data-nascimento');
-const idadeInput = document.getElementById('idade');
 
-if (dataNascimentoInput && idadeInput) {
-    dataNascimentoInput.addEventListener('change', function () {
-        const valor = this.value.trim();
+    // Função para calcular a idade a partir da data de nascimento
+    const dataNascimentoInput = document.getElementById('data-nascimento');
+    const idadeInput = document.getElementById('idade');
 
-    
-        const regexData = /^\d{2}-\d{2}-\d{4}$/;
-        if (!regexData.test(valor)) {
-            idadeInput.value = '';
-            idadeInput.setCustomValidity('Formato inválido. Use DD-MM-AAAA');
-            idadeInput.reportValidity();
-            return;
-        }
-
-        const dob = new Date(valor);
-        const hoje = new Date();
-        let idade = hoje.getFullYear() - dob.getFullYear();
-        const m = hoje.getMonth() - dob.getMonth();
-
-        if (m < 0 || (m === 0 && hoje.getDate() < dob.getDate())) {
-            idade--;
-        }
-
-        if (idade >= 3 && idade <= 90) {
-            idadeInput.value = idade;
-            idadeInput.setCustomValidity('');
-        } else {
-            idadeInput.value = '';
-            idadeInput.setCustomValidity('A idade deve estar entre 3 e 90 anos.');
-        }
-
-        idadeInput.reportValidity();
-    });}
-
+    if (dataNascimentoInput && idadeInput) {
+        dataNascimentoInput.addEventListener('change', function () {
+            const dob = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            idadeInput.value = age > 0 ? age : ''; // Define a idade, ou deixa vazio se for inválida/futura
+            idadeInput.setCustomValidity(age < 3 || age > 75 ? 'A idade deve ser entre 3 e 75 anos.' : '');
+            idadeInput.reportValidity(); // Mostra a mensagem de validação
+        });
+    }
 
     // Lógica para mostrar/ocultar campo "Outros Sintomas"
     const outrosSintomasCheckbox = document.getElementById('outros_sintomas');
@@ -58,7 +41,26 @@ if (dataNascimentoInput && idadeInput) {
             }
         });
     }
-    
+
+    // Lógica para BI opcional (apenas valida se preenchido)
+    const biInput = document.getElementById('bi');
+    if (biInput) {
+        biInput.addEventListener('input', function () {
+            if (this.value === '') {
+                this.setCustomValidity(''); // Campo vazio é válido
+            } else {
+                // Valida o padrão apenas se o campo não estiver vazio
+                const pattern = new RegExp(this.pattern);
+                if (!pattern.test(this.value)) {
+                    this.setCustomValidity(this.title);
+                } else {
+                    this.setCustomValidity('');
+                }
+            }
+            this.reportValidity();
+        });
+    }
+
     // Lógica para Data da Consulta
     const dataConsultaInput = document.getElementById('data-consulta');
     if (dataConsultaInput) {
@@ -122,9 +124,18 @@ if (dataNascimentoInput && idadeInput) {
         const inputs = currentSection.querySelectorAll('input, select, textarea');
         let sectionIsValid = true;
 
-// Para radio buttons, verifique se ao menos um está selecionado no grupo
+        inputs.forEach(input => {
+            // Se o campo for opcional (como o BI), não force a validação se estiver vazio
+            if (input.id === 'bi' && input.value === '') {
+                input.setCustomValidity(''); // Garante que BI vazio seja considerado válido
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+                return;
+            }
+
+            // Para radio buttons, verifique se ao menos um está selecionado no grupo
             if (input.type === 'radio' && input.name) {
-                const radioGroup = document.querySelectorAll(input[name="${input.name}"]);
+                const radioGroup = document.querySelectorAll(`input[name="${input.name}"]`);
                 const isChecked = Array.from(radioGroup).some(radio => radio.checked);
                 if (!isChecked && input.hasAttribute('required')) {
                     sectionIsValid = false;
@@ -149,7 +160,7 @@ if (dataNascimentoInput && idadeInput) {
                 input.classList.remove('is-invalid');
                 input.classList.add('is-valid');
             }
-     
+        });
 
         // Se a seção atual não for válida, para aqui
         if (!sectionIsValid) {
@@ -184,7 +195,12 @@ if (dataNascimentoInput && idadeInput) {
         let formIsValid = true;
 
         inputs.forEach(input => {
-
+            if (input.id === 'bi' && input.value === '') {
+                input.setCustomValidity('');
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+                return;
+            }
             if (input.type === 'radio' && input.name) {
                 const radioGroup = document.querySelectorAll(`input[name="${input.name}"]`);
                 const isChecked = Array.from(radioGroup).some(radio => radio.checked);
