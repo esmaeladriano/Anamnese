@@ -14,40 +14,46 @@
 </head>
 <style>
     .linha-bloco {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+    }
 
-.linha-dinamica.metade {
-  flex: 1 1 calc(50% - 80px); /* ou ajuste conforme o seu layout */
-  border-bottom: 1px solid #000;
-  min-height: 20px;
-}
+    .linha-dinamica.metade {
+        flex: 1 1 calc(50% - 80px);
+        /* ou ajuste conforme o seu layout */
+        border-bottom: 1px solid #000;
+        min-height: 20px;
+    }
 
-.linha-dinamica.metade {
-  flex: 1 1 calc(50% - 80px);
-  min-height: 20px;
-}
-.metade1 {
-  flex: 1 1 40%;
-  min-height: 20px;
-      border-bottom: 1px solid #000;
-}
-.linha-dinamica {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    .linha-dinamica.metade {
+        flex: 1 1 calc(50% - 80px);
+        min-height: 20px;
+    }
 
+    .metade1 {
+        flex: 1 1 40%;
+        min-height: 20px;
+        border-bottom: 1px solid #000;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
 
+    .linha-dinamica {
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: block;
+    }
 </style>
 
 
 <style>
     p {
-        margin: 4px 0;
+        margin: 2px 0;
+        font-size: 18px;
     }
 
     p strong {
@@ -109,7 +115,7 @@
                         <form id="nutrition-form" class="needs-validation" novalidate>
 
                             <div class="form-section active" id="section-1">
-                                <h3 class="h5 mb-4 text-center">Identificação</h3>
+                                <h3 class="h5 mb-2 text-center">Identificação</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="nome" class="form-label">Nome completo*</label>
@@ -171,7 +177,7 @@
                             </div>
 
                             <div class="form-section" id="section-2">
-                                <h3 class="h5 mb-4 text-center">Dados do Paciente</h3>
+                                <h3 class="h5 mb-2 text-center">Dados do Paciente</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="altura" class="form-label">Altura (m)*</label>
@@ -220,7 +226,7 @@
                             </div>
 
                             <div class="form-section" id="section-3">
-                                <h3 class="h5 mb-4 text-center">Histórico do Paciente</h3>
+                                <h3 class="h5 mb-2 text-center">Histórico do Paciente</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="historico" class="form-label">Motivo da consulta*</label>
@@ -274,8 +280,8 @@
                                         <label for="peso_max_min_adolescencia" class="form-label">Peso Máximo já
                                             atingido
                                             *</label>
-                                        <input type="number" min="0" step="0.1" name="peso_max_min_adulta" id="peso_max_min_adolescencia"
-                                            class="form-control" required>
+                                        <input type="number" min="0" step="0.1" name="peso_max_min_adulta"
+                                            id="peso_max_min_adolescencia" class="form-control" required>
                                         <div class="invalid-feedback">Informe o peso máximo no formato </div>
                                     </div>
 
@@ -295,14 +301,18 @@
                             </div>
 
                             <div class="form-section" id="section-4">
-                                <h3 class="h5 mb-4 text-center">Hábitos de Vida</h3>
+                                <h3 class="h5 mb-2 text-center">Hábitos de Vida</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
                                         <div class="col-12 col-md-6 mb-3">
-    <label for="agua_por_dia" class="form-label">Quantidade de água por dia?*</label>
-    <input type="number" name="agua_por_dia" id="agua_por_dia" class="form-control" placeholder="Em litros..." min="0" step="0.1" required>
-    <div class="invalid-feedback">Informe a quantidade de água que consome por dia.</div>
-</div>
+                                            <label for="agua_por_dia" class="form-label">Quantidade de água por
+                                                dia?*</label>
+                                            <input type="number" name="agua_por_dia" id="agua_por_dia"
+                                                class="form-control" placeholder="Em litros..." min="0" step="0.1"
+                                                required>
+                                            <div class="invalid-feedback">Informe a quantidade de água que consome por
+                                                dia.</div>
+                                        </div>
 
                                         <label class="form-label">Frequência de evacuação por dia*</label>
                                         <div class="d-flex flex-wrap gap-2">
@@ -530,31 +540,35 @@
 
                             <div class="form-section" id="section-5">
                                 <hr>
-                                <h3 class="h5 mb-4 text-center">Hábitos Alimentares</h3>
+                                <h3 class="h5 mb-2 text-center">Hábitos Alimentares</h3>
                                 <div class="row g-3">
-                               <div class="col-12 col-md-6 mb-3">
-    <label class="form-label">Faz as refeições fora de casa?*</label>
-    <div class="d-flex gap-2">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="refeicoes_fora" id="refeicoes_fora_sim" value="Sim" required>
-            <label class="form-check-label" for="refeicoes_fora_sim">Sim</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="refeicoes_fora" id="refeicoes_fora_nao" value="Não">
-            <label class="form-check-label" for="refeicoes_fora_nao">Não</label>
-        </div>
-    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label">Faz as refeições fora de casa?*</label>
+                                        <div class="d-flex gap-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="refeicoes_fora"
+                                                    id="refeicoes_fora_sim" value="Sim" required>
+                                                <label class="form-check-label" for="refeicoes_fora_sim">Sim</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="refeicoes_fora"
+                                                    id="refeicoes_fora_nao" value="Não">
+                                                <label class="form-check-label" for="refeicoes_fora_nao">Não</label>
+                                            </div>
+                                        </div>
 
-    <!-- Campo condicional -->
-    <div id="local-refeicoes-container" class="ms-3 mt-2" style="display: none;">
-        <label for="local_refeicoes" class="form-label">Se sim, onde?*</label>
-        <input type="text" name="local_refeicoes" id="local_refeicoes" class="form-control">
-        <div class="invalid-feedback">Informe o local das refeições fora.</div>
-    </div>
+                                        <!-- Campo condicional -->
+                                        <div id="local-refeicoes-container" class="ms-3 mt-2" style="display: none;">
+                                            <label for="local_refeicoes" class="form-label">Se sim, onde?*</label>
+                                            <input type="text" name="local_refeicoes" id="local_refeicoes"
+                                                class="form-control">
+                                            <div class="invalid-feedback">Informe o local das refeições fora.</div>
+                                        </div>
 
-    <!-- Feedback principal -->
-    <div class="invalid-feedback">Por favor, indique se faz refeições fora de casa.</div>
-</div>
+                                        <!-- Feedback principal -->
+                                        <div class="invalid-feedback">Por favor, indique se faz refeições fora de casa.
+                                        </div>
+                                    </div>
 
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="quem_compras" class="form-label">Quem faz as compras?*</label>
@@ -621,7 +635,7 @@
 
                             <div class="form-section" id="section-6">
                                 <hr>
-                                <h3 class="h5 mb-4 text-center">Atividades Físicas</h3>
+                                <h3 class="h5 mb-2 text-center">Atividades Físicas</h3>
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="tipo_atividade" class="form-label">Tipo de atividade física*</label>
@@ -680,7 +694,7 @@
                             </div>
 
                             <div class="form-section" id="section-7">
-                                <h3 class="h5 mb-4 text-center">Confirmação e Envio</h3>
+                                <h3 class="h5 mb-2 text-center">Confirmação e Envio</h3>
                                 <div class="alert alert-info" role="alert">
                                     Revise todas as informações antes de enviar. Um PDF será gerado com
                                     os dados.
@@ -717,173 +731,193 @@
 
         </div>
 
-   
-<!-- Seção 1: Identificação -->
-<h4 style="margin-top: clamp(10px, 3vh, 20px);">1. Identificação</h4>
-<ul>
-  <li class="linha-bloco">
-    <b>Nome completo:</b>
-    <span class="metade1" id="pdf-nome"></span>
-  </li>
-  <li class="linha-bloco">
-    <b>Idade:</b>
-    <span class="linha-dinamica metade" id="pdf-idade"></span>
-    <b>Sexo:</b>
-    <span class="linha-dinamica metade" id="pdf-sexo"></span>
-  </li>
-  <li class="linha-bloco">
-    <b>Telefone:</b>
-    <span class="linha-dinamica metade" id="pdf-telefone"></span>
-    <b>E-mail:</b>
-    <span class="linha-dinamica metade" id="pdf-email"></span>
-  </li>
-  <li class="linha-bloco">
-    <b>Profissão:</b>
-    <span class="linha-dinamica metade1" id="pdf-profissao"></span>
-     
-  </li>
-     <li class="linha-bloco">
-    <b>Data da 1ª consulta:</b>
-    <span class="metade1" id="pdf-data-consulta"></span>
-           <span class="linha-dinamica" > </span>
-  </li>
-</ul>
 
-<!-- Seção 2: Dados do Paciente -->
-<h4 style="margin-top: clamp(50px, 10vh, 85px);
+        <!-- Seção 1: Identificação -->
+        <h4 style="margin-top: clamp(10px, 3vh, 20px);">1. Identificação</h4>
+        <ul>
+            <li class="linha-bloco">
+                <b>Nome completo:</b>
+                <span class="metade1" id="pdf-nome"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Idade:</b>
+                <span class="linha-dinamica metade" id="pdf-idade"></span>
+                <b>Sexo:</b>
+                <span class="linha-dinamica metade" id="pdf-sexo"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Telefone:</b>
+                <span class="linha-dinamica metade" id="pdf-telefone"></span>
+                <b>E-mail:</b>
+                <span class="linha-dinamica metade" id="pdf-email"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Profissão:</b>
+                <span class="linha-dinamica metade1" id="pdf-profissao"></span>
+
+            </li>
+            <li class="linha-bloco">
+                <b>Data da 1ª consulta:</b>
+                <span class="metade1" id="pdf-data-consulta"></span>
+                <span class="linha-dinamica"> </span>
+            </li>
+        </ul>
+
+        <!-- Seção 2: Dados do Paciente -->
+        <h4 style="margin-top: clamp(50px, 10vh, 85px);
 ">2. Dados do Paciente</h4>
-<ul>
-  <li class="linha-bloco">
-    <b>Data de Nascimento:</b>
-    <span class="linha-dinamica metade" id="pdf-data-nascimento"></span>
-       </li>
-       <li class="linha-bloco">
-    <b>Estado Civil:</b>
-    <span class="linha-dinamica metade" id="pdf-estado-civil"></span>
-  </li>
-  <li class="linha-bloco">
-    <b>Peso:</b>
-    <span class="linha-dinamica metade" id="pdf-peso"></span>
-    <b>Endereço:</b>
-    <span class="linha-dinamica metade" id="pdf-endereco"></span>
-  </li>
-      <li class="linha-bloco">
-    <b>Altura:</b>
-    <span class="linha-dinamica metade" id="pdf-altura"></span>
-          </li>
-      <li class="linha-bloco">
-          <b>Carga Horária:</b>
-    <span class="linha-dinamica metade" id="pdf-ocupacao"></span>
-  </li>
-   
-</ul>
+        <ul>
+            <li class="linha-bloco">
+                <b>Data de Nascimento:</b>
+                <span class="linha-dinamica metade" id="pdf-data-nascimento"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Estado Civil:</b>
+                <span class="linha-dinamica metade" id="pdf-estado-civil"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Peso:</b>
+                <span class="linha-dinamica metade" id="pdf-peso"></span>
+                <b>Endereço:</b>
+                <span class="linha-dinamica metade" id="pdf-endereco"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Altura:</b>
+                <span class="linha-dinamica metade" id="pdf-altura"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Carga Horária:</b>
+                <span class="linha-dinamica metade" id="pdf-ocupacao"></span>
+            </li>
 
-<!-- Seção 3: Histórico do Paciente -->
-<h4 style="margin-top: clamp(50px, 10vh, 85px);
+        </ul>
+
+        <!-- Seção 3: Histórico do Paciente -->
+        <h4 style="margin-top: clamp(50px, 10vh, 85px);
 ">3. Histórico do Paciente</h4>
-<ul>
-  <li class="linha-bloco"><b>Motivo da consulta:</b><span class="linha-dinamica metade" id="pdf-historico"></span></li>
-  <li class="linha-bloco"><b>O que espera do nutricionista:</b><span class="linha-dinamica metade" id="pdf-vida_adulta"></span></li>
-  <li class="linha-bloco"> <b>Já realizou estratégia para perda de peso:</b> (<span class="linha-dinamica" id="pdf-alcool1"></span>) </li>
-  <li class="linha-bloco"><b>Com acompanhamento profissional:</b><span class="linha-dinamica metade" id="pdf-freq_alcool1"></span></li>
-  <li class="linha-bloco"><b>Avaliação durante o processo:</b><span class="linha-dinamica metade" id="pdf-Eva"></span></li>
-  <li class="linha-bloco">
-      <b>Peso Mínimo: </b> (<span class="linha-dinamica" id="pdf-peso_max_min_adolescencia"></span>)
- <b> Peso Máximo:</b> (<span class="linha-dinamica" id="pdf-peso_max_min_adulta"></span>)  
-        </li>
+        <ul>
+            <li class="linha-bloco"><b>Motivo da consulta:</b><span class="linha-dinamica metade"
+                    id="pdf-historico"></span></li>
+            <li class="linha-bloco"><b>O que espera do nutricionista:</b><span class="linha-dinamica metade"
+                    id="pdf-vida_adulta"></span></li>
+            <li class="linha-bloco"> <b>Já realizou estratégia para perda de peso:</b> (<span class="linha-dinamica"
+                    id="pdf-alcool1"></span>) </li>
+            <li class="linha-bloco"><b>Com acompanhamento profissional:</b><span class="linha-dinamica metade"
+                    id="pdf-freq_alcool1"></span></li>
+            <li class="linha-bloco"><b>Avaliação durante o processo:</b><span class="linha-dinamica metade"
+                    id="pdf-Eva"></span></li>
+            <li class="linha-bloco">
+                <b>Peso Mínimo: </b> (<span class="linha-dinamica" id="pdf-peso_max_min_adolescencia"></span>)
+                <b> Peso Máximo:</b> (<span class="linha-dinamica" id="pdf-peso_max_min_adulta"></span>)
+            </li>
 
-  <li class="linha-bloco"><b>Dificuldades alimentares:</b><span class="linha-dinamica metade" id="pdf-dificuldades_alimentacao"></span></li>
-</ul>
+            <li class="linha-bloco"><b>Dificuldades alimentares:</b><span class="linha-dinamica metade"
+                    id="pdf-dificuldades_alimentacao"></span></li>
+        </ul>
         <style>
             .quebra-pagina {
-  page-break-before: always;
-}
+                page-break-before: always;
+            }
 
-@media print {
-  .quebra-pagina {
-    display: block;
-    page-break-before: always;
-  }
-}
-
+            @media print {
+                .quebra-pagina {
+                    display: block;
+                    page-break-before: always;
+                }
+            }
         </style>
-             <div class="sua-classe">
+        <div class="sua-classe">
             <img src="logo-marca.png" alt="Logotipo" width="500" height="500">
         </div>
 
-           <div class="sua-classe1">
+        <div class="sua-classe1">
             <img src="logo-marca.png" alt="Logotipo" width="500" height="500">
         </div>
 
-<div class="quebra-pagina"></div>
-<!-- Seção 4: Hábitos de Vida -->
-<h4 style="margin-top: 35px;">4. Hábitos de Vida</h4>
-<ul>
-    <li class="linha-bloco">
-  <b>Quantidade de água por dia:</b>
-  (<span class="linha-dinamica" id="pdf-agua_por_dia"></span>)
-</li>
-  <li class="linha-bloco">
-      <b>Frequência de evacuação:</b> (<span class="linha-dinamica" id="pdf-freq_evacuacao"></span>)
-        <b>Fumante: </b> (<span class="linha-dinamica" id="pdf-fumante"></span>)
-       <b>Bebida alcoólicas:</b> (<span class="linha-dinamica" id="pdf-alcool"></span>)  
-      </li>
-    
-  <li class="linha-bloco"> 
- 
-   <b>Frequência do álcool: </b> (<span class="linha-dinamica" id="pdf-freq_alcool"></span>) 
-      <b>Apetite:</b><span class="linha-dinamica" id="pdf-apetite"></span>
-         <b>Mastigação:</b><span class="linha-dinamica" id="pdf-mastigacao"></span>
-  </li>
-  <li class="linha-bloco"><b>Patologias:</b><span class="linha-dinamica metade" id="pdf-patologias"></span></li>
-  <li class="linha-bloco"><b>Histórico familiar:</b><span class="linha-dinamica metade" id="pdf-historico_familiar"></span></li>
-     <li class="linha-bloco">
-    <b>Medicação:</b><span class="linha-dinamica metade" id="pdf-medicacao"></span>
-  </li>
-  <li class="linha-bloco"><b>Sintomas:</b><span class="linha-dinamica metade" id="pdf-sintomas"></span>  </li>
-     <li class="linha-bloco"> <b>Outros sintomas:</b><span class="linha-dinamica metade" id="pdf-outros_sintomas_text"></span>
-  </li>
-</ul>
+        <div class="quebra-pagina"></div>
+        <!-- Seção 4: Hábitos de Vida -->
+        <h4 style="margin-top: 35px;">4. Hábitos de Vida</h4>
+        <ul>
+            <li class="linha-bloco">
+                <b>Quantidade de água por dia:</b>
+                (<span class="linha-dinamica" id="pdf-agua_por_dia"></span>)
+            </li>
+            <li class="linha-bloco">
+                <b>Frequência de evacuação:</b> (<span class="linha-dinamica" id="pdf-freq_evacuacao"></span>)
+                <b>Fumante: </b> (<span class="linha-dinamica" id="pdf-fumante"></span>)
+                <b>Bebida alcoólicas:</b> (<span class="linha-dinamica" id="pdf-alcool"></span>)
+            </li>
 
-<!-- Seção 5: Hábitos Alimentares -->
-<h4 style="margin-top: 45px;">5. Hábitos Alimentares</h4>
-<ul>
-  <li class="linha-bloco">
-  <b>Refeições fora de casa:</b>
-  (<span class="linha-dinamica" id="pdf-refeicoes_fora"></span>)
-  <span id="pdf-local_refeicoes" class="linha-detalhe" style="display: none;"> <b>- Local: </b>  <span id="pdf-local_refeicoes_valor"></span></span>
-</li>
-  <li class="linha-bloco"><b>Onde faz refeições fora:</b><span class="linha-dinamica metade" id="pdf-local_refeicoes"></span></li>
-  <li class="linha-bloco"><b>Quem faz as compras:</b><span class="linha-dinamica metade" id="pdf-quem_compras"></span></li>
-  <li class="linha-bloco"><b>Alergia ou intolerância:</b> (<span class="linha-dinamica" id="pdf-alergia"></span>) </li>
-     <li class="linha-bloco">
-      <b>Tipo de alergia:</b><span class="linha-dinamica metade" id="pdf-tipo_alergia"></span>
-  </li>
-  <li class="linha-bloco">
-      <b>Café da manhã:</b><span class="linha-dinamica metade" id="pdf-cafe_manha"></span>  </li>
-        <li class="linha-bloco">
-    <b>Almoço:</b><span class="linha-dinamica metade" id="pdf-almoco"></span>
-  </li>
-  <li class="linha-bloco"><b>Lanche da tarde:</b><span class="linha-dinamica metade" id="pdf-lanche_tarde"></span> </li>
-     <li class="linha-bloco"><b>Jantar:</b><span class="linha-dinamica metade" id="pdf-jantar"></span>
-  </li>
-  <li class="linha-bloco"><b>Alimentos que não gosta:</b><span class="linha-dinamica metade" id="pdf-alimentos_nao_gosta"></span></li>
-</ul>
+            <li class="linha-bloco">
 
-<!-- Seção 6: Atividades Físicas -->
-<h4 style="margin-top: 45px;">6. Atividades Físicas</h4>
-<ul>
-  <li class="linha-bloco"><b>Tipo de atividade física:</b><span class="linha-dinamica metade" id="pdf-tipo_atividade"></span></li>
-  <li class="linha-bloco"><b>Frequência: </b> (<span class="linha-dinamica" id="pdf-frequencia_atividade"></span>)
-   <b>Duração:</b> (<span class="linha-dinamica" id="pdf-duracao_atividade"></span>) 
-  </li>
-  <li class="linha-bloco"><b>Realiza alimentado ou em jejum:</b><span class="linha-dinamica metade" id="pdf-alimentacao_atividade"></span></li>
-  <li class="linha-bloco"><b>Algo que não foi perguntado mas gostaria que eu soubesse:</b><span class="linha-dinamica metade" id="pdf-outras-info"></span></li>
-</ul>
+                <b>Frequência do álcool: </b> (<span class="linha-dinamica" id="pdf-freq_alcool"></span>)
+                <b>Apetite:</b><span class="linha-dinamica" id="pdf-apetite"></span>
+                <b>Mastigação:</b><span class="linha-dinamica" id="pdf-mastigacao"></span>
+            </li>
+            <li class="linha-bloco"><b>Patologias:</b><span class="linha-dinamica metade" id="pdf-patologias"></span>
+            </li>
+            <li class="linha-bloco"><b>Histórico familiar:</b><span class="linha-dinamica metade"
+                    id="pdf-historico_familiar"></span></li>
+            <li class="linha-bloco">
+                <b>Medicação:</b><span class="linha-dinamica metade" id="pdf-medicacao"></span>
+            </li>
+            <li class="linha-bloco"><b>Sintomas:</b><span class="linha-dinamica metade" id="pdf-sintomas"></span> </li>
+            <li class="linha-bloco"> <b>Outros sintomas:</b><span class="linha-dinamica metade"
+                    id="pdf-outros_sintomas_text"></span>
+            </li>
+        </ul>
+
+        <!-- Seção 5: Hábitos Alimentares -->
+        <h4 style="margin-top: 45px;">5. Hábitos Alimentares</h4>
+        <ul>
+            <li class="linha-bloco">
+                <b>Refeições fora de casa:</b>
+                (<span class="linha-dinamica" id="pdf-refeicoes_fora"></span>)
+                <span id="pdf-local_refeicoes" class="linha-detalhe" style="display: none;"> <b>- Local: </b> <span
+                        id="pdf-local_refeicoes_valor"></span></span>
+            </li>
+            <li class="linha-bloco"><b>Onde faz refeições fora:</b><span class="linha-dinamica metade"
+                    id="pdf-local_refeicoes"></span></li>
+            <li class="linha-bloco"><b>Quem faz as compras:</b><span class="linha-dinamica metade"
+                    id="pdf-quem_compras"></span></li>
+            <li class="linha-bloco"><b>Alergia ou intolerância:</b> (<span class="linha-dinamica"
+                    id="pdf-alergia"></span>) </li>
+            <li class="linha-bloco">
+                <b>Tipo de alergia:</b><span class="linha-dinamica metade" id="pdf-tipo_alergia"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Café da manhã:</b><span class="linha-dinamica metade" id="pdf-cafe_manha"></span>
+            </li>
+            <li class="linha-bloco">
+                <b>Almoço:</b><span class="linha-dinamica metade" id="pdf-almoco"></span>
+            </li>
+            <li class="linha-bloco"><b>Lanche da tarde:</b><span class="linha-dinamica metade"
+                    id="pdf-lanche_tarde"></span> </li>
+            <li class="linha-bloco"><b>Jantar:</b><span class="linha-dinamica metade" id="pdf-jantar"></span>
+            </li>
+            <li class="linha-bloco"><b>Alimentos que não gosta:</b><span class="linha-dinamica metade"
+                    id="pdf-alimentos_nao_gosta"></span></li>
+        </ul>
+
+        <!-- Seção 6: Atividades Físicas -->
+        <h4 style="margin-top: 45px;">6. Atividades Físicas</h4>
+        <ul>
+            <li class="linha-bloco"><b>Tipo de atividade física:</b><span class="linha-dinamica metade"
+                    id="pdf-tipo_atividade"></span></li>
+            <li class="linha-bloco"><b>Frequência: </b> (<span class="linha-dinamica"
+                    id="pdf-frequencia_atividade"></span>)
+                <b>Duração:</b> (<span class="linha-dinamica" id="pdf-duracao_atividade"></span>)
+            </li>
+            <li class="linha-bloco"><b>Realiza alimentado ou em jejum:</b><span class="linha-dinamica metade"
+                    id="pdf-alimentacao_atividade"></span></li>
+            <li class="linha-bloco"><b>Algo que não foi perguntado mas gostaria que eu soubesse:</b><span
+                    class="linha-dinamica metade" id="pdf-outras-info"></span></li>
+        </ul>
 
 
         <div style="text-align: center; font-size: 20px; margin-top: 35px;">
-            📞 Telefone: (+244) 948 781 761 &nbsp; | &nbsp; ✉️ Email: mariachinhama01@gmail.com &nbsp; | &nbsp; 📍 Luanda -
+            📞 Telefone: (+244) 948 781 761 &nbsp; | &nbsp; ✉️ Email:
+            mariachinhama01@gmail.com &nbsp; | &nbsp; 📍 Luanda -
             Angola<br>
             <em>Gerado em: <span id="data-geracao-pdf"></span></em>
         </div>
@@ -909,12 +943,12 @@
         <div class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2 shadow rounded-pill px-4 py-2">
             <style>
                 .padrao {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-}
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
             </style>
-<a href="" class="padrao">Voltar a preencher</a> 
+            <a href="" class="padrao">Voltar a preencher</a>
         </div>
     </div>
 
@@ -996,28 +1030,28 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-    const radioSim = document.getElementById('refeicoes_fora_sim');
-    const radioNao = document.getElementById('refeicoes_fora_nao');
-    const container = document.getElementById('local-refeicoes-container');
-    const inputLocal = document.getElementById('local_refeicoes');
+            const radioSim = document.getElementById('refeicoes_fora_sim');
+            const radioNao = document.getElementById('refeicoes_fora_nao');
+            const container = document.getElementById('local-refeicoes-container');
+            const inputLocal = document.getElementById('local_refeicoes');
 
-    function toggleLocalInput() {
-        if (radioSim.checked) {
-            container.style.display = 'block';
-            inputLocal.setAttribute('required', 'required');
-        } else {
-            container.style.display = 'none';
-            inputLocal.removeAttribute('required');
-            inputLocal.value = '';
-        }
-    }
+            function toggleLocalInput() {
+                if (radioSim.checked) {
+                    container.style.display = 'block';
+                    inputLocal.setAttribute('required', 'required');
+                } else {
+                    container.style.display = 'none';
+                    inputLocal.removeAttribute('required');
+                    inputLocal.value = '';
+                }
+            }
 
-    radioSim.addEventListener('change', toggleLocalInput);
-    radioNao.addEventListener('change', toggleLocalInput);
+            radioSim.addEventListener('change', toggleLocalInput);
+            radioNao.addEventListener('change', toggleLocalInput);
 
-    // Executa na inicialização
-    toggleLocalInput();
-});
+            // Executa na inicialização
+            toggleLocalInput();
+        });
 
     </script>
 

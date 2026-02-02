@@ -369,7 +369,7 @@ document.getElementById('pdf-outras-info').textContent = data.outras_info || ' O
             
             
             await html2pdf().from(pdfOutputElement).set({
-margin: 10,
+margin: [10, 10, 15, 10],
   filename: `ficha_anamnese_${data.nome.replace(/\s/g, '_')}.pdf`,
   image: { type: 'jpeg', quality: 0.98 },
   html2canvas: {
@@ -379,7 +379,7 @@ margin: 10,
     letterRendering: true
   },
   jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-  pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+  pagebreak: { mode: ['avoid-all', 'css', 'legacy'], after: '.page-break' }
             }).save();
 
             pdfOutputElement.style.display = 'none'; // Opcional: esconde de novo após gerar o PDF
